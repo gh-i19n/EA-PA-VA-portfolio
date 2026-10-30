@@ -25,6 +25,7 @@ pnpm build
 src/
   app/                 Next.js routes, layouts, metadata, and handlers
   components/ui/        App-wide, app-owned interface compositions
+  components/primitives/ Private shadcn implementation details
   config/               App-wide routes and presentation configuration
   features/<workflow>/  Workflow modules, organized by the work they own
   infrastructure/       Providers, integrations, and runtime setup
@@ -35,7 +36,12 @@ public/                 Static files served from the site root
 
 Keep routes thin and compose feature entry points from `src/features`. A workflow owns its components, hooks, services, schemas, types, configuration, and utilities; create only the folders it needs. Keep shared helpers in `src/shared` only when multiple workflows use them. No workspace packages or separate apps are part of this project.
 
-shadcn is configured for the app's design tokens and component workflow. Keep reusable UI app-owned: do not add or consume raw shadcn primitives, and place purposeful compositions in `src/components/ui`.
+shadcn generates its primitives into `src/components/primitives`. Only complete,
+app-owned compositions in `src/components/ui` consume them. Routes and features
+use compositions such as `TextField`, `TextAreaField`, and `SelectField`; they
+never import primitives or build raw inputs. Field compositions own their label,
+description, validation, disabled state, focus treatment and control. ESLint
+enforces both the import boundary and the restriction on raw form controls.
 
 ## Portfolio routes
 

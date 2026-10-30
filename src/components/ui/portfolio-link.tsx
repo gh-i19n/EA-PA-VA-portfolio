@@ -19,7 +19,7 @@ export function PortfolioLink({
     <Link
       href={href}
       className={cn(
-        "group inline-flex min-h-12 w-fit items-center justify-between gap-9 border-b pb-2 pt-3 text-[13px] font-medium",
+        "group inline-flex min-h-12 w-fit items-center justify-between gap-9 border-b pb-2 pt-3 text-label font-medium",
         light ? "border-paper/40 text-paper" : "border-ink/40 text-ink",
         quiet ? "gap-8" : "gap-12",
       )}

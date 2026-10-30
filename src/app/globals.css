@@ -15,14 +15,34 @@
   --font-sans: var(--site-sans);
   --color-celery: var(--highlight);
   --color-fern: var(--accent);
-  --font-display: var(--site-sans);
+  --font-display: var(--site-display);
+}
+
+@theme {
+  --color-destructive: #8c2934;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+  --text-support: 1rem;
+  --text-support--line-height: 1.6;
+  --text-label: 0.9375rem;
+  --text-label--line-height: 1.5;
+  --text-caption: 0.875rem;
+  --text-caption--line-height: 1.5;
+
+  --radius-feature: clamp(1.25rem, 2.2vw, 2rem);
+  --radius-frame: clamp(1rem, 1.7vw, 1.5rem);
+  --radius-panel: 1.75rem;
+  --radius-document: 0.875rem;
+  --radius-control: 0.625rem;
+  --radius-inset: 0.5rem;
 }
 
 :root {
   color-scheme: light;
   --background: #e9e9e6;
   --foreground: #252725;
-  --muted: #62655f;
+  --muted: #5d605a;
   --surface: #dcded7;
   --surface-strong: var(--surface);
   --border: #bfc2b9;

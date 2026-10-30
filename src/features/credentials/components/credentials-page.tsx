@@ -17,7 +17,7 @@ export function CredentialsPage() {
       >
         <h2
           id="trust-title"
-          className="max-w-[600px] text-[clamp(34px,5.4vw,78px)] leading-[1.04] tracking-[-.06em]"
+          className="font-display font-medium max-w-[600px] text-[clamp(34px,5.4vw,78px)] leading-[1.04] tracking-[-.035em]"
         >
           A clear way
           <br />
@@ -28,7 +28,7 @@ export function CredentialsPage() {
             Agree the responsibility. Respect the confidence. Keep the
             commitment.
           </p>
-          <p className="mb-6 mt-5 text-sm leading-[1.85] text-muted">
+          <p className="mb-6 mt-5 text-body text-muted">
             I work with agreed access and approval limits, treat sensitive
             information with care and keep communication clear. A dependable
             partnership is built through those everyday decisions.
@@ -46,7 +46,7 @@ export function CredentialsPage() {
         >
           <h2
             id="testimonials-title"
-            className="text-[clamp(30px,4vw,58px)] leading-[1.1] tracking-[-.055em]"
+            className="font-display font-medium text-[clamp(30px,4vw,58px)] leading-[1.1] tracking-[-.035em]"
           >
             Client perspectives.
           </h2>
@@ -57,16 +57,16 @@ export function CredentialsPage() {
                   <blockquote className="text-[24px] leading-[1.5] tracking-[-.03em]">
                     “{item.quote}”
                   </blockquote>
-                  <figcaption className="mt-6 text-xs">
+                  <figcaption className="mt-6 text-label">
                     {item.name}
-                    <span className="mt-2 block text-[11px] text-muted">
+                    <span className="mt-2 block text-caption text-muted">
                       {item.role}
                     </span>
                   </figcaption>
                 </figure>
               ))
             ) : (
-              <p className="max-w-[410px] text-sm leading-[1.85] text-muted">
+              <p className="max-w-[410px] text-body text-muted">
                 Approved client testimonials have not been supplied for this
                 preview. This space is reserved for feedback shared with
                 permission.
@@ -81,7 +81,7 @@ export function CredentialsPage() {
         >
           <h2
             id="certificates-title"
-            className="text-[clamp(30px,4vw,58px)] leading-[1.1] tracking-[-.055em]"
+            className="font-display font-medium text-[clamp(30px,4vw,58px)] leading-[1.1] tracking-[-.035em]"
           >
             Certificates & learning.
           </h2>
@@ -97,7 +97,7 @@ export function CredentialsPage() {
                 >
                   <span>
                     <span className="text-xl">{item.title}</span>
-                    <span className="mt-3 block text-xs text-muted">
+                    <span className="mt-3 block text-label text-muted">
                       {item.issuer} / {item.issued}
                     </span>
                   </span>
@@ -105,7 +105,7 @@ export function CredentialsPage() {
                 </a>
               ))
             ) : (
-              <p className="max-w-[410px] text-sm leading-[1.85] text-muted">
+              <p className="max-w-[410px] text-body text-muted">
                 Verified certificates will be listed with the issuing
                 organisation, completion details and a verification link when
                 available.

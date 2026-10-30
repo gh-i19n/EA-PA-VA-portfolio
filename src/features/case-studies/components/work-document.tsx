@@ -16,20 +16,20 @@ export function WorkDocument({
   return (
     <article
       className={cn(
-        "relative rounded-[3px] bg-white text-ink shadow-[0_15px_60px_-20px_#233e3530]",
-        compact ? "p-5 sm:p-6" : "p-6 sm:p-10",
+        "relative rounded-document bg-white text-ink shadow-[0_15px_60px_-20px_#233e3530]",
+        compact ? "p-5 sm:p-6" : "p-5 sm:p-10",
       )}
       aria-label={`${sample.label}, illustrative sample`}
     >
-      <header className="flex items-center justify-between gap-5 border-b border-rule pb-4">
-        <span className="text-[11px] font-medium">AY / Executive office</span>
-        <span className="rounded-full bg-mist px-2.5 py-1 text-[9px] text-muted">
+      <header className="flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-b border-rule pb-4">
+        <span className="text-caption font-medium">AY / Executive office</span>
+        <span className="rounded-full bg-mist px-3 py-1.5 text-caption text-muted">
           Illustrative sample
         </span>
       </header>
       <p
         className={cn(
-          "text-[10px] text-muted",
+          "text-caption text-muted",
           compact ? "mb-2 mt-5" : "mb-3 mt-7",
         )}
       >
@@ -37,7 +37,7 @@ export function WorkDocument({
       </p>
       <h3
         className={cn(
-          "font-semibold leading-[1.2] tracking-[-.045em]",
+          "font-display font-medium leading-[1.2] tracking-[-.03em]",
           compact
             ? "text-[23px]"
             : "max-w-[350px] text-[clamp(26px,2.5vw,36px)]",
@@ -50,36 +50,35 @@ export function WorkDocument({
           <li
             key={row.title}
             className={cn(
-              "grid grid-cols-[48px_1fr] gap-3 border-t border-rule/70",
-              compact ? "py-3" : "py-5 sm:grid-cols-[55px_1fr]",
+              "grid gap-2 border-t border-rule/70 sm:grid-cols-[64px_minmax(0,1fr)] sm:gap-4",
+              compact ? "py-4" : "py-5",
             )}
           >
-            <span className="pt-0.5 text-[10px] font-medium text-muted">
+            <span className="text-caption font-medium tabular-nums text-muted sm:pt-0.5">
               {row.reference}
             </span>
             <div>
-              <p
-                className={cn(
-                  "font-medium",
-                  compact ? "text-[11px]" : "text-[13px]",
-                )}
-              >
-                {row.title}
-              </p>
+              <p className="text-support font-medium">{row.title}</p>
               {!compact && (
-                <p className="mt-1.5 max-w-[320px] text-[11px] leading-[1.7] text-muted">
+                <p className="mt-2 max-w-[350px] text-support text-muted">
                   {row.note}
                 </p>
               )}
-              <span className="mt-2 inline-flex items-center gap-1.5 text-[9px] text-ink">
+              <span className="mt-3 inline-flex items-start gap-2 text-caption text-ink">
                 {/decision|approval|following/i.test(row.status) ? (
                   <ArrowUpRight
-                    size={10}
+                    size={14}
+                    className="mt-1 shrink-0"
                     strokeWidth={1.5}
                     aria-hidden="true"
                   />
                 ) : (
-                  <Check size={10} strokeWidth={1.8} aria-hidden="true" />
+                  <Check
+                    size={14}
+                    className="mt-1 shrink-0"
+                    strokeWidth={1.8}
+                    aria-hidden="true"
+                  />
                 )}
                 {row.status}
               </span>
@@ -88,7 +87,7 @@ export function WorkDocument({
         ))}
       </ul>
       {!compact && (
-        <p className="mt-4 flex items-start gap-3 rounded-[2px] bg-celery/70 p-4 text-[11px] leading-[1.8]">
+        <p className="mt-4 flex items-start gap-3 rounded-inset bg-celery/70 p-4 text-label">
           <ArrowUpRight
             size={16}
             className="mt-0.5 shrink-0"
@@ -97,7 +96,7 @@ export function WorkDocument({
           {sample.annotation}
         </p>
       )}
-      <p className="mt-3 border-t border-rule pt-3 text-[9px] text-muted">
+      <p className="mt-3 border-t border-rule pt-3 text-caption text-muted">
         Prepared with context. Ready for the next step.
       </p>
     </article>

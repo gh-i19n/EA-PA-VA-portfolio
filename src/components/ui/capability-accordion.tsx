@@ -58,7 +58,7 @@ export function CapabilityAccordion({
           onToggle={(event) => reveal(event.currentTarget)}
         >
           <summary className="flex min-h-[110px] cursor-pointer list-none items-center justify-between gap-5 py-7 [&::-webkit-details-marker]:hidden">
-            <h3 className="text-[clamp(23px,2.4vw,34px)] font-medium leading-[1.25] tracking-[-.05em]">
+            <h3 className="font-display font-medium text-[clamp(23px,2.4vw,34px)] leading-[1.25] tracking-[-.03em]">
               {item.title}
             </h3>
             <span className="grid size-10 shrink-0 place-items-center rounded-full border border-rule transition-colors duration-200 group-hover:border-ink group-open:border-ink group-open:bg-ink group-open:text-paper motion-reduce:transition-none">
@@ -71,16 +71,16 @@ export function CapabilityAccordion({
             </span>
           </summary>
           <div data-capability-content className="pb-9 pr-1 sm:pr-14">
-            <p className="mb-4 text-[17px] font-medium leading-[1.6] tracking-[-.02em]">
+            <p className="mb-4 text-body font-medium">
               {item.introduction}
             </p>
-            <p className="max-w-[540px] text-sm leading-[1.9] text-muted">
+            <p className="max-w-[540px] text-body text-muted">
               {item.description}
             </p>
             <ul className="mt-7 grid list-none gap-x-6 gap-y-4 sm:grid-cols-2">
               {item.capabilities.map((capability) => (
                 <li
-                  className="flex items-baseline gap-3 text-[11px] leading-[1.7] before:size-1 before:shrink-0 before:rounded-full before:bg-fern before:content-['']"
+                  className="flex items-baseline gap-3 text-label before:size-1 before:shrink-0 before:rounded-full before:bg-fern before:content-['']"
                   key={capability}
                 >
                   {capability}

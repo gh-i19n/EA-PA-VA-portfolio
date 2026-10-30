@@ -36,27 +36,27 @@ export function PortfolioHome() {
         className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-28"
         aria-labelledby="support-title"
       >
-        <div className="mb-6 flex items-center justify-between gap-6 border-b border-rule pb-5">
-          <h2 id="support-title" className="text-xs text-muted">
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-b border-rule pb-5">
+          <h2 id="support-title" className="font-medium text-label text-muted">
             The responsibility I can carry
           </h2>
-          <span className="text-[10px] text-muted">Explore services</span>
+          <span className="text-caption text-muted">Explore services</span>
         </div>
         {support.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="group grid items-center gap-3 border-b border-rule py-7 sm:grid-cols-[1fr_auto] sm:gap-10 sm:py-9"
+            className="group grid grid-cols-[minmax(0,1fr)] items-center gap-3 border-b border-rule py-7 sm:py-9 md:grid-cols-[minmax(0,1fr)_auto] md:gap-10"
           >
-            <span className="text-[clamp(26px,4vw,58px)] leading-[1.1] tracking-[-.055em] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-3 motion-reduce:transition-none">
+            <span className="font-display text-[clamp(26px,4vw,58px)] font-medium leading-[1.1] tracking-[-.035em] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-3 motion-reduce:transition-none">
               {item.title}
             </span>
-            <span className="flex items-center justify-between gap-9 text-[11px] text-muted sm:min-w-[280px]">
-              {item.detail}
+            <span className="flex min-w-0 items-center justify-between gap-5 text-label text-muted md:min-w-[290px]">
+              <span className="min-w-0 [overflow-wrap:anywhere]">{item.detail}</span>
               <ArrowUpRight
                 size={22}
                 strokeWidth={1.2}
-                className="text-ink transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:rotate-45 motion-reduce:transition-none"
+                className="shrink-0 text-ink transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:rotate-45 motion-reduce:transition-none"
                 aria-hidden="true"
               />
             </span>
@@ -65,14 +65,14 @@ export function PortfolioHome() {
       </section>
       <section className="bg-mist py-16 sm:py-24" aria-labelledby="work-title">
         <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
-          <div className="mb-10 flex flex-col justify-between gap-6 sm:mb-14 sm:flex-row sm:items-end">
+          <div className="mb-10 flex flex-col justify-between gap-6 sm:mb-14 lg:flex-row lg:items-end">
             <div>
-              <p className="mb-5 text-xs text-muted">
+              <p className="mb-5 text-label text-muted">
                 Selected thinking / Illustrative scenarios
               </p>
               <h2
                 id="work-title"
-                className="text-[clamp(43px,7vw,102px)] leading-none tracking-[-.07em]"
+                className="font-display font-medium text-[clamp(43px,7vw,102px)] leading-none tracking-[-.045em]"
               >
                 Behind the day.
               </h2>
@@ -103,10 +103,10 @@ export function PortfolioHome() {
                     />
                   </span>
                 </PortfolioVisual>
-                <p className="mb-3 mt-5 text-[10px] text-muted">
+                <p className="mb-3 mt-5 text-caption text-muted">
                   Executive organisation / Sample scenario
                 </p>
-                <h3 className="text-[clamp(27px,2.9vw,42px)] tracking-[-.05em]">
+                <h3 className="font-display font-medium text-[clamp(27px,2.9vw,42px)] tracking-[-.03em]">
                   The executive week.
                 </h3>
               </Link>
@@ -132,10 +132,10 @@ export function PortfolioHome() {
                     />
                   </span>
                 </PortfolioVisual>
-                <p className="mb-3 mt-5 text-[10px] text-muted">
+                <p className="mb-3 mt-5 text-caption text-muted">
                   Travel & personal logistics / Sample scenario
                 </p>
-                <h3 className="text-[clamp(27px,2.9vw,42px)] tracking-[-.05em]">
+                <h3 className="font-display font-medium text-[clamp(27px,2.9vw,42px)] tracking-[-.03em]">
                   Every journey, considered.
                 </h3>
               </Link>
@@ -157,18 +157,18 @@ export function PortfolioHome() {
           />
         </PortfolioVisual>
         <div className="self-center">
-          <p className="mb-7 text-xs text-muted">
+          <p className="mb-7 text-label text-muted">
             The person behind the preparation
           </p>
           <h2
             id="personal-title"
-            className="text-[clamp(37px,4.9vw,70px)] leading-[1.05] tracking-[-.06em]"
+            className="font-display font-medium text-[clamp(37px,4.9vw,70px)] leading-[1.05] tracking-[-.035em]"
           >
             Close to the detail.
             <br />
             Clear on what matters.
           </h2>
-          <p className="mb-6 mt-7 max-w-[400px] text-sm leading-[1.85] text-muted">
+          <p className="mb-6 mt-7 max-w-[400px] text-body text-muted">
             I learn how you work, when to act and when a decision needs your
             attention. Discretion, sound judgment and a personal sense of
             ownership shape the way I support you.

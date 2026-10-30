@@ -44,31 +44,31 @@ export function AboutPage() {
               className="object-cover object-[30%_center] saturate-[.25]"
             />
           </PortfolioVisual>
-          <figcaption className="mt-4 text-[9px] text-muted">
+          <figcaption className="mt-4 text-caption text-muted">
             Portrait placeholder / Dayana Joseph, Pexels
           </figcaption>
         </figure>
         <div className="self-end lg:pb-9">
           <h2
             id="story-title"
-            className="max-w-[520px] text-[clamp(34px,4.2vw,60px)] leading-[1.1] tracking-[-.055em]"
+            className="font-display font-medium max-w-[520px] text-[clamp(34px,4.2vw,60px)] leading-[1.1] tracking-[-.035em]"
           >
             The detail is where
             <br />
             the difference is.
           </h2>
-          <p className="mt-7 text-[17px] leading-[1.75] tracking-[-.02em]">
+          <p className="mt-7 text-body text-ink">
             I support founders and senior leaders at the point where time,
             people and decisions meet.
           </p>
-          <p className="mt-5 max-w-[460px] text-sm leading-[1.85] text-muted">
+          <p className="mt-5 max-w-[460px] text-body text-muted">
             My work spans complex calendars, executive correspondence, meeting
             preparation, operational coordination and personal logistics. I pay
             attention to how those responsibilities connect: what needs to
             happen first, who needs context and where a small delay could become
             a larger problem.
           </p>
-          <p className="mb-6 mt-5 max-w-[460px] text-sm leading-[1.85] text-muted">
+          <p className="mb-6 mt-5 max-w-[460px] text-body text-muted">
             I bring a senior EA's perspective and a personal sense of ownership.
             The aim is a working relationship where you can delegate with
             confidence and keep your attention on the decisions only you can
@@ -84,7 +84,7 @@ export function AboutPage() {
         aria-labelledby="principles-title"
       >
         <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
-          <p className="mb-10 text-xs text-muted" id="principles-title">
+          <p className="mb-10 text-label text-muted" id="principles-title">
             How I work
           </p>
           {principles.map((item) => (
@@ -92,10 +92,10 @@ export function AboutPage() {
               key={item.title}
               className="grid gap-5 border-t border-rule py-8 md:grid-cols-[1.1fr_1fr] md:gap-24 md:py-10"
             >
-              <h2 className="text-[clamp(35px,5.2vw,75px)] leading-none tracking-[-.06em]">
+              <h2 className="font-display font-medium text-[clamp(35px,5.2vw,75px)] leading-none tracking-[-.035em]">
                 {item.title}
               </h2>
-              <p className="max-w-[480px] text-sm leading-[1.85] text-muted md:pt-1">
+              <p className="max-w-[480px] text-body text-muted md:pt-1">
                 {item.text}
               </p>
             </article>

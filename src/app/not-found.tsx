@@ -11,13 +11,13 @@ export default function NotFound() {
       />
       <div className="mx-auto my-12 flex w-[calc(100%-2.75rem)] max-w-[1220px] flex-wrap gap-x-8 gap-y-4 sm:w-[calc(100%-4rem)]">
         <Link
-          className="border-b border-rule pb-2 text-sm hover:border-ledger"
+          className="border-b border-rule pb-2 text-support hover:border-ledger"
           href="/"
         >
           Return home
         </Link>
         <Link
-          className="border-b border-rule pb-2 text-sm hover:border-ledger"
+          className="border-b border-rule pb-2 text-support hover:border-ledger"
           href="/case-studies"
         >
           Explore case studies

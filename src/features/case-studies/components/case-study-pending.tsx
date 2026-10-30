@@ -8,13 +8,13 @@ export function CaseStudyPending() {
       aria-label="Loading case study"
     >
       <Link
-        className="inline-block min-h-11 py-3 text-xs underline underline-offset-4"
+        className="inline-block min-h-11 py-3 text-label underline underline-offset-4"
         href="/case-studies"
       >
         All case studies
       </Link>
       <p
-        className="mt-12 text-[clamp(40px,7vw,100px)] leading-[1.1] tracking-[-.065em]"
+        className="mt-12 font-display text-[clamp(40px,7vw,100px)] font-medium leading-[1.1] tracking-[-.04em]"
         role="status"
       >
         Opening the

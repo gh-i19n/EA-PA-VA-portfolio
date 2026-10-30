@@ -52,13 +52,13 @@ export function CaseStudiesPage() {
                   />
                 </span>
               </PortfolioVisual>
-              <p className="mb-3 mt-6 text-[10px] text-muted">
+              <p className="mb-3 mt-6 text-caption text-muted">
                 {study.category} / Sample scenario
               </p>
-              <h2 className="text-[clamp(28px,3.4vw,49px)] leading-[1.1] tracking-[-.055em]">
+              <h2 className="font-display font-medium text-[clamp(28px,3.4vw,49px)] leading-[1.1] tracking-[-.035em]">
                 {study.title}
               </h2>
-              <p className="mt-4 max-w-[410px] text-[13px] leading-[1.8] text-muted">
+              <p className="mt-4 max-w-[410px] text-body text-muted">
                 {study.summary}
               </p>
             </Link>

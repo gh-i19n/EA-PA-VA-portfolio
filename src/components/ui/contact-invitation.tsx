@@ -11,10 +11,10 @@ export function ContactInvitation({
       aria-label="Work with AY"
     >
       <div>
-        <p className="mb-4 text-xs text-muted">
+        <p className="mb-4 text-label text-muted">
           An introduction is a good place to start.
         </p>
-        <h2 className="max-w-[750px] text-[clamp(30px,3.6vw,50px)] font-medium leading-[1.15] tracking-[-.055em]">
+        <h2 className="font-display font-medium max-w-[750px] text-[clamp(30px,3.6vw,50px)] leading-[1.15] tracking-[-.035em]">
           {title}
         </h2>
       </div>

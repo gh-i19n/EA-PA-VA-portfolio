@@ -15,5 +15,5 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Put each workflow in `src/features/<workflow>`. A feature owns its components, hooks, services, schemas, types, configuration, and utilities; create only the folders it needs.
 - Put app-wide route and presentation configuration in `src/config`, providers and runtime setup in `src/infrastructure`, and helpers genuinely shared by multiple workflows in `src/shared`.
 - Use `src/components/ui` for reusable, app-owned interface compositions. Keep workflow-specific presentation inside its feature.
-- Do not add or consume raw shadcn primitives. shadcn is configured for the app's design tokens and future component workflow; build purposeful app-owned compositions in `src/components/ui`.
+- Keep generated shadcn primitives in `src/components/primitives` as private implementation details. Only app-owned compositions in `src/components/ui` may consume them. Features and routes must use complete compositions such as `TextField`, `TextAreaField`, and `SelectField`, never primitives or renamed pass-through wrappers.
 - Keep contracts, schemas, and configuration independent of rendering, workflow hooks, and request services.

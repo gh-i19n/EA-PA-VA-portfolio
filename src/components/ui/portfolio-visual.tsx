@@ -14,40 +14,60 @@ export function PortfolioVisual({
   children,
   className,
   reveal = "viewport",
+  radius = "frame",
 }: {
   children: ReactNode;
   className: string;
   reveal?: "arrival" | "viewport";
+  radius?: "frame" | "inherit";
 }) {
   const frame = useRef<HTMLDivElement>(null);
   useGSAP(
     () => {
-      if (!frame.current) return;
+      const element = frame.current;
+      if (!element) return;
       const media = gsap.matchMedia();
       media.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from(frame.current, {
-          clipPath:
-            reveal === "arrival" ? "inset(0 0 100% 0)" : "inset(8% 5% 8% 5%)",
-          duration: 1.1,
-          ease: motion.headlineEase,
-          ...(reveal === "viewport"
-            ? {
-                scrollTrigger: {
-                  trigger: frame.current,
-                  start: "top 88%",
-                  once: true,
-                },
-              }
-            : {}),
-        });
+        const curve = getComputedStyle(element).borderTopLeftRadius;
+        gsap.fromTo(
+          element,
+          {
+            clipPath:
+              reveal === "arrival"
+                ? `inset(0% 0% 100% 0% round ${curve})`
+                : `inset(8% 5% 8% 5% round ${curve})`,
+          },
+          {
+            clipPath: `inset(0% 0% 0% 0% round ${curve})`,
+            duration: 1.1,
+            ease: motion.headlineEase,
+            clearProps: "clipPath",
+            ...(reveal === "viewport"
+              ? {
+                  scrollTrigger: {
+                    trigger: element,
+                    start: "top 88%",
+                    once: true,
+                  },
+                }
+              : {}),
+          },
+        );
       });
       return () => media.revert();
     },
-    { scope: frame, dependencies: [reveal], revertOnUpdate: true },
+    { scope: frame, dependencies: [reveal, radius], revertOnUpdate: true },
   );
 
   return (
-    <div ref={frame} className={cn("overflow-hidden", className)}>
+    <div
+      ref={frame}
+      className={cn(
+        "overflow-hidden",
+        radius === "inherit" ? "rounded-[inherit]" : "rounded-frame",
+        className,
+      )}
+    >
       {children}
     </div>
   );

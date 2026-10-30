@@ -57,8 +57,8 @@ export function PortfolioPageTitle({
       aria-label={label}
       className={
         appearance === "portrait"
-          ? "text-[clamp(66px,11.5vw,172px)] font-normal leading-[.92] tracking-[-.075em]"
-          : "text-[clamp(58px,10.4vw,150px)] font-medium leading-[.97] tracking-[-.075em]"
+          ? "font-display text-[clamp(60px,11.5vw,172px)] font-medium leading-[.96] tracking-[-.045em]"
+          : "font-display text-[clamp(54px,10.4vw,150px)] font-medium leading-[1.01] tracking-[-.045em]"
       }
     >
       {title.split("\n").map((line, index) => (

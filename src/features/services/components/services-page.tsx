@@ -20,21 +20,21 @@ export function ServicesPage() {
             key={item.id}
             className="grid scroll-mt-10 gap-7 border-t border-rule py-10 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-24"
           >
-            <h2 className="max-w-[650px] text-[clamp(35px,5.5vw,80px)] leading-[1.04] tracking-[-.065em]">
+            <h2 className="font-display font-medium max-w-[650px] text-[clamp(35px,5.5vw,80px)] leading-[1.04] tracking-[-.04em]">
               {item.title}
             </h2>
             <div className="lg:pt-1">
               <p className="mb-5 max-w-[500px] text-[20px] leading-[1.4] tracking-[-.03em]">
                 {item.introduction}
               </p>
-              <p className="max-w-[480px] text-sm leading-[1.85] text-muted">
+              <p className="max-w-[480px] text-body text-muted">
                 {item.description}
               </p>
               <ul className="mt-7 grid list-none gap-3 sm:grid-cols-2 sm:gap-x-7">
                 {item.capabilities.map((capability) => (
                   <li
                     key={capability}
-                    className="flex items-baseline gap-3 text-[11px] leading-[1.7] before:size-[3px] before:shrink-0 before:bg-ink before:content-['']"
+                    className="flex items-baseline gap-3 text-label before:size-[3px] before:shrink-0 before:bg-ink before:content-['']"
                   >
                     {capability}
                   </li>
@@ -56,7 +56,7 @@ export function ServicesPage() {
         <div className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-10 sm:w-[calc(100%-5rem)] lg:grid-cols-[1fr_1.1fr] lg:gap-24">
           <h2
             id="process-title"
-            className="max-w-[550px] text-[clamp(40px,6vw,84px)] leading-[1.02] tracking-[-.065em]"
+            className="font-display font-medium max-w-[550px] text-[clamp(40px,6vw,84px)] leading-[1.02] tracking-[-.04em]"
           >
             Working
             <br />
@@ -68,12 +68,12 @@ export function ServicesPage() {
                 key={step.title}
                 className="grid grid-cols-[25px_1fr] gap-5 border-t border-rule py-7 first:border-0 first:pt-0"
               >
-                <span className="pt-1 text-xs text-muted">{index + 1}.</span>
+                <span className="pt-1 text-label text-muted">{index + 1}.</span>
                 <div>
-                  <h3 className="text-[23px] leading-[1.3] tracking-[-.04em]">
+                  <h3 className="font-display font-medium text-[23px] leading-[1.3] tracking-[-.025em]">
                     {step.title}
                   </h3>
-                  <p className="mt-3 max-w-[440px] text-[13px] leading-[1.85] text-muted">
+                  <p className="mt-3 max-w-[440px] text-body text-muted">
                     {step.text}
                   </p>
                 </div>

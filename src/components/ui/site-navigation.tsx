@@ -106,17 +106,17 @@ export function SiteNavigation() {
   return (
     <header
       ref={scope}
-      className="relative z-20 mx-auto flex min-h-[88px] w-[calc(100%-2.5rem)] max-w-[1440px] items-center justify-between gap-5 sm:w-[calc(100%-5rem)] sm:min-h-[100px]"
+      className="relative z-20 mx-auto flex min-h-[88px] w-[calc(100%-2.5rem)] max-w-[1440px] flex-wrap items-center justify-between gap-x-5 gap-y-3 py-4 sm:w-[calc(100%-5rem)] sm:min-h-[100px] sm:py-0"
     >
       <Link
         href="/"
         aria-label="AY, executive assistant. Home"
-        className="flex items-center gap-4"
+        className="flex shrink-0 items-center gap-4"
       >
-        <span className="text-[35px] font-semibold leading-none tracking-[-.09em]">
+        <span className="font-display text-[38px] font-bold leading-none tracking-[-.055em]">
           AY
         </span>
-        <span className="text-[10px] leading-[1.45] text-muted">
+        <span className="text-caption text-muted">
           Executive
           <br />
           Assistant
@@ -124,7 +124,7 @@ export function SiteNavigation() {
       </Link>
       <nav
         aria-label="Main navigation"
-        className="ml-auto hidden items-center gap-9 md:flex"
+        className="ml-auto hidden items-center gap-8 lg:flex"
       >
         {[siteNavigation[1], siteNavigation[2], siteNavigation[3]].map(
           (item) => (
@@ -132,7 +132,7 @@ export function SiteNavigation() {
               key={item.href}
               href={item.href}
               aria-current={active(item.href) ? "page" : undefined}
-              className="py-3 text-xs underline-offset-4 hover:underline aria-[current=page]:underline"
+              className="py-3 text-label underline-offset-4 hover:underline aria-[current=page]:underline"
             >
               {item.label}
             </Link>
@@ -140,7 +140,7 @@ export function SiteNavigation() {
         )}
         <Link
           href="/contact"
-          className="flex items-center gap-2 py-3 text-xs underline-offset-4 hover:underline"
+          className="flex items-center gap-2 py-3 text-label underline-offset-4 hover:underline"
           aria-current={pathname === "/contact" ? "page" : undefined}
         >
           Contact
@@ -155,7 +155,7 @@ export function SiteNavigation() {
         aria-expanded={open}
         aria-controls="portfolio-index"
         aria-haspopup="dialog"
-        className="group ml-2 flex min-h-11 items-center gap-4 text-xs sm:ml-8"
+        className="group ml-auto flex min-h-11 shrink-0 items-center gap-4 text-label lg:ml-8"
       >
         Menu
         <span className="grid size-9 place-items-center rounded-full border border-ink/30 transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] group-hover:rotate-90 motion-reduce:transition-none">
@@ -180,7 +180,7 @@ export function SiteNavigation() {
           <div className="flex min-h-[88px] items-center justify-between sm:min-h-[100px]">
             <Link
               onClick={finishClose}
-              className="text-[35px] font-semibold tracking-[-.09em]"
+              className="font-display text-[38px] font-bold tracking-[-.055em]"
               href="/"
             >
               AY
@@ -188,7 +188,7 @@ export function SiteNavigation() {
             <button
               type="button"
               onClick={closeMenu}
-              className="flex min-h-11 items-center gap-4 text-xs"
+              className="flex min-h-11 items-center gap-4 text-label"
             >
               Close menu
               <span className="grid size-9 place-items-center rounded-full border border-paper/40">
@@ -212,16 +212,16 @@ export function SiteNavigation() {
                 href={cover.href}
                 onClick={finishClose}
                 aria-current={active(cover.href) ? "page" : undefined}
-                className="group flex min-h-[230px] flex-col bg-paper p-5 text-ink md:min-h-[min(65dvh,650px)] md:p-6"
+                className="group flex min-h-[230px] flex-col rounded-[calc(var(--radius-inset)+1.25rem)] bg-paper p-5 text-ink md:min-h-[min(65dvh,650px)] md:rounded-[calc(var(--radius-inset)+1.5rem)] md:p-6"
               >
-                <span className="flex items-center justify-between text-[10px] text-muted">
+                <span className="flex items-center justify-between text-caption text-muted">
                   AY / Portfolio
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </span>
-                <span className="mb-8 mt-6 text-[clamp(35px,3.6vw,58px)] leading-none tracking-[-.065em]">
+                <span className="mb-8 mt-6 font-display text-[clamp(35px,3.6vw,58px)] font-medium leading-[1.05] tracking-[-.04em]">
                   {cover.title}
                 </span>
-                <div className="relative mt-auto aspect-[1.8] overflow-hidden md:aspect-[1.2]">
+                <div className="relative mt-auto aspect-[1.8] overflow-hidden rounded-inset md:aspect-[1.2]">
                   {open && (
                     <Image
                       src={cover.image}
@@ -233,7 +233,7 @@ export function SiteNavigation() {
                     />
                   )}
                 </div>
-                <span className="mt-4 text-[10px] text-muted">
+                <span className="mt-4 text-caption text-muted">
                   {cover.description}
                 </span>
               </Link>
@@ -253,7 +253,7 @@ export function SiteNavigation() {
                 key={item.href}
                 href={item.href}
                 onClick={finishClose}
-                className="py-3 text-sm underline-offset-4 hover:underline"
+                className="py-3 text-support underline-offset-4 hover:underline"
                 aria-current={active(item.href) ? "page" : undefined}
               >
                 {item.label}

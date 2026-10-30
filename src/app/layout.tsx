@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
 import type React from "react";
-import { Instrument_Sans } from "next/font/google";
 import { SiteShell } from "~/components/ui/site-shell";
+import { displayFont, readingFont } from "~/infrastructure/fonts";
 import "./globals.css";
-
-const sans = Instrument_Sans({
-  subsets: ["latin"],
-  variable: "--site-sans",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: { default: "AY | Executive Assistant", template: "%s | AY" },
@@ -20,7 +14,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={sans.variable}>
+    <html lang="en" className={`${readingFont.variable} ${displayFont.variable}`}>
       <body>
         <SiteShell>{children}</SiteShell>
       </body>
