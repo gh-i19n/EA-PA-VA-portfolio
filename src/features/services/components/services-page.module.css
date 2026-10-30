@@ -1,0 +1,13 @@
+.services { width: min(100% - 160px, 1220px); margin: 20px auto 110px; display: grid; grid-template-columns: .8fr 1.4fr; gap: 100px; }
+.sideNote { padding-top: 30px; }
+.sideNote p { font-family: var(--font-editorial), Georgia, serif; font-size: 39px; font-weight: 400; letter-spacing: -.04em; line-height: 1.2; margin: 0 0 26px; }
+.sideNote span { display: block; font-size: 13px; line-height: 1.8; color: var(--muted); max-width: 240px; }
+.process { padding: 70px max(80px, calc((100vw - 1220px)/2)); background: var(--surface); }
+.process h2 { font-family: var(--font-editorial), Georgia, serif; font-size: 56px; font-weight: 400; letter-spacing: -.045em; line-height: 1.1; margin: 0 0 45px; }
+.process ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px; list-style: none; padding: 0; margin: 0; }
+.process li { border-top: 1px solid var(--border); padding-top: 22px; }
+.process li > span { color: var(--muted); font-size: 11px; }
+.process h3 { font-size: 22px; font-weight: 400; letter-spacing: -.03em; margin: 20px 0 13px; }
+.process p { font-size: 14px; line-height: 1.8; color: var(--muted); margin: 0; }
+@media (max-width: 900px) { .services { width: calc(100% - 64px); gap: 45px; grid-template-columns: .7fr 1.3fr; } .process { padding-inline: 32px; } .process ol { gap: 30px; } }
+@media (max-width: 650px) { .services { width: calc(100% - 44px); grid-template-columns: 1fr; gap: 35px; margin-bottom: 60px; } .sideNote { padding-top: 0; } .sideNote p { font-size: 32px; } .sideNote span { max-width: none; } .process { padding: 50px 22px; } .process h2 { font-size: 43px; } .process ol { grid-template-columns: 1fr; gap: 28px; } }

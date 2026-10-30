@@ -1,0 +1,16 @@
+.story { width: min(100% - 160px, 1220px); margin: 20px auto 100px; display: grid; grid-template-columns: 1fr 1.1fr; align-items: center; gap: 100px; }
+.story figure { margin: 0; }
+.portrait { position: relative; height: 580px; overflow: hidden; border-radius: 220px 220px 3px 3px; }
+.portrait img { object-fit: cover; object-position: 35% center; filter: saturate(.5); }
+.story figcaption { font-size: 10px; color: var(--muted); margin-top: 14px; }
+.storyCopy h2 { font-family: var(--font-editorial), Georgia, serif; font-size: 66px; font-weight: 400; letter-spacing: -.05em; margin: 0 0 25px; line-height: 1.1; }
+.storyCopy p { font-size: 15px; line-height: 1.85; color: var(--muted); }
+.storyCopy .lead { font-size: 21px; color: var(--foreground); margin-bottom: 24px; }
+.storyCopy a { display: inline-flex; align-items: center; gap: 28px; margin-top: 20px; padding-bottom: 10px; text-decoration: none; border-bottom: 1px solid var(--border); font-size: 13px; }
+.principles { background: var(--surface); display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; padding: 80px max(80px, calc((100vw - 1220px)/2)); }
+.principles > h2 { font-family: var(--font-editorial), Georgia, serif; font-size: 60px; font-weight: 400; letter-spacing: -.05em; line-height: 1.1; margin: 0; }
+.principles article { display: grid; grid-template-columns: .85fr 1.3fr; gap: 32px; padding-block: 28px; border-top: 1px solid var(--border); }
+.principles h3 { margin: 0; font-size: 22px; font-weight: 400; letter-spacing: -.03em; }
+.principles p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+@media (max-width: 900px) { .story { width: calc(100% - 64px); gap: 45px; } .portrait { height: 480px; } .principles { padding-inline: 32px; gap: 45px; grid-template-columns: 1fr; } }
+@media (max-width: 650px) { .story { width: calc(100% - 44px); grid-template-columns: 1fr; gap: 40px; margin-bottom: 65px; } .story figure { width: 90%; } .portrait { height: auto; aspect-ratio: .85; } .storyCopy h2 { font-size: 48px; } .principles { padding: 55px 22px; gap: 30px; } .principles > h2 { font-size: 45px; } .principles article { grid-template-columns: 1fr; gap: 16px; } }

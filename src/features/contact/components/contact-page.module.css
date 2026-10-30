@@ -1,0 +1,10 @@
+.contactLayout { width: min(100% - 160px, 1220px); margin: 20px auto 110px; display: grid; grid-template-columns: .8fr 1.3fr; gap: 100px; align-items: start; }
+.contactDetails { padding-top: 15px; }
+.contactDetails .invitation { font-family: var(--font-editorial), Georgia, serif; font-size: 40px; line-height: 1.18; letter-spacing: -.045em; margin: 0 0 50px; color: var(--foreground); }
+.contactDetails > div { margin-top: 35px; }
+.contactDetails h2 { font-size: 14px; font-weight: 500; margin: 0 0 18px; }
+.contactDetails a { display: inline-flex; align-items: center; gap: 25px; font-size: 20px; text-underline-offset: 8px; }
+.contactDetails p { max-width: 300px; font-size: 14px; color: var(--muted); line-height: 1.85; }
+.contactDetails .previewNote { font-size: 11px; margin-top: 18px; }
+@media (max-width: 1000px) { .contactLayout { width: calc(100% - 64px); gap: 45px; } }
+@media (max-width: 700px) { .contactLayout { width: calc(100% - 44px); grid-template-columns: 1fr; gap: 40px; margin-bottom: 65px; } .contactDetails .invitation { font-size: 34px; margin-bottom: 30px; } }
