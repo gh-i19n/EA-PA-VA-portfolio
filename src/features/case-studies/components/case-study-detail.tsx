@@ -1,32 +1,158 @@
+import { PortfolioVisual } from "~/components/ui/portfolio-visual";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { ContactInvitation } from "~/components/ui/contact-invitation";
+import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
 import { caseStudies, type CaseStudy } from "../config/case-studies";
-import styles from "./case-studies.module.css";
+import { WorkDocument } from "./work-document";
 
 export function CaseStudyDetail({ study }: { study: CaseStudy }) {
-  const next = caseStudies.find((item) => item.slug !== study.slug);
+  const index = caseStudies.findIndex((item) => item.slug === study.slug);
+  const next = caseStudies[(index + 1) % caseStudies.length];
   return (
     <>
-      <header className={styles.detailHeader}>
-        <Link href="/case-studies"><ArrowLeft size={16} aria-hidden="true" />All case studies</Link>
-        <p>{study.category} / Illustrative scenario</p>
-        <h1>{study.title}</h1>
-        <p className={styles.detailSummary}>{study.summary}</p>
-      </header>
-      <div className={styles.detailImage}><Image src={study.image} alt={study.alt} fill preload sizes="100vw" /></div>
-      <div className={styles.detailBody}>
-        <aside><span>In this scenario</span><p>Preparation.<br />Coordination.<br />Follow-through.</p><small>An illustrative approach, prepared for the portfolio design.</small></aside>
-        <div>
-          <section aria-labelledby="challenge-title"><h2 id="challenge-title">The challenge.</h2><p>{study.challenge}</p></section>
-          <section aria-labelledby="approach-title"><h2 id="approach-title">The approach.</h2><ol className={styles.steps}>{study.approach.map((step) => <li key={step.title}><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol></section>
-          <section className={styles.handoff} aria-labelledby="handoff-title"><h2 id="handoff-title">The handoff.</h2><ul>{study.deliverables.map((item) => <li key={item}>{item}</li>)}</ul></section>
-          <section aria-labelledby="result-title"><h2 id="result-title">The intended result.</h2><p>{study.intendedResult}</p></section>
-          {next && <Link className={styles.nextStudy} href={`/case-studies/${next.slug}`}><span>Next study<br /><strong>{next.title}</strong></span><ArrowUpRight size={28} aria-hidden="true" /></Link>}
-        </div>
+      <div className="mx-auto mt-6 w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
+        <Link
+          href="/case-studies"
+          className="inline-flex min-h-11 items-center gap-3 text-[11px]"
+        >
+          <ArrowLeft size={14} strokeWidth={1.3} aria-hidden="true" />
+          All case studies
+        </Link>
       </div>
-      <ContactInvitation title="Bring a little more order to your world." />
+      <EditorialPageIntro
+        label={`${study.category} / Illustrative scenario`}
+        title={study.title}
+        description={study.summary}
+      />
+      <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
+        <PortfolioVisual className="relative aspect-[1.2] overflow-hidden bg-mist sm:aspect-[2.1]">
+          <Image
+            src={study.image}
+            alt={study.alt}
+            fill
+            loading="eager"
+            sizes="95vw"
+            className="object-cover object-[center_45%] saturate-[.3]"
+          />
+        </PortfolioVisual>
+      </div>
+      <section
+        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-8 py-14 sm:w-[calc(100%-5rem)] sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:gap-28"
+        aria-labelledby="brief-title"
+      >
+        <h2
+          id="brief-title"
+          className="text-[clamp(36px,5vw,72px)] leading-none tracking-[-.06em]"
+        >
+          The brief.
+        </h2>
+        <div>
+          <p className="max-w-[650px] text-[17px] leading-[1.8] tracking-[-.02em]">
+            {study.challenge}
+          </p>
+          <ul className="mt-8 grid list-none gap-3 border-t border-rule pt-6">
+            {study.constraints.map((item) => (
+              <li key={item} className="text-xs text-muted">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section
+        className="bg-mist py-16 sm:py-24"
+        aria-labelledby="approach-title"
+      >
+        <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
+          <h2
+            id="approach-title"
+            className="mb-12 text-[clamp(40px,6vw,86px)] leading-none tracking-[-.065em]"
+          >
+            The approach.
+          </h2>
+          <ol className="list-none">
+            {study.approach.map((step, i) => (
+              <li
+                className="grid gap-5 border-t border-rule py-8 md:grid-cols-[.12fr_.78fr_1.1fr] md:gap-10 md:py-10"
+                key={step.title}
+              >
+                <span className="pt-1 text-xs text-muted">{i + 1}.</span>
+                <h3 className="max-w-[370px] text-[28px] leading-[1.15] tracking-[-.045em]">
+                  {step.title}
+                </h3>
+                <p className="max-w-[550px] text-sm leading-[1.85] text-muted">
+                  {step.text}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      <section
+        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-10 py-16 sm:w-[calc(100%-5rem)] sm:py-24 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-28"
+        aria-labelledby="handoff-title"
+      >
+        <div>
+          <p className="mb-6 text-xs text-muted">From thinking to handoff</p>
+          <h2
+            id="handoff-title"
+            className="text-[clamp(37px,5vw,72px)] leading-[1.04] tracking-[-.065em]"
+          >
+            Make the next
+            <br />
+            step clear.
+          </h2>
+          <ul className="my-8 list-none space-y-3">
+            {study.deliverables.map((item) => (
+              <li
+                className="flex gap-3 text-[13px] before:mt-2 before:size-[3px] before:shrink-0 before:bg-ink before:content-['']"
+                key={item}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="max-w-[450px] border-t border-rule pt-6 text-sm leading-[1.85] text-muted">
+            {study.judgment}
+          </p>
+        </div>
+        <div className="mx-auto w-full max-w-[520px]">
+          <WorkDocument variant={study.sample} />
+        </div>
+      </section>
+      <section
+        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-8 border-t border-rule py-12 sm:w-[calc(100%-5rem)] sm:py-16 lg:grid-cols-[.8fr_1.2fr] lg:gap-28"
+        aria-labelledby="outcome-title"
+      >
+        <h2 id="outcome-title" className="text-[30px] tracking-[-.045em]">
+          What this enables.
+        </h2>
+        <p className="max-w-[620px] text-sm leading-[1.85] text-muted">
+          {study.intendedResult}
+        </p>
+      </section>
+      <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-24">
+        <Link
+          href={`/case-studies/${next.slug}`}
+          className="group flex items-end justify-between gap-7 border-t border-rule pt-8"
+        >
+          <span>
+            <span className="mb-5 block text-xs text-muted">
+              Next illustrative study
+            </span>
+            <span className="text-[clamp(30px,5vw,72px)] leading-[1.1] tracking-[-.055em]">
+              {next.title}
+            </span>
+          </span>
+          <ArrowUpRight
+            size={35}
+            strokeWidth={1}
+            className="shrink-0 transition-transform duration-300 group-hover:rotate-45 motion-reduce:transition-none"
+            aria-hidden="true"
+          />
+        </Link>
+      </div>
     </>
   );
 }

@@ -1,12 +1,65 @@
 export const skillGroups = [
-  { title: "Executive organisation", description: "Calendar judgment, inbox triage, meeting preparation and priority management.", keywords: ["Prioritisation", "Calendar strategy", "Attention to detail"] },
-  { title: "Communication & relationships", description: "Clear correspondence, considered stakeholder coordination and discreet communication.", keywords: ["Business writing", "Stakeholder care", "Discretion"] },
-  { title: "Coordination & delivery", description: "Keeping projects, logistics and everyday commitments moving toward a clear next step.", keywords: ["Follow-through", "Travel planning", "Project coordination"] },
-  { title: "Research & information", description: "Finding what matters, organising it clearly and making it useful for a decision.", keywords: ["Research", "Documentation", "Reporting"] },
+  {
+    title: "Executive organisation",
+    description:
+      "Balancing access, priorities and preparation in a complex working day.",
+    keywords: ["Calendar strategy", "Inbox judgment", "Priority management"],
+  },
+  {
+    title: "Communication",
+    description:
+      "Giving each person the information they need, in the right tone and at the right time.",
+    keywords: ["Executive correspondence", "Stakeholder liaison", "Discretion"],
+  },
+  {
+    title: "Coordination",
+    description:
+      "Connecting owners, dependencies and deadlines so commitments move forward.",
+    keywords: ["Action tracking", "Travel logistics", "Project coordination"],
+  },
+  {
+    title: "Information",
+    description:
+      "Turning scattered information into a concise, useful reference for a decision.",
+    keywords: ["Research", "Briefing documents", "Process documentation"],
+  },
 ] as const;
 
 export const toolGroups = [
-  { category: "The working day", description: "Calendars, correspondence and documents.", tools: ["Google Workspace", "Microsoft 365", "Calendly"] },
-  { category: "Projects & systems", description: "Tasks, knowledge and the next action.", tools: ["Notion", "Asana", "Trello"] },
-  { category: "People & conversations", description: "Keeping a distributed working day connected.", tools: ["Slack", "Zoom", "Microsoft Teams"] },
+  {
+    category: "Calendar & communication",
+    description: "The working day, connected.",
+    tools: [
+      {
+        name: "Google Workspace",
+        purpose: "Calendar, email, shared documents",
+      },
+      {
+        name: "Microsoft 365",
+        purpose: "Outlook, documents, executive collaboration",
+      },
+      { name: "Calendly", purpose: "Scheduling with clear availability" },
+    ],
+  },
+  {
+    category: "Projects & knowledge",
+    description: "A reliable place for the next step.",
+    tools: [
+      { name: "Notion", purpose: "Briefs, processes, reference libraries" },
+      { name: "Asana", purpose: "Owners, dependencies, progress" },
+      { name: "Trello", purpose: "Visible task and workflow tracking" },
+    ],
+  },
+  {
+    category: "Remote collaboration",
+    description: "Context across locations.",
+    tools: [
+      { name: "Slack", purpose: "Team coordination and updates" },
+      { name: "Zoom", purpose: "Meeting setup and remote logistics" },
+      {
+        name: "Microsoft Teams",
+        purpose: "Conversations, meetings, shared work",
+      },
+    ],
+  },
 ] as const;

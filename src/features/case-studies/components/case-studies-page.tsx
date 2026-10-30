@@ -1,30 +1,70 @@
+import { PortfolioVisual } from "~/components/ui/portfolio-visual";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
-import { ContactInvitation } from "~/components/ui/contact-invitation";
 import { caseStudies } from "../config/case-studies";
-import styles from "./case-studies.module.css";
 
 export function CaseStudiesPage() {
   return (
     <>
-      <EditorialPageIntro label="Case studies" title={"The thinking\nbehind the doing."} description="A closer look at the preparation, coordination and follow-through behind thoughtful assistance." />
-      <p className={styles.context}>Illustrative scenarios for this portfolio preview. Client case studies will follow.</p>
-      <section className={styles.gallery} aria-label="Case studies">
-        {caseStudies.map((study) => (
-          <article key={study.slug}>
-            <Link className={styles.imageLink} href={`/case-studies/${study.slug}`} aria-label={`Read ${study.title}`}>
-              <Image src={study.image} alt={study.alt} fill sizes="(max-width: 700px) 90vw, 50vw" />
-              <span>View study<ArrowUpRight size={18} aria-hidden="true" /></span>
+      <EditorialPageIntro
+        label="Case studies / Illustrative scenarios"
+        title="In practice."
+        description="The preparation, judgment and follow-through behind a well-run day. These sample scenarios show how I would approach the work; they contain no client information."
+      />
+      <section
+        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-x-12 gap-y-14 pb-16 sm:w-[calc(100%-5rem)] sm:pb-28 md:grid-cols-[1.1fr_1fr] md:gap-y-24"
+        aria-label="Illustrative case studies"
+      >
+        {caseStudies.map((study, index) => (
+          <article
+            key={study.slug}
+            className={
+              index === 1
+                ? "md:mt-32"
+                : index === 2
+                  ? "md:col-span-2 md:ml-auto md:w-[72%]"
+                  : undefined
+            }
+          >
+            <Link href={`/case-studies/${study.slug}`} className="group block">
+              <PortfolioVisual
+                className={`relative overflow-hidden bg-mist ${index === 2 ? "aspect-[1.65]" : "aspect-[1.05]"}`}
+              >
+                <Image
+                  src={study.image}
+                  alt={study.alt}
+                  fill
+                  loading={index === 0 ? "eager" : "lazy"}
+                  sizes={
+                    index === 2
+                      ? "(max-width:768px) 90vw,70vw"
+                      : "(max-width:768px) 90vw,47vw"
+                  }
+                  className="object-cover object-center saturate-[.3] transition-transform duration-1000 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105 motion-reduce:transition-none"
+                />
+                <span className="absolute bottom-5 right-5 grid size-12 place-items-center rounded-full bg-paper text-ink">
+                  <ArrowUpRight
+                    size={22}
+                    strokeWidth={1.2}
+                    aria-hidden="true"
+                  />
+                </span>
+              </PortfolioVisual>
+              <p className="mb-3 mt-6 text-[10px] text-muted">
+                {study.category} / Sample scenario
+              </p>
+              <h2 className="text-[clamp(28px,3.4vw,49px)] leading-[1.1] tracking-[-.055em]">
+                {study.title}
+              </h2>
+              <p className="mt-4 max-w-[410px] text-[13px] leading-[1.8] text-muted">
+                {study.summary}
+              </p>
             </Link>
-            <p className={styles.category}>{study.category} / Illustrative scenario</p>
-            <Link className={styles.titleLink} href={`/case-studies/${study.slug}`}><h2>{study.title}</h2><ArrowUpRight size={24} aria-hidden="true" /></Link>
-            <p className={styles.summary}>{study.summary}</p>
           </article>
         ))}
       </section>
-      <ContactInvitation title="What would good support change for you?" />
     </>
   );
 }

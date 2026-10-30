@@ -1,25 +1,183 @@
+import { PortfolioVisual } from "~/components/ui/portfolio-visual";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { ContactInvitation } from "~/components/ui/contact-invitation";
+import { PortfolioLink } from "~/components/ui/portfolio-link";
 import { PortfolioHero } from "./portfolio-hero";
-import styles from "./home-overview.module.css";
+
+const support = [
+  {
+    title: "Executive organisation",
+    detail: "Calendars, inbox & priorities",
+    href: "/services#executive-time",
+  },
+  {
+    title: "Decision preparation",
+    detail: "Briefings, meetings & research",
+    href: "/services#decision-support",
+  },
+  {
+    title: "Operational follow-through",
+    detail: "People, actions & deadlines",
+    href: "/services#operations",
+  },
+  {
+    title: "Personal & travel logistics",
+    detail: "Arrangements, connected",
+    href: "/services#personal-logistics",
+  },
+];
 
 export function PortfolioHome() {
   return (
     <>
       <PortfolioHero />
-      <section className={styles.overview} id="discover" aria-labelledby="overview-title">
-        <div><p>A personal approach</p><h2 id="overview-title">Your world.<br />A little lighter.</h2></div>
-        <div className={styles.overviewBody}>
-          <p>Considered support for the person behind the position. From executive priorities to the details of everyday life, discover how I can work alongside you.</p>
-          <nav aria-label="Explore the portfolio">
-            <Link href="/about"><span>Meet your right hand</span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-            <Link href="/services"><span>Find your support</span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-            <Link href="/case-studies"><span>See the thinking in practice</span><ArrowUpRight size={22} aria-hidden="true" /></Link>
-          </nav>
+      <section
+        className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-28"
+        aria-labelledby="support-title"
+      >
+        <div className="mb-6 flex items-center justify-between gap-6 border-b border-rule pb-5">
+          <h2 id="support-title" className="text-xs text-muted">
+            The responsibility I can carry
+          </h2>
+          <span className="text-[10px] text-muted">Explore services</span>
+        </div>
+        {support.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="group grid items-center gap-3 border-b border-rule py-7 sm:grid-cols-[1fr_auto] sm:gap-10 sm:py-9"
+          >
+            <span className="text-[clamp(26px,4vw,58px)] leading-[1.1] tracking-[-.055em] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-3 motion-reduce:transition-none">
+              {item.title}
+            </span>
+            <span className="flex items-center justify-between gap-9 text-[11px] text-muted sm:min-w-[280px]">
+              {item.detail}
+              <ArrowUpRight
+                size={22}
+                strokeWidth={1.2}
+                className="text-ink transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:rotate-45 motion-reduce:transition-none"
+                aria-hidden="true"
+              />
+            </span>
+          </Link>
+        ))}
+      </section>
+      <section className="bg-mist py-16 sm:py-24" aria-labelledby="work-title">
+        <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
+          <div className="mb-10 flex flex-col justify-between gap-6 sm:mb-14 sm:flex-row sm:items-end">
+            <div>
+              <p className="mb-5 text-xs text-muted">
+                Selected thinking / Illustrative scenarios
+              </p>
+              <h2
+                id="work-title"
+                className="text-[clamp(43px,7vw,102px)] leading-none tracking-[-.07em]"
+              >
+                Behind the day.
+              </h2>
+            </div>
+            <PortfolioLink href="/case-studies" quiet>
+              All case studies
+            </PortfolioLink>
+          </div>
+          <div className="grid gap-9 md:grid-cols-[1.2fr_1fr] md:gap-12">
+            <article>
+              <Link
+                href="/case-studies/the-executive-week"
+                className="group block"
+              >
+                <PortfolioVisual className="relative aspect-[1.12] overflow-hidden bg-rule">
+                  <Image
+                    src="/images/folio/meeting-room.jpg"
+                    alt="A meeting room prepared for a leadership conversation"
+                    fill
+                    sizes="(max-width: 768px) 90vw, 52vw"
+                    className="object-cover object-center saturate-[.35] transition-transform duration-1000 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105 motion-reduce:transition-none"
+                  />
+                  <span className="absolute bottom-5 right-5 grid size-11 place-items-center rounded-full bg-paper text-ink">
+                    <ArrowUpRight
+                      size={20}
+                      strokeWidth={1.2}
+                      aria-hidden="true"
+                    />
+                  </span>
+                </PortfolioVisual>
+                <p className="mb-3 mt-5 text-[10px] text-muted">
+                  Executive organisation / Sample scenario
+                </p>
+                <h3 className="text-[clamp(27px,2.9vw,42px)] tracking-[-.05em]">
+                  The executive week.
+                </h3>
+              </Link>
+            </article>
+            <article className="md:mt-28">
+              <Link
+                href="/case-studies/every-journey-considered"
+                className="group block"
+              >
+                <PortfolioVisual className="relative aspect-[.94] overflow-hidden bg-rule">
+                  <Image
+                    src="/images/folio/in-transit.jpg"
+                    alt="An aircraft wing over the clouds"
+                    fill
+                    sizes="(max-width: 768px) 90vw, 40vw"
+                    className="object-cover saturate-[.35] transition-transform duration-1000 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105 motion-reduce:transition-none"
+                  />
+                  <span className="absolute bottom-5 right-5 grid size-11 place-items-center rounded-full bg-paper text-ink">
+                    <ArrowUpRight
+                      size={20}
+                      strokeWidth={1.2}
+                      aria-hidden="true"
+                    />
+                  </span>
+                </PortfolioVisual>
+                <p className="mb-3 mt-5 text-[10px] text-muted">
+                  Travel & personal logistics / Sample scenario
+                </p>
+                <h3 className="text-[clamp(27px,2.9vw,42px)] tracking-[-.05em]">
+                  Every journey, considered.
+                </h3>
+              </Link>
+            </article>
+          </div>
         </div>
       </section>
-      <ContactInvitation title="Make room for what matters." />
+      <section
+        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-9 py-16 sm:w-[calc(100%-5rem)] sm:py-28 md:grid-cols-[.75fr_1.25fr] md:gap-20 lg:gap-32"
+        aria-labelledby="personal-title"
+      >
+        <PortfolioVisual className="relative aspect-[1.04] overflow-hidden bg-mist">
+          <Image
+            src="/images/ay-editorial-desk.png"
+            alt="A notebook and pen, ready for the working day"
+            fill
+            sizes="(max-width:768px) 90vw,35vw"
+            className="object-cover object-[center_70%] saturate-0"
+          />
+        </PortfolioVisual>
+        <div className="self-center">
+          <p className="mb-7 text-xs text-muted">
+            The person behind the preparation
+          </p>
+          <h2
+            id="personal-title"
+            className="text-[clamp(37px,4.9vw,70px)] leading-[1.05] tracking-[-.06em]"
+          >
+            Close to the detail.
+            <br />
+            Clear on what matters.
+          </h2>
+          <p className="mb-6 mt-7 max-w-[400px] text-sm leading-[1.85] text-muted">
+            I learn how you work, when to act and when a decision needs your
+            attention. Discretion, sound judgment and a personal sense of
+            ownership shape the way I support you.
+          </p>
+          <PortfolioLink href="/about" quiet>
+            Get to know AY
+          </PortfolioLink>
+        </div>
+      </section>
     </>
   );
 }

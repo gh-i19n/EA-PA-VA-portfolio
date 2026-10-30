@@ -1,26 +1,87 @@
-import { CapabilityAccordion } from "~/components/ui/capability-accordion";
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
-import { ContactInvitation } from "~/components/ui/contact-invitation";
-import { serviceAreas } from "../config/services-content";
-import styles from "./services-page.module.css";
+import { PortfolioLink } from "~/components/ui/portfolio-link";
+import { serviceAreas, onboardingSteps } from "../config/services-content";
 
 export function ServicesPage() {
   return (
     <>
-      <EditorialPageIntro label="Services" title={"Good support.\nOn your terms."} description="Executive, virtual and personal assistance, shaped around the way you work and the life you lead." />
-      <section className={styles.services} aria-label="Explore assistance services">
-        <div className={styles.sideNote}><p>One trusted person.<br />A considered kind of support.</p><span>Explore each area to see what I can take off your plate.</span></div>
-        <CapabilityAccordion items={serviceAreas} label="Areas of assistance" />
+      <EditorialPageIntro
+        label="Services / Executive, virtual & personal assistance"
+        title={"Executive\nsupport."}
+        description="I take responsibility for the preparation, communication and coordination around a demanding role. Here is what you can put in my hands."
+      />
+      <section
+        className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-28"
+        aria-label="Areas of executive support"
+      >
+        {serviceAreas.map((item) => (
+          <article
+            id={item.id}
+            key={item.id}
+            className="grid scroll-mt-10 gap-7 border-t border-rule py-10 sm:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-24"
+          >
+            <h2 className="max-w-[650px] text-[clamp(35px,5.5vw,80px)] leading-[1.04] tracking-[-.065em]">
+              {item.title}
+            </h2>
+            <div className="lg:pt-1">
+              <p className="mb-5 max-w-[500px] text-[20px] leading-[1.4] tracking-[-.03em]">
+                {item.introduction}
+              </p>
+              <p className="max-w-[480px] text-sm leading-[1.85] text-muted">
+                {item.description}
+              </p>
+              <ul className="mt-7 grid list-none gap-3 sm:grid-cols-2 sm:gap-x-7">
+                {item.capabilities.map((capability) => (
+                  <li
+                    key={capability}
+                    className="flex items-baseline gap-3 text-[11px] leading-[1.7] before:size-[3px] before:shrink-0 before:bg-ink before:content-['']"
+                  >
+                    {capability}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+        <div className="border-t border-rule pt-8">
+          <PortfolioLink href="/case-studies" quiet>
+            See the thinking in practice
+          </PortfolioLink>
+        </div>
       </section>
-      <section className={styles.process} aria-labelledby="process-title">
-        <h2 id="process-title">Finding our rhythm.</h2>
-        <ol>
-          <li><span>01</span><h3>A conversation.</h3><p>We talk about your world, your priorities and what good support would change.</p></li>
-          <li><span>02</span><h3>A clear agreement.</h3><p>We define the scope, communication habits and responsibilities that fit.</p></li>
-          <li><span>03</span><h3>A thoughtful start.</h3><p>We get the essentials in place and build a working rhythm together.</p></li>
-        </ol>
+      <section
+        className="bg-mist py-16 sm:py-24"
+        aria-labelledby="process-title"
+      >
+        <div className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-10 sm:w-[calc(100%-5rem)] lg:grid-cols-[1fr_1.1fr] lg:gap-24">
+          <h2
+            id="process-title"
+            className="max-w-[550px] text-[clamp(40px,6vw,84px)] leading-[1.02] tracking-[-.065em]"
+          >
+            Working
+            <br />
+            together.
+          </h2>
+          <ol className="list-none">
+            {onboardingSteps.map((step, index) => (
+              <li
+                key={step.title}
+                className="grid grid-cols-[25px_1fr] gap-5 border-t border-rule py-7 first:border-0 first:pt-0"
+              >
+                <span className="pt-1 text-xs text-muted">{index + 1}.</span>
+                <div>
+                  <h3 className="text-[23px] leading-[1.3] tracking-[-.04em]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 max-w-[440px] text-[13px] leading-[1.85] text-muted">
+                    {step.text}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </section>
-      <ContactInvitation title="What could I take off your plate?" />
     </>
   );
 }

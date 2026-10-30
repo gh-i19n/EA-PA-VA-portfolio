@@ -1,36 +1,107 @@
+import { PortfolioVisual } from "~/components/ui/portfolio-visual";
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
-import { ContactInvitation } from "~/components/ui/contact-invitation";
-import styles from "./about-page.module.css";
+import { PortfolioLink } from "~/components/ui/portfolio-link";
 
 const principles = [
-  { title: "Discretion, always.", text: "Sensitive conversations and personal details deserve careful judgment. Trust starts with how information is handled." },
-  { title: "A step ahead.", text: "Preparation creates breathing room. I look for what is coming, connect the details and make the next step clear." },
-  { title: "Follow-through.", text: "The value is in closing the loop: the confirmed booking, the prepared meeting, the decision with a clear next action." },
+  {
+    title: "Judgment",
+    text: "I learn your priorities, preferences and decision-making style. That context helps me assess a request, anticipate a dependency and bring a recommendation when a choice needs your attention.",
+  },
+  {
+    title: "Discretion",
+    text: "Sensitive conversations and personal arrangements are handled with care. Access, delegated authority and approval limits are agreed at the beginning of the relationship.",
+  },
+  {
+    title: "Ownership",
+    text: "I keep track of the next step, confirm who is responsible and make progress visible. You should know where things stand without having to chase the details.",
+  },
 ];
 
 export function AboutPage() {
   return (
     <>
-      <EditorialPageIntro label="About AY" title={"The person behind\nthe details."} description="Professional in the work. Personal in the way I care. Get to know the person you can count on." />
-      <section className={styles.story} aria-labelledby="story-title">
-        <figure><div className={styles.portrait}><Image src="/images/folio/portrait-placeholder.jpg" alt="Stock portrait used as a design placeholder for AY" fill sizes="(max-width: 700px) 85vw, 40vw" /></div><figcaption>Portrait direction / Dayana Joseph, Pexels</figcaption></figure>
-        <div className={styles.storyCopy}>
-          <h2 id="story-title">Hello, I&apos;m AY.</h2>
-          <p className={styles.lead}>A calm presence in a demanding day.</p>
-          <p>I work alongside leaders and busy professionals, bringing order to the moving parts of work and life. My approach combines executive awareness with a very personal attention to detail.</p>
-          <p>I enjoy making things work: the diary that finally has breathing room, the meeting everyone is prepared for, the journey where every connection has been considered.</p>
-          <p>Good support is a partnership. I take time to understand how you think, what matters to you and where an extra pair of capable hands will make the biggest difference.</p>
-          <Link href="/services">Explore how I can support you<ArrowUpRight size={20} aria-hidden="true" /></Link>
+      <EditorialPageIntro
+        label="About AY"
+        title={"AY, at\nyour side."}
+        description="An experienced executive assistant. A steady point of coordination. A person who takes your priorities personally."
+      />
+      <section
+        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-10 pb-16 sm:w-[calc(100%-5rem)] sm:pb-28 lg:grid-cols-[1.1fr_1fr] lg:gap-24"
+        aria-labelledby="story-title"
+      >
+        <figure>
+          <PortfolioVisual
+            reveal="arrival"
+            className="relative aspect-[.96] overflow-hidden bg-mist"
+          >
+            <Image
+              src="/images/folio/portrait-placeholder.jpg"
+              alt="Stock portrait used as a design placeholder for AY"
+              fill
+              loading="eager"
+              sizes="(max-width:1024px) 90vw,48vw"
+              className="object-cover object-[30%_center] saturate-[.25]"
+            />
+          </PortfolioVisual>
+          <figcaption className="mt-4 text-[9px] text-muted">
+            Portrait placeholder / Dayana Joseph, Pexels
+          </figcaption>
+        </figure>
+        <div className="self-end lg:pb-9">
+          <h2
+            id="story-title"
+            className="max-w-[520px] text-[clamp(34px,4.2vw,60px)] leading-[1.1] tracking-[-.055em]"
+          >
+            The detail is where
+            <br />
+            the difference is.
+          </h2>
+          <p className="mt-7 text-[17px] leading-[1.75] tracking-[-.02em]">
+            I support founders and senior leaders at the point where time,
+            people and decisions meet.
+          </p>
+          <p className="mt-5 max-w-[460px] text-sm leading-[1.85] text-muted">
+            My work spans complex calendars, executive correspondence, meeting
+            preparation, operational coordination and personal logistics. I pay
+            attention to how those responsibilities connect: what needs to
+            happen first, who needs context and where a small delay could become
+            a larger problem.
+          </p>
+          <p className="mb-6 mt-5 max-w-[460px] text-sm leading-[1.85] text-muted">
+            I bring a senior EA's perspective and a personal sense of ownership.
+            The aim is a working relationship where you can delegate with
+            confidence and keep your attention on the decisions only you can
+            make.
+          </p>
+          <PortfolioLink href="/services" quiet>
+            Explore my support
+          </PortfolioLink>
         </div>
       </section>
-      <section className={styles.principles} aria-labelledby="principles-title">
-        <h2 id="principles-title">How I show up.</h2>
-        <div>{principles.map((item) => <article key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}</div>
+      <section
+        className="bg-mist py-16 sm:py-24"
+        aria-labelledby="principles-title"
+      >
+        <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
+          <p className="mb-10 text-xs text-muted" id="principles-title">
+            How I work
+          </p>
+          {principles.map((item) => (
+            <article
+              key={item.title}
+              className="grid gap-5 border-t border-rule py-8 md:grid-cols-[1.1fr_1fr] md:gap-24 md:py-10"
+            >
+              <h2 className="text-[clamp(35px,5.2vw,75px)] leading-none tracking-[-.06em]">
+                {item.title}
+              </h2>
+              <p className="max-w-[480px] text-sm leading-[1.85] text-muted md:pt-1">
+                {item.text}
+              </p>
+            </article>
+          ))}
+        </div>
       </section>
-      <ContactInvitation title="A good partnership starts here." />
     </>
   );
 }

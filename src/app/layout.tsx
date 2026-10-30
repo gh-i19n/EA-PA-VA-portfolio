@@ -1,27 +1,29 @@
 import type { Metadata } from "next";
 import type React from "react";
-import { Bodoni_Moda, DM_Sans } from "next/font/google";
-import { cn } from "~/shared/ui/utils";
+import { Instrument_Sans } from "next/font/google";
 import { SiteShell } from "~/components/ui/site-shell";
 import "./globals.css";
 
-const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
-const editorial = Bodoni_Moda({
+const sans = Instrument_Sans({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-editorial",
+  variable: "--site-sans",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: { default: "AY | A step ahead", template: "%s | AY" },
-  description: "Thoughtful executive, virtual and personal assistance. A steady hand behind your busy world.",
+  title: { default: "AY | Executive Assistant", template: "%s | AY" },
+  description:
+    "Senior executive assistance for founders and leaders. Calendar strategy, decision-ready meetings, operations and personal logistics, handled with foresight.",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cn(sans.variable, editorial.variable)}>
-      <body><SiteShell>{children}</SiteShell></body>
+    <html lang="en" className={sans.variable}>
+      <body>
+        <SiteShell>{children}</SiteShell>
+      </body>
     </html>
   );
 }

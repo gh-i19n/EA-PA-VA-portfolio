@@ -1,12 +1,26 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import styles from "./editorial.module.css";
+import { PortfolioLink } from "./portfolio-link";
 
-export function ContactInvitation({ title = "A little less on your mind." }: { title?: string }) {
+export function ContactInvitation({
+  title = "What needs your attention?",
+}: {
+  title?: string;
+}) {
   return (
-    <aside className={styles.invitation} aria-label="Work with AY">
-      <div><p>Good things start with a conversation.</p><h2>{title}</h2></div>
-      <Link href="/contact">Let&apos;s talk<ArrowUpRight size={24} strokeWidth={1.2} aria-hidden="true" /></Link>
+    <aside
+      className="mx-auto flex w-[calc(100%-2.75rem)] max-w-[1320px] flex-col items-start justify-between gap-7 border-t border-rule py-14 sm:w-[calc(100%-5rem)] sm:py-20 md:flex-row md:items-center md:gap-16"
+      aria-label="Work with AY"
+    >
+      <div>
+        <p className="mb-4 text-xs text-muted">
+          An introduction is a good place to start.
+        </p>
+        <h2 className="max-w-[750px] text-[clamp(30px,3.6vw,50px)] font-medium leading-[1.15] tracking-[-.055em]">
+          {title}
+        </h2>
+      </div>
+      <div className="shrink-0">
+        <PortfolioLink href="/contact">Let&apos;s talk</PortfolioLink>
+      </div>
     </aside>
   );
 }

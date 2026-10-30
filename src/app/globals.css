@@ -2,30 +2,61 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@theme inline {
+  --color-paper: var(--background);
+  --color-ink: var(--foreground);
+  --color-muted: var(--muted);
+  --color-mist: var(--surface);
+  --color-mist-strong: var(--surface-strong);
+  --color-rule: var(--border);
+  --color-ledger: var(--accent);
+  --color-ledger-deep: var(--accent-deep);
+  --color-brass: var(--highlight);
+  --font-sans: var(--site-sans);
+  --color-celery: var(--highlight);
+  --color-fern: var(--accent);
+  --font-display: var(--site-sans);
+}
+
 :root {
   color-scheme: light;
-  --background: #f4f2ef;
-  --foreground: #382b33;
-  --muted: #71676b;
-  --surface: #e9e4df;
-  --border: #d5ceca;
-  --accent: #58404e;
+  --background: #e9e9e6;
+  --foreground: #252725;
+  --muted: #62655f;
+  --surface: #dcded7;
+  --surface-strong: var(--surface);
+  --border: #bfc2b9;
+  --accent: #3040ce;
+  --accent-deep: var(--accent);
+  --highlight: #d2d3cd;
 }
-* { box-sizing: border-box; }
-html { min-width: 320px; scroll-padding-top: 100px; }
-body {
-  margin: 0;
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
-  -webkit-font-smoothing: antialiased;
+@layer base {
+  html {
+    min-width: 320px;
+    scroll-padding-top: 32px;
+  }
+  body {
+    margin: 0;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--site-sans), sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a,
+  button,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button,
+  summary {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 6px;
+  }
 }
-button, input, textarea { font: inherit; }
-a, button, summary { -webkit-tap-highlight-color: transparent; }
-button, summary { cursor: pointer; }
-a { color: inherit; }
-::selection { background: #d8c9d1; color: #382b33; }
-:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
-@media (prefers-reduced-motion: no-preference) {
-  html { scroll-behavior: smooth; }
+::selection {
+  background: #d2d3cd;
+  color: #252725;
 }

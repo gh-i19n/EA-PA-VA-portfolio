@@ -1,26 +1,119 @@
-import Link from "next/link";
-import { ArrowUpRight, FileCheck2, MessageSquareQuote } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
-import { ContactInvitation } from "~/components/ui/contact-invitation";
+import { PortfolioLink } from "~/components/ui/portfolio-link";
 import { certificates, testimonials } from "../config/credentials-content";
-import styles from "./credentials.module.css";
 
 export function CredentialsPage() {
   return (
     <>
-      <EditorialPageIntro label="Testimonials & certificates" title={"Trust, earned\nin the details."} description="A place for client perspectives, professional learning and the evidence behind a trusted working relationship." />
-      <nav className={styles.collectionNav} aria-label="Credential collections"><a href="#testimonials">Client words</a><a href="#certificates">Certificates & learning</a></nav>
-      <section className={styles.testimonials} id="testimonials" aria-labelledby="testimonials-title">
-        <div><MessageSquareQuote size={32} strokeWidth={1} aria-hidden="true" /><h2 id="testimonials-title">In their words.</h2><p>The experience of working together, told by the people who know it.</p></div>
-        <div className={styles.quotes}>
-          {testimonials.length ? testimonials.map((item) => <figure key={item.name}><blockquote>{item.quote}</blockquote><figcaption>{item.name}<span>{item.role}</span></figcaption></figure>) : <div className={styles.quoteEmpty}><span className={styles.quoteMark} aria-hidden="true">“</span><p>Good work leaves<br />a lasting impression.</p><span>Client testimonials will appear here once shared with permission.</span></div>}
+      <EditorialPageIntro
+        label="Trust, testimonials & certificates"
+        title={"A matter\nof trust."}
+        description="The responsibility of executive support is personal. How information is handled, promises are followed through and decisions are escalated all matter."
+      />
+      <section
+        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-10 border-t border-rule py-10 sm:w-[calc(100%-5rem)] sm:py-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24"
+        aria-labelledby="trust-title"
+      >
+        <h2
+          id="trust-title"
+          className="max-w-[600px] text-[clamp(34px,5.4vw,78px)] leading-[1.04] tracking-[-.06em]"
+        >
+          A clear way
+          <br />
+          of working.
+        </h2>
+        <div className="max-w-[470px]">
+          <p className="text-[18px] leading-[1.6] tracking-[-.025em]">
+            Agree the responsibility. Respect the confidence. Keep the
+            commitment.
+          </p>
+          <p className="mb-6 mt-5 text-sm leading-[1.85] text-muted">
+            I work with agreed access and approval limits, treat sensitive
+            information with care and keep communication clear. A dependable
+            partnership is built through those everyday decisions.
+          </p>
+          <PortfolioLink href="/about" quiet>
+            My approach to the work
+          </PortfolioLink>
         </div>
       </section>
-      <section className={styles.certificates} id="certificates" aria-labelledby="certificates-title">
-        <div><FileCheck2 size={30} strokeWidth={1} aria-hidden="true" /><h2 id="certificates-title">Always learning.</h2><p>Professional training and certificates, with the details to verify them.</p></div>
-        <div>{certificates.length ? certificates.map((certificate) => <a className={styles.certificate} key={certificate.title} href={certificate.verificationUrl} target="_blank" rel="noreferrer"><div><h3>{certificate.title}</h3><p>{certificate.issuer} / {certificate.issued}</p></div><ArrowUpRight size={20} aria-hidden="true" /></a>) : <div className={styles.certificateEmpty}><FileCheck2 size={44} strokeWidth={.9} aria-hidden="true" /><h3>Certificates to follow.</h3><p>Verified credentials will be added with their issuing organisation and completion details.</p><Link href="/contact">Discuss your requirements<ArrowUpRight size={18} aria-hidden="true" /></Link></div>}</div>
-      </section>
-      <ContactInvitation title="Let's build a working relationship." />
+      <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-28">
+        <section
+          id="testimonials"
+          className="grid gap-7 border-t border-rule py-10 lg:grid-cols-[1.1fr_1fr] lg:gap-24"
+          aria-labelledby="testimonials-title"
+        >
+          <h2
+            id="testimonials-title"
+            className="text-[clamp(30px,4vw,58px)] leading-[1.1] tracking-[-.055em]"
+          >
+            Client perspectives.
+          </h2>
+          <div>
+            {testimonials.length ? (
+              testimonials.map((item) => (
+                <figure className="mb-8" key={item.name}>
+                  <blockquote className="text-[24px] leading-[1.5] tracking-[-.03em]">
+                    “{item.quote}”
+                  </blockquote>
+                  <figcaption className="mt-6 text-xs">
+                    {item.name}
+                    <span className="mt-2 block text-[11px] text-muted">
+                      {item.role}
+                    </span>
+                  </figcaption>
+                </figure>
+              ))
+            ) : (
+              <p className="max-w-[410px] text-sm leading-[1.85] text-muted">
+                Approved client testimonials have not been supplied for this
+                preview. This space is reserved for feedback shared with
+                permission.
+              </p>
+            )}
+          </div>
+        </section>
+        <section
+          id="certificates"
+          className="grid gap-7 border-t border-rule py-10 lg:grid-cols-[1.1fr_1fr] lg:gap-24"
+          aria-labelledby="certificates-title"
+        >
+          <h2
+            id="certificates-title"
+            className="text-[clamp(30px,4vw,58px)] leading-[1.1] tracking-[-.055em]"
+          >
+            Certificates & learning.
+          </h2>
+          <div>
+            {certificates.length ? (
+              certificates.map((item) => (
+                <a
+                  href={item.verificationUrl}
+                  key={item.title}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mb-6 flex items-center justify-between gap-6 border-b border-rule pb-6"
+                >
+                  <span>
+                    <span className="text-xl">{item.title}</span>
+                    <span className="mt-3 block text-xs text-muted">
+                      {item.issuer} / {item.issued}
+                    </span>
+                  </span>
+                  <ArrowUpRight size={19} aria-hidden="true" />
+                </a>
+              ))
+            ) : (
+              <p className="max-w-[410px] text-sm leading-[1.85] text-muted">
+                Verified certificates will be listed with the issuing
+                organisation, completion details and a verification link when
+                available.
+              </p>
+            )}
+          </div>
+        </section>
+      </div>
     </>
   );
 }

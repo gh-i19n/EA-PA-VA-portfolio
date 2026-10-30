@@ -1,23 +1,69 @@
 export const serviceAreas = [
   {
-    id: "executive",
-    title: "Executive assistance",
-    introduction: "A clear head. A well-run day.",
-    description: "Thoughtful support around your priorities, with the preparation and follow-through that let you stay present in the room.",
-    capabilities: ["Calendar & inbox management", "Meeting preparation", "Stakeholder coordination", "Travel & itineraries"],
+    id: "executive-time",
+    title: "Time & communication",
+    introduction: "A working day shaped around your priorities.",
+    description:
+      "I manage the flow of requests around you: assessing urgency, resolving calendar conflicts and making sure the right conversations receive your attention.",
+    capabilities: [
+      "Complex calendars & time zones",
+      "Inbox triage & correspondence",
+      "Focus time & preparation buffers",
+      "Stakeholder coordination",
+    ],
   },
   {
-    id: "virtual",
-    title: "Virtual assistance",
-    introduction: "Close attention, wherever you work.",
-    description: "A dependable point of coordination for a distributed working day. Clear information, organised systems and nothing left hanging.",
-    capabilities: ["Project coordination", "Research & reporting", "Documents & workflows", "Remote team support"],
+    id: "decision-support",
+    title: "Meeting & decision support",
+    introduction: "Arrive with the context. Leave with a next step.",
+    description:
+      "From leadership reviews to important partner conversations, I bring the agenda, background and outstanding decisions together, then keep the follow-up visible.",
+    capabilities: [
+      "Agendas & executive briefs",
+      "Research & background notes",
+      "Meeting logistics & materials",
+      "Decisions, actions & follow-up",
+    ],
   },
   {
-    id: "personal",
-    title: "Personal assistance",
-    introduction: "Life, with a little more room.",
-    description: "Considered help with the arrangements around a demanding life. Personal details handled with care and discretion.",
-    capabilities: ["Personal scheduling", "Appointments & reservations", "Lifestyle administration", "Events & special occasions"],
+    id: "operations",
+    title: "Operations & follow-through",
+    introduction: "A dependable point of coordination.",
+    description:
+      "I connect people, information and deadlines across the work you delegate. Dependencies are tracked, owners stay informed and issues reach you with context and options.",
+    capabilities: [
+      "Project & deadline coordination",
+      "Processes & documentation",
+      "Supplier & team liaison",
+      "Progress reporting & escalation",
+    ],
+  },
+  {
+    id: "personal-logistics",
+    title: "Travel & personal logistics",
+    introduction: "Considered arrangements for the whole person.",
+    description:
+      "Business commitments and personal arrangements often share a calendar. I coordinate the details around both, with clear preferences, agreed authority and discretion.",
+    capabilities: [
+      "Business travel & itineraries",
+      "Reservations & appointments",
+      "Event & offsite logistics",
+      "Personal administration",
+    ],
+  },
+] as const;
+
+export const onboardingSteps = [
+  {
+    title: "Understand the pressure points",
+    text: "We identify what is taking your attention, how you make decisions and what you would like to delegate.",
+  },
+  {
+    title: "Agree the working relationship",
+    text: "We define responsibilities, access, approval limits, communication and the decisions that stay with you.",
+  },
+  {
+    title: "Build a dependable rhythm",
+    text: "A practical handover, a clear priority list and regular check-ins give the partnership a considered start.",
   },
 ] as const;
