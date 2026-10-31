@@ -77,16 +77,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <div className="mt-7 flex flex-col justify-between gap-3 text-caption text-paper/70 sm:flex-row">
-            <span>AY / Portfolio design preview</span>
-            <a
-              className="underline-offset-4 hover:underline"
-              href="https://www.pexels.com/photo/close-up-shot-of-a-woman-in-black-blazer-looking-at-camera-8312669/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Stock portrait placeholder by Dayana Joseph
-            </a>
+          <div className="mt-7 text-caption text-paper/70">
+            <span>AY / Executive assistant</span>
           </div>
         </div>
       </footer>

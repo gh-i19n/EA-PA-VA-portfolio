@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PortfolioLink } from "~/components/ui/portfolio-link";
 import { PortfolioHero } from "./portfolio-hero";
+import { siteImages } from "~/config/site";
 
 const support = [
   {
@@ -149,11 +150,11 @@ export function PortfolioHome() {
       >
         <PortfolioVisual className="relative aspect-[1.04] overflow-hidden bg-mist">
           <Image
-            src="/images/ay-editorial-desk.png"
-            alt="A notebook and pen, ready for the working day"
+            src={siteImages.introductionPortrait}
+            alt="AY smiling with one hand resting near her face"
             fill
             sizes="(max-width:768px) 90vw,35vw"
-            className="object-cover object-[center_70%] saturate-0"
+            className="object-cover object-[center_32%] saturate-[.9]"
           />
         </PortfolioVisual>
         <div className="self-center">

@@ -8,7 +8,7 @@ import { ArrowUpRight, Plus } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { motion } from "~/config/motion";
-import { siteNavigation } from "~/config/site";
+import { siteImages, siteNavigation } from "~/config/site";
 
 gsap.registerPlugin(useGSAP);
 
@@ -17,7 +17,7 @@ const covers = [
     title: "About",
     description: "The person behind the preparation",
     href: "/about",
-    image: "/images/folio/portrait-placeholder.jpg",
+    image: siteImages.aboutPortrait,
   },
   {
     title: "Services",

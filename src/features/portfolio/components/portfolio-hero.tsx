@@ -2,8 +2,8 @@ import { PortfolioVisual } from "~/components/ui/portfolio-visual";
 import Image from "next/image";
 import { ArrowDownRight } from "lucide-react";
 import { PortfolioLink } from "~/components/ui/portfolio-link";
-import { PortfolioPageTitle } from "~/components/ui/portfolio-page-title";
 import { PortfolioContours } from "~/components/ui/portfolio-contours";
+import { HeroRoleTitle } from "./hero-role-title";
 
 export function PortfolioHero() {
   return (
@@ -15,20 +15,20 @@ export function PortfolioHero() {
         <p>AY / Senior executive assistant</p>
         <p className="text-right text-muted">For founders & senior leaders</p>
       </div>
-      <div className="relative isolate overflow-hidden rounded-feature bg-mist">
+      <div className="relative isolate overflow-hidden rounded-feature bg-ink">
         <PortfolioVisual
           reveal="arrival"
           radius="inherit"
           className="absolute inset-0"
         >
           <Image
-            src="/images/folio/portrait-placeholder.jpg"
-            alt="Stock portrait used as a design placeholder for AY"
+            src="/images/ay.png"
+            alt="AY smiling in a mustard blouse"
             fill
             loading="eager"
             fetchPriority="high"
             sizes="(max-width: 640px) 100vw, 95vw"
-            className="object-cover object-[50%_10%] saturate-[.35] max-sm:object-[40%_center]"
+            className="translate-y-70 scale-[1.3] origin-bottom-left object-contain object-left-bottom max-sm:scale-[.858]"
           />
           <PortfolioContours appearance="portrait" />
         </PortfolioVisual>
@@ -37,18 +37,12 @@ export function PortfolioHero() {
           aria-hidden="true"
         />
         <div className="relative flex min-h-[540px] flex-col justify-end px-5 pb-7 pt-24 text-white sm:min-h-[650px] sm:px-10 sm:pb-10 lg:min-h-[min(76dvh,850px)] lg:px-14 lg:pb-12">
-          <p className="mb-6 max-w-[220px] text-support text-white/90 sm:mb-8 sm:max-w-none">
+          <p className="absolute left-5 top-5 z-10 max-w-[220px] text-left text-support text-white/90 sm:left-10 sm:top-10 sm:max-w-none lg:left-14">
             The details, anticipated.
             <br />
             The day, taken care of.
           </p>
-          <div className="mb-16 ml-auto w-fit max-w-full text-right sm:mb-0">
-            <PortfolioPageTitle
-              title={"Executive\nAssistant."}
-              id="hero-title"
-              appearance="portrait"
-            />
-          </div>
+          <HeroRoleTitle id="hero-title" />
           <a
             className="absolute bottom-9 left-6 grid size-12 place-items-center rounded-full border border-white/50 sm:bottom-12 sm:left-10 sm:size-16 lg:left-14"
             href="#introduction"
@@ -58,9 +52,8 @@ export function PortfolioHero() {
           </a>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between gap-x-8 gap-y-2 py-4 text-caption text-muted">
+      <div className="py-4 text-caption text-muted">
         <span>Executive, virtual & personal support</span>
-        <span className="text-right">Portrait placeholder / Dayana Joseph</span>
       </div>
       <div
         id="introduction"

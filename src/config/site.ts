@@ -11,6 +11,12 @@ export const primaryNavigation = siteNavigation.filter(
   (item) => item.href !== "/" && item.href !== "/credentials",
 );
 
+export const siteImages = {
+  heroPortrait: "/images/folio/ay-smiling-portrait.jpeg",
+  introductionPortrait: "/images/ay-a.png",
+  aboutPortrait: "/images/ay-a.png",
+} as const;
+
 export const siteContact = {
   // Reserved dummy address authorised by the client for this design preview.
   email: "ay@example.com",

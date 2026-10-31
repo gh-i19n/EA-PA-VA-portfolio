@@ -2,6 +2,7 @@ import { PortfolioVisual } from "~/components/ui/portfolio-visual";
 import Image from "next/image";
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
 import { PortfolioLink } from "~/components/ui/portfolio-link";
+import { siteImages } from "~/config/site";
 
 const principles = [
   {
@@ -36,17 +37,14 @@ export function AboutPage() {
             className="relative aspect-[.96] overflow-hidden bg-mist"
           >
             <Image
-              src="/images/folio/portrait-placeholder.jpg"
-              alt="Stock portrait used as a design placeholder for AY"
+              src={siteImages.aboutPortrait}
+              alt="AY smiling in a mustard blouse with one hand near her face"
               fill
               loading="eager"
               sizes="(max-width:1024px) 90vw,48vw"
-              className="object-cover object-[30%_center] saturate-[.25]"
+              className="object-cover object-center saturate-[.92]"
             />
           </PortfolioVisual>
-          <figcaption className="mt-4 text-caption text-muted">
-            Portrait placeholder / Dayana Joseph, Pexels
-          </figcaption>
         </figure>
         <div className="self-end lg:pb-9">
           <h2
