@@ -1,5 +1,7 @@
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
+import { PointerImageTrail } from "~/components/ui/pointer-image-trail";
 import { skillGroups, toolGroups } from "../config/capabilities";
+import { ToolBrand } from "./tool-brand";
 
 export function SkillsToolsPage() {
   return (
@@ -18,12 +20,21 @@ export function SkillsToolsPage() {
         </h2>
         {skillGroups.map((group) => (
           <article
-            key={group.title}
+            key={group.id}
             className="grid gap-5 border-t border-rule py-8 md:grid-cols-[1.1fr_1fr] md:gap-24 md:py-10"
+            aria-labelledby={`skill-${group.id}`}
           >
-            <h3 className="font-display font-medium text-[clamp(31px,4.9vw,70px)] leading-[1.05] tracking-[-.035em]">
-              {group.title}
-            </h3>
+            <PointerImageTrail
+              images={group.images}
+              className="w-fit max-w-full self-start"
+            >
+              <h3
+                id={`skill-${group.id}`}
+                className="font-display font-medium text-[clamp(31px,4.9vw,70px)] leading-[1.05] tracking-[-.035em]"
+              >
+                {group.title}
+              </h3>
+            </PointerImageTrail>
             <div>
               <p className="max-w-[460px] text-pretty text-body text-muted">
                 {group.description}
@@ -71,10 +82,8 @@ export function SkillsToolsPage() {
                     key={tool.name}
                     className="border-b border-ink/10 py-5 first:pt-0 last:border-0"
                   >
-                    <span className="font-display text-[clamp(26px,3.2vw,42px)] font-medium leading-[1.1] tracking-[-.03em]">
-                      {tool.name}
-                    </span>
-                    <p className="mt-3 text-support text-muted">
+                    <ToolBrand name={tool.name} logo={tool.logo} />
+                    <p className="mt-2 text-support text-muted">
                       {tool.purpose}
                     </p>
                   </li>

@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { siteNavigation, siteContact } from "~/config/site";
 import { SiteNavigation } from "./site-navigation";
 import { PortfolioContours } from "./portfolio-contours";
+import { ContactChannels } from "./contact-channels";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
@@ -41,12 +42,15 @@ export function SiteShell({ children }: { children: ReactNode }) {
               <br />
               to keep you a step ahead.
             </p>
-            <a
-              href={siteContact.mailto}
-              className="w-fit py-2 text-support underline-offset-4 hover:underline"
-            >
-              {siteContact.email}
-            </a>
+            <div className="flex flex-col items-start gap-2 sm:items-end">
+              <a
+                href={siteContact.mailto}
+                className="w-fit py-2 text-support underline-offset-4 hover:underline"
+              >
+                {siteContact.email}
+              </a>
+              <ContactChannels appearance="dark" label="Contact AY" />
+            </div>
           </div>
           <Link
             href="/contact"

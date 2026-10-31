@@ -8,7 +8,7 @@ import { ArrowUpRight, Plus } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { motion } from "~/config/motion";
-import { siteImages, siteNavigation } from "~/config/site";
+import { primaryNavigation, siteImages, siteNavigation } from "~/config/site";
 
 gsap.registerPlugin(useGSAP);
 
@@ -126,18 +126,16 @@ export function SiteNavigation() {
         aria-label="Main navigation"
         className="ml-auto hidden items-center gap-8 lg:flex"
       >
-        {[siteNavigation[1], siteNavigation[2], siteNavigation[3]].map(
-          (item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={active(item.href) ? "page" : undefined}
-              className="py-3 text-label underline-offset-4 hover:underline aria-[current=page]:underline"
-            >
-              {item.label}
-            </Link>
-          ),
-        )}
+        {primaryNavigation.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            aria-current={active(item.href) ? "page" : undefined}
+            className="py-3 text-label underline-offset-4 hover:underline aria-[current=page]:underline"
+          >
+            {item.label}
+          </Link>
+        ))}
         <Link
           href="/contact"
           className="flex items-center gap-2 py-3 text-label underline-offset-4 hover:underline"

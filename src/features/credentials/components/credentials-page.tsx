@@ -1,16 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
-import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
 import { PortfolioLink } from "~/components/ui/portfolio-link";
 import { certificates, testimonials } from "../config/credentials-content";
+import { CredentialsHero } from "./credentials-hero";
 
 export function CredentialsPage() {
   return (
     <>
-      <EditorialPageIntro
-        label="Trust, testimonials & certificates"
-        title={"A matter\nof trust."}
-        description="The responsibility of executive support is personal. How information is handled, promises are followed through and decisions are escalated all matter."
-      />
+      <CredentialsHero />
       <section
         className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-10 border-t border-rule py-10 sm:w-[calc(100%-5rem)] sm:py-16 lg:grid-cols-[1.1fr_1fr] lg:gap-24"
         aria-labelledby="trust-title"

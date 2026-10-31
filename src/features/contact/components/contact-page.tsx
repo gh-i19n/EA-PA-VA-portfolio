@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
 import { EmailEnquiry } from "~/components/ui/email-enquiry";
+import { ContactChannels } from "~/components/ui/contact-channels";
 import { siteContact } from "~/config/site";
 
 export function ContactPage() {
@@ -32,6 +33,9 @@ export function ContactPage() {
             <span className="min-w-0 break-all">{siteContact.email}</span>
             <ArrowUpRight size={20} strokeWidth={1.3} aria-hidden="true" />
           </a>
+          <div className="mt-3">
+            <ContactChannels label="Connect with AY" />
+          </div>
           <div className="mt-10 max-w-[320px] pt-6">
             <h3 className="font-medium mb-3 text-label">The first conversation</h3>
             <p className="text-body text-muted">

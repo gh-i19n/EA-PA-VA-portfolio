@@ -13,12 +13,13 @@ export const primaryNavigation = siteNavigation.filter(
 
 export const siteImages = {
   heroPortrait: "/images/folio/ay-smiling-portrait.jpeg",
-  introductionPortrait: "/images/ay-a.png",
+  introductionPortrait: "/images/ay-at-work.png",
   aboutPortrait: "/images/ay-a.png",
 } as const;
 
 export const siteContact = {
-  // Reserved dummy address authorised by the client for this design preview.
-  email: "ay@example.com",
-  mailto: "mailto:ay@example.com?subject=Let%27s%20work%20together",
+  email: "ajibolaayomidee@gmail.com",
+  mailto: "mailto:ajibolaayomidee@gmail.com?subject=Let%27s%20work%20together",
+  linkedin: "https://www.linkedin.com/in/ajibolaayomidee",
+  whatsapp: "https://wa.me/2349053600768?s=p",
 };
