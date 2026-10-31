@@ -28,7 +28,7 @@ export function PortfolioHero() {
             loading="eager"
             fetchPriority="high"
             sizes="(max-width: 640px) 100vw, 95vw"
-            className="translate-y-70 scale-[1.3] origin-bottom-left object-contain object-left-bottom max-sm:scale-[.858]"
+            className="translate-y-70 scale-[1.3] origin-bottom-left object-contain object-left-bottom max-lg:-translate-x-20 max-lg:translate-y-35 max-lg:scale-[1]"
           />
           <PortfolioContours appearance="portrait" />
         </PortfolioVisual>
@@ -36,7 +36,7 @@ export function PortfolioHero() {
           className="absolute inset-0 bg-linear-to-t from-[#151914]/90 via-[#151914]/15 to-transparent"
           aria-hidden="true"
         />
-        <div className="relative flex min-h-[540px] flex-col justify-end px-5 pb-7 pt-24 text-white sm:min-h-[650px] sm:px-10 sm:pb-10 lg:min-h-[min(76dvh,850px)] lg:px-14 lg:pb-12">
+        <div className="relative flex w-full min-h-[clamp(440px,92vw,540px)] flex-col justify-end px-5 pb-6 pt-24 text-white sm:min-h-[650px] sm:px-10 sm:pb-10 lg:min-h-[min(76dvh,850px)] lg:px-14 lg:pb-12">
           <p className="absolute left-5 top-5 z-10 max-w-[220px] text-left text-support text-white/90 sm:left-10 sm:top-10 sm:max-w-none lg:left-14">
             The details, anticipated.
             <br />
@@ -44,7 +44,7 @@ export function PortfolioHero() {
           </p>
           <HeroRoleTitle id="hero-title" />
           <a
-            className="absolute bottom-9 left-6 grid size-12 place-items-center rounded-full border border-white/50 sm:bottom-12 sm:left-10 sm:size-16 lg:left-14"
+            className="absolute right-5 top-5 grid size-12 place-items-center rounded-full border border-white/50 sm:bottom-12 sm:left-10 sm:right-auto sm:top-auto sm:size-16 lg:left-14"
             href="#introduction"
             aria-label="Discover AY's executive support"
           >

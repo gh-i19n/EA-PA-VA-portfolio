@@ -26,7 +26,7 @@ export function PortfolioContours({
         className={cn(
           "absolute h-auto max-w-none",
           appearance === "portrait"
-            ? "-right-[8%] -top-[20%] w-[72%] rotate-[18deg] opacity-[.26] [mask-image:linear-gradient(to_bottom,black_58%,transparent_94%)] max-sm:-right-[38%] max-sm:-top-[6%] max-sm:w-[116%] max-sm:opacity-20"
+            ? "-right-[8%] -top-[20%] w-[72%] rotate-[18deg] opacity-[.26] [mask-image:linear-gradient(to_bottom,black_58%,transparent_94%)] max-sm:-right-[26%] max-sm:-top-[8%] max-sm:w-[95%] max-sm:opacity-[.15]"
             : "-right-[8%] -top-[65%] w-[88%] min-w-[700px] rotate-[-12deg] opacity-[.14] [mask-image:linear-gradient(to_right,transparent,black_32%)] max-sm:-right-[70%] max-sm:-top-[5%] max-sm:opacity-[.12]",
         )}
       />

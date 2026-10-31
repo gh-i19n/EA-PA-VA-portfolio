@@ -101,7 +101,7 @@ export function HeroRoleTitle({ id }: { id: string }) {
   return (
     <div
       ref={scope}
-      className="relative mb-16 ml-auto w-fit max-w-full text-right sm:mb-0"
+      className="relative mb-2 ml-auto w-fit max-w-full text-right sm:mb-0"
     >
       <h1
         id={id}
@@ -110,7 +110,7 @@ export function HeroRoleTitle({ id }: { id: string }) {
       >
         <span className="flex items-center justify-end gap-3 pb-[.08em]">
           <span
-            className="block shrink-0 overflow-hidden text-[clamp(42px,7vw,104px)] text-mustard"
+            className="block shrink-0 overflow-hidden text-[clamp(42px,7vw,104px)] text-mustard max-sm:text-[clamp(34px,8vw,42px)]"
             aria-hidden="true"
           >
             <span ref={role} className="inline-block whitespace-nowrap">
@@ -135,7 +135,7 @@ export function HeroRoleTitle({ id }: { id: string }) {
           )}
         </span>
         <span
-          className="block overflow-hidden pb-[.08em] text-[clamp(60px,11.5vw,172px)]"
+          className="block overflow-hidden pb-[.08em] text-[clamp(60px,11.5vw,172px)] max-sm:text-[clamp(48px,12vw,60px)]"
           aria-hidden="true"
         >
           <span ref={assistant} className="inline-block whitespace-nowrap">
