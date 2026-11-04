@@ -61,8 +61,9 @@ export function SkillsToolsPage() {
               The toolkit.
             </h2>
             <p className="max-w-[460px] text-pretty text-body text-muted lg:self-end">
-              A representative toolkit for this portfolio direction. The tools
-              follow the workflow, and the workflow fits your organisation.
+              The tools follow the workflow, and the workflow fits your
+              organisation. Explore the Excel and Trello samples to see the
+              systems in use.
             </p>
           </div>
           {toolGroups.map((group) => (
@@ -86,6 +87,19 @@ export function SkillsToolsPage() {
                     <ToolBrand name={tool.name} logo={tool.logo} />
                     <p className="mt-2 text-support text-muted">
                       {tool.purpose}
+                      {"sampleHref" in tool && (
+                        <>
+                          {" · "}
+                          <a
+                            href={tool.sampleHref}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="underline underline-offset-4"
+                          >
+                            {tool.sampleLabel}
+                          </a>
+                        </>
+                      )}
                     </p>
                   </li>
                 ))}

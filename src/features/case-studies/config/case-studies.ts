@@ -8,40 +8,51 @@ export const caseStudies = [
     category: "Executive organisation",
     sample: "brief",
     summary:
-      "Turning a crowded calendar into a week with room for the decisions that matter.",
-    image: "/images/folio/meeting-room.jpg",
-    alt: "A prepared meeting room with a long conference table",
+      "Bookable availability and a prepared meeting agenda, brought into a clearer working rhythm.",
+    image: "/images/work/calendar-availability.png",
+    alt: "AY’s Google Calendar appointment schedule with recurring training availability",
     challenge:
-      "A founder has leadership reviews, partner conversations and an approaching project decision competing for the same week. Meeting invitations are arriving faster than the context behind them. The brief is to make the week workable and keep preparation from becoming an afterthought.",
+      "The scheduling sample sets out bookable windows for training sessions. A separate team-meeting agenda shows how opening remarks, progress updates and role-based reports are prepared before a conversation.",
     constraints: [
-      "Fixed partner commitments",
-      "A decision deadline with incomplete information",
-      "Focus time that needs protecting",
+      "A defined appointment duration",
+      "Availability varies across weekdays",
+      "Separate scheduling and meeting-agenda samples"
     ],
     approach: [
       {
-        title: "Establish the priorities",
-        text: "Confirm the decisions, relationships and deadlines that deserve the founder's time. Review each calendar commitment against that purpose, including who needs to attend and what preparation it requires.",
+        title: "Define the available windows",
+        text:
+          "The calendar sample sets a session duration and recurring availability across the working week, giving booking requests a clear set of options."
       },
       {
         title: "Prepare the conversation",
-        text: "Bring the agenda, previous decisions and unanswered questions into a short briefing. Request missing inputs early, resolve logistics and flag the decision the executive will need to make.",
+        text:
+          "The supplied agenda sets out the meeting time, platform, opening remarks and progress-update section, with the reporting roles identified."
       },
       {
-        title: "Keep the week connected",
-        text: "Protect preparation and focus windows, communicate changes to the people affected and maintain a short action record. End the week with a concise view of what moved, what remains open and what comes next.",
-      },
+        title: "Make the next step visible",
+        text:
+          "Availability and preparation sit in documents people can consult before the meeting, so timing and purpose are easier to understand."
+      }
     ],
     deliverables: [
-      "A priority-led weekly calendar",
-      "A concise executive morning brief",
-      "Meeting agendas and preparation notes",
-      "A decisions and follow-up record",
+      "Google Calendar appointment-schedule sample",
+      "Recurring availability and session duration",
+      "Team-meeting agenda prepared by AY",
+      "Progress-update and reporting sections"
     ],
     judgment:
-      "An invitation does not automatically become a priority. I would establish the purpose, assess the cost to the rest of the week and bring a clear recommendation when a trade-off needs the executive's decision.",
+      "A useful calendar shows when a conversation can happen. A useful agenda explains what needs attention when people arrive.",
     intendedResult:
-      "The intended outcome is a calendar that reflects priorities, meetings that begin with context and actions that remain visible after the room clears. This is an illustrative scenario, not a measured client result.",
+      "The schedule makes available meeting windows visible; the agenda gives participants a clear order for updates and discussion.",
+    artifact: {
+      href: "/images/work/meeting-agenda.png",
+      preview: "/images/work/meeting-agenda.png",
+      alt: "AY’s supplied weekly team-alignment meeting agenda",
+      label: "Open the meeting-agenda sample",
+      width: 807,
+      height: 815
+    }
   },
   {
     slug: "every-journey-considered",
@@ -49,40 +60,51 @@ export const caseStudies = [
     category: "Travel & personal logistics",
     sample: "travel",
     summary:
-      "Connecting the arrangements around a business trip into one usable plan.",
-    image: "/images/folio/in-transit.jpg",
-    alt: "An aircraft wing seen above the clouds",
+      "A Lagos–Abuja planning sample connecting the schedule, estimated budget and travel checklist.",
+    image: "/images/work/travel-cover.png",
+    alt: "Preview of AY’s Lagos–Abuja executive travel itinerary",
     challenge:
-      "A leader is travelling from Lagos to London for a partner meeting. Flights, transfers, accommodation and preparation have separate dependencies. The brief is to coordinate the whole journey, give the traveller one reliable reference and plan for a change in arrival time.",
+      "The supplied itinerary brings airport movements, accommodation, a board meeting, meals and return travel into one reference. It also includes an estimated budget and a checklist of documents, work items and personal essentials.",
     constraints: [
-      "A fixed meeting window",
-      "Local times and transfer dependencies",
-      "Preferences, rest and preparation",
+      "Lagos–Abuja route and meeting schedule",
+      "Airport, hotel and local-transport arrangements",
+      "Indicative costs and a traveller-preparation checklist"
     ],
     approach: [
       {
-        title: "Work back from the commitment",
-        text: "Start with the purpose and timing of the meeting. Build the journey around an appropriate arrival buffer, rest, preparation and the practical time required between each location.",
+        title: "Connect the journey",
+        text:
+          "The itinerary sets out activities in time order, from airport arrival through the meeting programme and the return journey."
       },
       {
-        title: "Consolidate the details",
-        text: "Keep confirmations, local times, locations and contacts in a single itinerary. Check each arrangement against the next dependency so the traveller knows what happens on arrival and whom to contact.",
+        title: "Make the costs visible",
+        text:
+          "Separate budget lines cover flights, accommodation, local transport, meals and contingency. They are planning estimates in the supplied sample, not current quotations."
       },
       {
-        title: "Prepare the alternative",
-        text: "Identify which people need an update if timings change. Keep options and contact details close, confirm changes within agreed authority and bring cost or schedule decisions back with useful context.",
-      },
+        title: "Prepare the traveller",
+        text:
+          "The checklist groups identification, reservations, meeting materials, electronics and personal essentials so preparation can happen before departure."
+      }
     ],
     deliverables: [
-      "A consolidated, local-time itinerary",
-      "Booking and contact reference",
-      "Meeting preparation and access notes",
-      "A change and communication plan",
+      "A Lagos–Abuja executive travel itinerary",
+      "Meeting, hotel and airport schedule",
+      "Estimated travel-budget breakdown",
+      "Documents and essentials checklist"
     ],
     judgment:
-      "The cheapest or earliest booking may create the least workable day. I would weigh the full journey against the purpose of the trip, the executive's preferences and the approved budget before presenting options.",
+      "The document is a planning work sample. Its schedule, availability and estimated costs would need reconfirming for a live trip.",
     intendedResult:
-      "The intended outcome is a connected journey with clear next steps and a practical response to change. The itinerary shown is a sample of the approach; it contains no real booking or client details.",
+      "The sample shows how travel arrangements, preparation and indicative costs can be gathered into one usable document. The original planning document is available to read in full.",
+    artifact: {
+      href: "/documents/lagos-abuja-itinerary.pdf",
+      preview: "/images/work/travel-itinerary.png",
+      alt: "First-page preview of the supplied Lagos–Abuja itinerary",
+      label: "Read the travel itinerary (PDF)",
+      width: 1132,
+      height: 1600
+    }
   },
   {
     slug: "closing-the-loop",
@@ -90,41 +112,53 @@ export const caseStudies = [
     category: "Operations & follow-through",
     sample: "handoff",
     summary:
-      "Giving decisions an owner, a next action and a dependable path forward.",
-    image: "/images/ay-editorial-desk.png",
-    alt: "An open notebook and pen on a desk",
+      "A Trello walkthrough showing task stages, due dates and checklist-based follow-through.",
+    image: "/images/work/trello-workflow.jpg",
+    alt: "AY’s supplied Trello board showing To-do, In Progress and Done lists",
+    recording: "/videos/trello-workflow.mp4",
     challenge:
-      "A weekly leadership review has produced several commitments across operations and external suppliers. One unresolved budget decision affects a proposed launch date. The brief is to turn the discussion into an actionable handoff and bring the dependency back before it becomes a surprise.",
+      "The supplied recording shows a team board organised into To-do, In Progress and Done. Opening individual cards reveals task descriptions, checklists, due dates and completion indicators.",
     constraints: [
-      "Several people own different actions",
-      "A supplier estimate is still outstanding",
-      "The budget requires executive approval",
+      "Several team members and task stages",
+      "Due dates attached to individual cards",
+      "Checklist detail behind the board overview"
     ],
     approach: [
       {
-        title: "Record the decision accurately",
-        text: "Separate decisions from discussion. Confirm the next action, responsible person and expected timing, then share a concise record with the people who need it.",
+        title: "Separate the work stages",
+        text:
+          "The board keeps queued, active and completed work in distinct lists, making the current stage of a task visible from the overview."
       },
       {
-        title: "Follow the dependencies",
-        text: "Track the supplier response and its effect on the schedule. Follow up with context, keep owners informed and distinguish a blocked action from work that can continue.",
+        title: "Keep the detail with the task",
+        text:
+          "Individual cards contain descriptions and checklists, so the next action can be understood without relying only on the card title."
       },
       {
-        title: "Escalate with options",
-        text: "Bring the outstanding approval to the executive with the relevant estimate, schedule implications and a clear set of options. Update the action record once a decision is confirmed.",
-      },
+        title: "Follow through on dates and completion",
+        text:
+          "Due dates and checklist completion give the team a shared reference for progress. The recording moves between the overview and card detail so both can be inspected."
+      }
     ],
     deliverables: [
-      "A concise decision record",
-      "An owner and deadline for each action",
-      "A dependency and escalation note",
-      "A weekly progress summary",
+      "Trello board with distinct workflow stages",
+      "Task descriptions and checklists",
+      "Visible due dates and completion indicators",
+      "A silent walkthrough of the supplied board"
     ],
     judgment:
-      "Ownership includes recognising the limits of delegated authority. I would progress coordination independently, while bringing the budget decision and its consequences to the person authorised to approve it.",
+      "A board is most useful when its overview and card detail agree. Clear stages, dates and checklists make it easier to see what needs attention.",
     intendedResult:
-      "The intended outcome is visible ownership and earlier attention to blocked work. This scenario illustrates the coordination process and makes no claim about actual client delivery.",
-  },
+      "The board brings the current stage, next action and supporting checklist into one place, giving people a shared reference for follow-through.",
+    artifact: {
+      href: "/videos/trello-workflow.mp4",
+      preview: "/images/work/trello-workflow.jpg",
+      alt: "Preview of the Trello workflow recording",
+      label: "Watch the Trello workflow (silent)",
+      width: 1280,
+      height: 724
+    }
+  }
 ] as const satisfies readonly CaseStudy[];
 
 export function findCaseStudy(slug: string) {

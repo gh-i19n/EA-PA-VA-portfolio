@@ -14,4 +14,13 @@ export type CaseStudy = {
   deliverables: readonly string[];
   judgment: string;
   intendedResult: string;
+  recording?: string;
+  artifact?: {
+    href: string;
+    preview: string;
+    alt: string;
+    label: string;
+    width: number;
+    height: number;
+  };
 };

@@ -5,7 +5,7 @@ export const skillGroups = [
     description:
       "Balancing access, priorities and preparation in a complex working day.",
     keywords: ["Calendar strategy", "Inbox judgment", "Priority management"],
-    images: ["/images/skills/planning.jpg", "/images/ay-editorial-desk.png"],
+    images: ["/images/work/calendar-availability.png", "/images/work/meeting-agenda.png"],
   },
   {
     id: "communication",
@@ -13,7 +13,7 @@ export const skillGroups = [
     description:
       "Giving each person the information they need, in the right tone and at the right time.",
     keywords: ["Executive correspondence", "Stakeholder liaison", "Discretion"],
-    images: ["/images/skills/communication.jpg", "/images/meeting-prepared.png"],
+    images: ["/images/work/speaker-outreach.png", "/images/work/event-communication.png"],
   },
   {
     id: "coordination",
@@ -21,7 +21,7 @@ export const skillGroups = [
     description:
       "Connecting owners, dependencies and deadlines so commitments move forward.",
     keywords: ["Action tracking", "Travel logistics", "Project coordination"],
-    images: ["/images/skills/coordination.jpg", "/images/executive-travel.png"],
+    images: ["/images/work/trello-workflow.jpg", "/images/work/travel-itinerary.png"],
   },
   {
     id: "information",
@@ -29,7 +29,7 @@ export const skillGroups = [
     description:
       "Turning scattered information into a concise, useful reference for a decision.",
     keywords: ["Research", "Briefing documents", "Process documentation"],
-    images: ["/images/skills/research.jpg", "/images/skills/reference.jpg"],
+    images: ["/images/work/research-writing.png", "/images/work/excel-reporting.jpg"],
   },
 ] as const;
 
@@ -52,6 +52,8 @@ export const toolGroups = [
       {
         name: "Microsoft 365",
         purpose: "Outlook, documents, executive collaboration",
+        sampleHref: "/videos/excel-reporting.mp4",
+        sampleLabel: "View Excel reporting sample (silent)",
         logo: {
           src: "/images/tools/microsoft-365.svg",
           width: 1320,
@@ -102,6 +104,8 @@ export const toolGroups = [
       {
         name: "Trello",
         purpose: "Visible task and workflow tracking",
+        sampleHref: "/videos/trello-workflow.mp4",
+        sampleLabel: "View Trello workflow sample (silent)",
         logo: {
           src: "/images/tools/trello.svg",
           width: 312,

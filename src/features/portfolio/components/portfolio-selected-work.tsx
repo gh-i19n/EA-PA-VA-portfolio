@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PortfolioVisual } from "~/components/ui/portfolio-visual";
 import { PortfolioLink } from "~/components/ui/portfolio-link";
+import { caseStudies } from "~/features/case-studies/config/case-studies";
 
 export function PortfolioSelectedWork() {
   return (
@@ -29,8 +30,8 @@ export function PortfolioSelectedWork() {
             >
               <PortfolioVisual className="relative aspect-[1.6] overflow-hidden bg-rule">
                 <Image
-                  src="/images/folio/meeting-room.jpg"
-                  alt="A meeting room prepared for a leadership conversation"
+                  src={caseStudies[0].image}
+                  alt={caseStudies[0].alt}
                   fill
                   sizes="(max-width: 768px) 90vw, 52vw"
                   className="object-cover object-center saturate-[.35] transition-transform duration-1000 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105 motion-reduce:transition-none"
@@ -44,13 +45,13 @@ export function PortfolioSelectedWork() {
                 </span>
               </PortfolioVisual>
               <p className="mb-3 mt-5 text-caption text-muted">
-                Executive organisation / Sample scenario
+                Executive organisation / Work sample
               </p>
               <h3 className="font-display font-medium text-[clamp(27px,2.9vw,42px)] tracking-[-.03em]">
                 The executive week.
               </h3>
               <p className="mt-3 max-w-[480px] text-body text-muted">
-                Turning a crowded calendar into a week with room for the decisions that matter.
+                {caseStudies[0].summary}
               </p>
             </Link>
           </article>
@@ -61,8 +62,8 @@ export function PortfolioSelectedWork() {
             >
               <PortfolioVisual className="relative aspect-[1.45] overflow-hidden bg-rule">
                 <Image
-                  src="/images/folio/in-transit.jpg"
-                  alt="An aircraft wing over the clouds"
+                  src={caseStudies[1].image}
+                  alt={caseStudies[1].alt}
                   fill
                   sizes="(max-width: 768px) 90vw, 40vw"
                   className="object-cover saturate-[.35] transition-transform duration-1000 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105 motion-reduce:transition-none"
@@ -76,13 +77,13 @@ export function PortfolioSelectedWork() {
                 </span>
               </PortfolioVisual>
               <p className="mb-3 mt-5 text-caption text-muted">
-                Travel & personal logistics / Sample scenario
+                Travel & personal logistics / Work sample
               </p>
               <h3 className="font-display font-medium text-[clamp(27px,2.9vw,42px)] tracking-[-.03em]">
                 Every journey, considered.
               </h3>
               <p className="mt-3 max-w-[440px] text-body text-muted">
-                Connecting the arrangements around a business trip into one usable plan.
+                {caseStudies[1].summary}
               </p>
             </Link>
           </article>

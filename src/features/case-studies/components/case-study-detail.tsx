@@ -26,14 +26,28 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
       />
       <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
         <PortfolioVisual className="relative aspect-[1.2] overflow-hidden bg-mist sm:aspect-[2.1]">
-          <Image
-            src={study.image}
-            alt={study.alt}
-            fill
-            loading="eager"
-            sizes="95vw"
-            className="object-cover object-[center_45%] saturate-[.3]"
-          />
+          {study.recording ? (
+            <video
+              src={study.recording}
+              poster={study.image}
+              controls
+              playsInline
+              preload="none"
+              aria-label={`${study.title} Silent workflow recording`}
+              className="h-full w-full object-contain"
+            >
+              <a href={study.recording}>Open the workflow recording</a>
+            </video>
+          ) : (
+            <Image
+              src={study.image}
+              alt={study.alt}
+              fill
+              loading="eager"
+              sizes="95vw"
+              className="object-cover object-[center_45%] saturate-[.3]"
+            />
+          )}
         </PortfolioVisual>
       </div>
       <div className="bg-sheet mt-12 sm:mt-20">
@@ -118,7 +132,30 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
           </p>
         </div>
         <div className="mx-auto w-full max-w-[520px]">
-          <WorkDocument variant={study.sample} />
+          {study.artifact ? (
+            <a
+              href={study.artifact.href}
+              target="_blank"
+              rel="noreferrer"
+              className="group block"
+              aria-label={`${study.artifact.label} (opens in a new tab)`}
+            >
+              <Image
+                src={study.artifact.preview}
+                alt={study.artifact.alt}
+                width={study.artifact.width}
+                height={study.artifact.height}
+                sizes="(max-width:768px) 90vw,520px"
+                className="h-auto w-full rounded-document"
+              />
+              <p className="mt-4 flex min-h-11 items-center justify-between gap-4 text-label">
+                {study.artifact.label}
+                <ArrowUpRight size={18} aria-hidden="true" />
+              </p>
+            </a>
+          ) : (
+            <WorkDocument variant={study.sample} />
+          )}
         </div>
       </section>
       <div className="bg-linen ">
@@ -141,7 +178,7 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
         >
           <span>
             <span className="mb-5 block text-label text-muted">
-              Next illustrative study
+              Next work sample
             </span>
             <span className="font-display text-[clamp(30px,5vw,72px)] font-medium leading-[1.1] tracking-[-.035em]">
               {next.title}

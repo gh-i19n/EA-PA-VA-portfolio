@@ -10,12 +10,12 @@ export function CaseStudiesPage() {
     <>
       <EditorialPageIntro
         title="In practice."
-        description="The preparation, judgment and follow-through behind a well-run day. These sample scenarios show how I would approach the work; they contain no client information."
+        description="Scheduling, travel planning and task coordination, shown through AY’s supplied work samples. Explore the documents and walkthroughs behind the work."
       />
       <div className="bg-sheet pt-12 sm:pt-20">
         <section
           className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-x-12 gap-y-14 pb-16 sm:w-[calc(100%-5rem)] sm:pb-28 md:grid-cols-[1.1fr_1fr] md:gap-y-24"
-          aria-label="Illustrative case studies"
+          aria-label="Portfolio work samples"
         >
           {caseStudies.map((study, index) => (
             <article
@@ -53,7 +53,7 @@ export function CaseStudiesPage() {
                   </span>
                 </PortfolioVisual>
                 <p className="mb-3 mt-6 text-caption text-muted">
-                  {study.category} / Sample scenario
+                  {study.category} / Work sample
                 </p>
                 <h2 className="font-display font-medium text-[clamp(28px,3.4vw,49px)] leading-[1.1] tracking-[-.035em]">
                   {study.title}
