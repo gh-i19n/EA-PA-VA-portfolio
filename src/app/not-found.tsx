@@ -5,7 +5,6 @@ export default function NotFound() {
   return (
     <>
       <EditorialPageIntro
-        label="Page not found"
         title={"Page not\nfound."}
         description="That page is no longer here, or the address may be incomplete. You can find your way back from here."
       />

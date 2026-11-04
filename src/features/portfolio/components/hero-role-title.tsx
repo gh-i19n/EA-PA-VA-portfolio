@@ -1,23 +1,24 @@
 "use client";
 
-import { Pause, Play } from "lucide-react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { motion } from "~/config/motion";
 
-const roles = ["Executive", "Virtual", "Personal"] as const;
+const roles = [
+  { role: "Executive", designation: "Assistant" },
+  { role: "Virtual", designation: "Assistant" },
+  { role: "Personal", designation: "Assistant" },
+  { role: "Administrative", designation: "Officer" },
+] as const;
 
 gsap.registerPlugin(useGSAP);
 
 export function HeroRoleTitle({ id }: { id: string }) {
   const scope = useRef<HTMLDivElement>(null);
   const role = useRef<HTMLSpanElement>(null);
-  const assistant = useRef<HTMLSpanElement>(null);
-  const timeline = useRef<gsap.core.Timeline | null>(null);
+  const designation = useRef<HTMLSpanElement>(null);
   const roleIndex = useRef(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [canRotate, setCanRotate] = useState(false);
 
   useGSAP(
     () => {
@@ -25,13 +26,11 @@ export function HeroRoleTitle({ id }: { id: string }) {
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
         const roleElement = role.current;
-        const assistantElement = assistant.current;
-        if (!roleElement || !assistantElement) return;
+        const designationElement = designation.current;
+        if (!roleElement || !designationElement) return;
+        const lines = [roleElement, designationElement];
 
-        setCanRotate(true);
-        setIsPaused(false);
-
-        gsap.from([roleElement, assistantElement], {
+        gsap.from(lines, {
           yPercent: 105,
           autoAlpha: 0,
           duration: motion.entrance,
@@ -42,61 +41,50 @@ export function HeroRoleTitle({ id }: { id: string }) {
         const rotation = gsap.timeline({
           delay: 3,
           repeat: -1,
-          repeatDelay: 2.25,
+          repeatDelay: 2.2,
         });
 
         rotation
-          .to(roleElement, {
+          .to(lines, {
             yPercent: -115,
             autoAlpha: 0,
-            duration: 0.3,
+            duration: 0.28,
+            stagger: 0.04,
             ease: "power2.in",
             onComplete: () => {
               roleIndex.current = (roleIndex.current + 1) % roles.length;
-              roleElement.textContent = roles[roleIndex.current];
-              gsap.set(roleElement, { yPercent: 115 });
+              const next = roles[roleIndex.current];
+              roleElement.textContent = next.role;
+              roleElement.dataset.compact = String(next.role === "Administrative");
+              designationElement.textContent = next.designation;
             },
           })
           .fromTo(
-            roleElement,
+            lines,
             { yPercent: 115, autoAlpha: 0 },
             {
               yPercent: 0,
               autoAlpha: 1,
-              duration: 0.45,
+              duration: 0.44,
+              stagger: 0.04,
               ease: motion.headlineEase,
               immediateRender: false,
             },
           );
 
-        timeline.current = rotation;
         return () => {
-          timeline.current = null;
+          rotation.kill();
+          roleIndex.current = 0;
+          roleElement.textContent = roles[0].role;
+          roleElement.dataset.compact = "false";
+          designationElement.textContent = roles[0].designation;
         };
-      });
-
-      media.add(motion.reducedMotion, () => {
-        setCanRotate(false);
-        timeline.current = null;
       });
 
       return () => media.revert();
     },
     { scope },
   );
-
-  function toggleRotation() {
-    const currentTimeline = timeline.current;
-    if (!currentTimeline) return;
-
-    if (isPaused) {
-      currentTimeline.resume();
-      setIsPaused(false);
-    } else {
-      currentTimeline.pause();
-      setIsPaused(true);
-    }
-  }
 
   return (
     <div
@@ -105,41 +93,27 @@ export function HeroRoleTitle({ id }: { id: string }) {
     >
       <h1
         id={id}
-        aria-label="Executive assistant, virtual assistant, and personal assistant"
+        aria-label="Executive assistant, virtual assistant, personal assistant, and administrative officer"
         className="font-display font-medium leading-[.96] tracking-[-.045em]"
       >
-        <span className="flex items-center justify-end gap-3 pb-[.08em]">
-          <span
-            className="block shrink-0 overflow-hidden text-[clamp(42px,7vw,104px)] text-mustard max-sm:text-[clamp(34px,8vw,42px)]"
-            aria-hidden="true"
-          >
-            <span ref={role} className="inline-block whitespace-nowrap">
-              Executive
-            </span>
-          </span>
-          {canRotate && (
-            <button
-              type="button"
-              aria-label={isPaused ? "Resume role rotation" : "Pause role rotation"}
-              aria-controls={id}
-              aria-pressed={isPaused}
-              onClick={toggleRotation}
-              className="grid size-9 shrink-0 place-items-center rounded-full border border-mustard/60 text-mustard transition-colors hover:bg-mustard hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-mustard motion-reduce:hidden"
-            >
-              {isPaused ? (
-                <Play size={14} fill="currentColor" aria-hidden="true" />
-              ) : (
-                <Pause size={14} fill="currentColor" aria-hidden="true" />
-              )}
-            </button>
-          )}
-        </span>
         <span
-          className="block overflow-hidden pb-[.08em] text-[clamp(60px,11.5vw,172px)] max-sm:text-[clamp(48px,12vw,60px)]"
+          className="relative block h-[1.16em] overflow-hidden text-[clamp(42px,7vw,104px)] text-mustard max-sm:text-[clamp(34px,8vw,42px)]"
           aria-hidden="true"
         >
-          <span ref={assistant} className="inline-block whitespace-nowrap">
-            Assistant.
+          <span
+            ref={role}
+            className="absolute bottom-[.08em] right-0 inline-block whitespace-nowrap data-[compact=true]:text-[.7em]"
+          >
+            Executive
+          </span>
+        </span>
+        <span
+          className="grid overflow-hidden pb-[.08em] text-[clamp(60px,11.5vw,172px)] max-sm:text-[clamp(48px,12vw,60px)]"
+          aria-hidden="true"
+        >
+          <span className="invisible col-start-1 row-start-1">Assistant</span>
+          <span ref={designation} className="col-start-1 row-start-1 justify-self-end whitespace-nowrap">
+            Assistant
           </span>
         </span>
       </h1>

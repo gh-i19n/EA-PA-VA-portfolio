@@ -21,7 +21,6 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
         </Link>
       </div>
       <EditorialPageIntro
-        label={`${study.category} / Illustrative scenario`}
         title={study.title}
         description={study.summary}
       />
@@ -37,29 +36,31 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
           />
         </PortfolioVisual>
       </div>
-      <section
-        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-8 py-14 sm:w-[calc(100%-5rem)] sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:gap-28"
-        aria-labelledby="brief-title"
-      >
-        <h2
-          id="brief-title"
-          className="font-display font-medium text-[clamp(36px,5vw,72px)] leading-none tracking-[-.035em]"
+      <div className="bg-sheet mt-12 sm:mt-20">
+        <section
+          className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-8 py-14 sm:w-[calc(100%-5rem)] sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:gap-28"
+          aria-labelledby="brief-title"
         >
-          The brief.
-        </h2>
-        <div>
-          <p className="max-w-[650px] text-body">
-            {study.challenge}
-          </p>
-          <ul className="mt-8 grid list-none gap-3 border-t border-rule pt-6">
-            {study.constraints.map((item) => (
-              <li key={item} className="text-support text-muted">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+          <h2
+            id="brief-title"
+            className="font-display font-medium text-[clamp(36px,5vw,72px)] leading-none tracking-[-.035em]"
+          >
+            The brief.
+          </h2>
+          <div>
+            <p className="max-w-[650px] text-body">
+              {study.challenge}
+            </p>
+            <ul className="mt-8 grid list-none gap-3 border-t border-rule pt-6">
+              {study.constraints.map((item) => (
+                <li key={item} className="text-support text-muted">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
       <section
         className="bg-mist py-16 sm:py-24"
         aria-labelledby="approach-title"
@@ -94,7 +95,6 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
         aria-labelledby="handoff-title"
       >
         <div>
-          <p className="mb-6 text-label text-muted">From thinking to handoff</p>
           <h2
             id="handoff-title"
             className="font-display font-medium text-[clamp(37px,5vw,72px)] leading-[1.04] tracking-[-.04em]"
@@ -121,17 +121,19 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
           <WorkDocument variant={study.sample} />
         </div>
       </section>
-      <section
-        className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-8 border-t border-rule py-12 sm:w-[calc(100%-5rem)] sm:py-16 lg:grid-cols-[.8fr_1.2fr] lg:gap-28"
-        aria-labelledby="outcome-title"
-      >
-        <h2 id="outcome-title" className="font-display font-medium text-[30px] tracking-[-.03em]">
-          What this enables.
-        </h2>
-        <p className="max-w-[620px] text-body text-muted">
-          {study.intendedResult}
-        </p>
-      </section>
+      <div className="bg-linen ">
+        <section
+          className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] gap-8 border-t border-rule py-12 sm:w-[calc(100%-5rem)] sm:py-16 lg:grid-cols-[.8fr_1.2fr] lg:gap-28"
+          aria-labelledby="outcome-title"
+        >
+          <h2 id="outcome-title" className="font-display font-medium text-[30px] tracking-[-.03em]">
+            What this enables.
+          </h2>
+          <p className="max-w-[620px] text-body text-muted">
+            {study.intendedResult}
+          </p>
+        </section>
+      </div>
       <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-24">
         <Link
           href={`/case-studies/${next.slug}`}

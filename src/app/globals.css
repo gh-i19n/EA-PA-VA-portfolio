@@ -6,6 +6,8 @@
   --color-paper: var(--background);
   --color-ink: var(--foreground);
   --color-muted: var(--muted);
+  --color-sheet: var(--surface-sheet);
+  --color-linen: var(--surface-linen);
   --color-mist: var(--surface);
   --color-mist-strong: var(--surface-strong);
   --color-rule: var(--border);
@@ -44,7 +46,9 @@
   --background: #e9e9e6;
   --foreground: #252725;
   --muted: #5d605a;
-  --surface: #dcded7;
+  --surface-sheet: #f2f1ed;
+  --surface-linen: #e9e4dc;
+  --surface: #dfe2da;
   --surface-strong: var(--surface);
   --border: #bfc2b9;
   --accent: #3040ce;

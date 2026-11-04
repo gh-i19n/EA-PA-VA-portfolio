@@ -23,3 +23,10 @@ export const siteContact = {
   linkedin: "https://www.linkedin.com/in/ajibolaayomidee",
   whatsapp: "https://wa.me/2349053600768?s=p",
 };
+
+export const introductionVideo = {
+  src: "/videos/ay-introduction.mp4",
+  poster: "/images/ay-introduction-poster.jpg",
+  captions: "/videos/ay-introduction.en.vtt",
+  duration: "1:38",
+} as const;

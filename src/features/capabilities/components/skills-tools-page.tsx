@@ -7,49 +7,50 @@ export function SkillsToolsPage() {
   return (
     <>
       <EditorialPageIntro
-        label="Skills & tools"
         title={"Skills &\nsystems."}
         description="Judgment makes the work effective. Familiar systems make it dependable. My approach connects both to the way you already work."
       />
-      <section
-        className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-28"
-        aria-labelledby="skills-title"
-      >
-        <h2 id="skills-title" className="font-medium mb-8 text-label text-muted">
-          The human skills
-        </h2>
-        {skillGroups.map((group) => (
-          <article
-            key={group.id}
-            className="grid gap-5 border-t border-rule py-8 md:grid-cols-[1.1fr_1fr] md:gap-24 md:py-10"
-            aria-labelledby={`skill-${group.id}`}
-          >
-            <PointerImageTrail
-              images={group.images}
-              className="w-fit max-w-full self-start"
+      <div className="bg-sheet pt-12 sm:pt-20">
+        <section
+          className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-28"
+          aria-labelledby="skills-title"
+        >
+          <h2 id="skills-title" className="font-medium mb-8 text-label text-muted">
+            The human skills
+          </h2>
+          {skillGroups.map((group) => (
+            <article
+              key={group.id}
+              className="grid gap-5 border-t border-rule py-8 md:grid-cols-[1.1fr_1fr] md:gap-24 md:py-10"
+              aria-labelledby={`skill-${group.id}`}
             >
-              <h3
-                id={`skill-${group.id}`}
-                className="font-display font-medium text-[clamp(31px,4.9vw,70px)] leading-[1.05] tracking-[-.035em]"
+              <PointerImageTrail
+                images={group.images}
+                className="w-fit max-w-full self-start"
               >
-                {group.title}
-              </h3>
-            </PointerImageTrail>
-            <div>
-              <p className="max-w-[460px] text-pretty text-body text-muted">
-                {group.description}
-              </p>
-              <ul className="mt-6 flex list-none flex-wrap gap-x-6 gap-y-3">
-                {group.keywords.map((word) => (
-                  <li className="text-label" key={word}>
-                    {word}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </article>
-        ))}
-      </section>
+                <h3
+                  id={`skill-${group.id}`}
+                  className="font-display font-medium text-[clamp(31px,4.9vw,70px)] leading-[1.05] tracking-[-.035em]"
+                >
+                  {group.title}
+                </h3>
+              </PointerImageTrail>
+              <div>
+                <p className="max-w-[460px] text-pretty text-body text-muted">
+                  {group.description}
+                </p>
+                <ul className="mt-6 flex list-none flex-wrap gap-x-6 gap-y-3">
+                  {group.keywords.map((word) => (
+                    <li className="text-label" key={word}>
+                      {word}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </section>
+      </div>
       <section className="bg-mist py-16 sm:py-24" aria-labelledby="tools-title">
         <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
           <div className="mb-14 grid gap-7 lg:grid-cols-[1.1fr_1fr] lg:gap-24">

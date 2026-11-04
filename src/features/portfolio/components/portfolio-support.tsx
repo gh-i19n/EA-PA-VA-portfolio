@@ -1,18 +1,21 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { PortfolioLink } from "~/components/ui/portfolio-link";
 import { portfolioSupport } from "../config/support";
 
 export function PortfolioSupport() {
   return (
     <section
-      className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-28"
+      className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] py-16 sm:w-[calc(100%-5rem)] sm:py-24"
       aria-labelledby="support-title"
     >
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-x-6 gap-y-3 border-b border-rule pb-5">
-        <h2 id="support-title" className="font-medium text-label text-muted">
-          The responsibility I can carry
-        </h2>
-        <span className="text-caption text-muted">Explore services</span>
+      <div className="mb-6 flex flex-col justify-between gap-6 border-b border-rule pb-8 lg:flex-row lg:items-end">
+        <div>
+          <h2 id="support-title" className="max-w-[800px] font-display text-[clamp(36px,5.5vw,78px)] font-medium leading-[1.05] tracking-[-.04em]">
+            What I can take<br />off your plate.
+          </h2>
+        </div>
+        <PortfolioLink href="/services" quiet>Explore all services</PortfolioLink>
       </div>
       {portfolioSupport.map((item) => (
         <Link

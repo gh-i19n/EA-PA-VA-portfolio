@@ -111,15 +111,10 @@ export function SiteNavigation() {
       <Link
         href="/"
         aria-label="AY, executive assistant. Home"
-        className="flex shrink-0 items-center gap-4"
+        className="flex shrink-0 items-center"
       >
-        <span className="font-display text-[38px] font-bold leading-none tracking-[-.055em]">
+        <span className="font-display text-[38px] font-black leading-none tracking-[-.055em]">
           AY
-        </span>
-        <span className="text-caption text-muted">
-          Executive
-          <br />
-          Assistant
         </span>
       </Link>
       <nav
