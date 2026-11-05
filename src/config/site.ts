@@ -25,8 +25,8 @@ export const siteContact = {
 };
 
 export const introductionVideo = {
-  src: "/videos/ay-introduction.mp4",
+  src: "/videos/ay-meet-ay-3x4.mp4",
   poster: "/images/ay-introduction-poster.jpg",
-  captions: "/videos/ay-introduction.en.vtt",
-  duration: "1:38",
+  captions: "/videos/ay-meet-ay-3x4.en.vtt",
+  duration: "1:50",
 } as const;

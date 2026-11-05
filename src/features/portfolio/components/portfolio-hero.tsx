@@ -35,7 +35,6 @@ export function PortfolioHero() {
           <div className="absolute left-5 right-20 top-6 z-10 text-left sm:left-auto sm:right-10 sm:top-10 sm:w-[min(46%,440px)] sm:text-right lg:right-14">
             <p className="font-display text-[clamp(26px,2.4vw,38px)] font-medium leading-[1.15] tracking-[-.035em]">
               I&apos;m Ayomide Ajibola.
-              <span className="mt-1 block text-white/75">Call me AY.</span>
             </p>
             <p className="mt-4 max-w-[360px] text-support text-white/85 sm:ml-auto">
               I help founders and senior leaders stay focused, prepared and a

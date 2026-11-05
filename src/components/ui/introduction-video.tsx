@@ -98,8 +98,8 @@ export function IntroductionVideo({
           ref={video}
           src={src}
           poster={poster}
-          width={576}
-          height={1024}
+          width={720}
+          height={960}
           controls
           playsInline
           preload="none"
@@ -107,7 +107,7 @@ export function IntroductionVideo({
           onError={() => setFailed(true)}
           className="mx-auto block max-h-[76dvh] w-auto max-w-full rounded-document bg-black"
         >
-          <track src={captions} kind="captions" srcLang="en" label="English (auto-generated)" />
+          <track src={captions} kind="captions" srcLang="en" label="English" />
           Your browser cannot play this video. <a href={src}>Open AY’s introduction video</a>.
         </video>
         {failed && (

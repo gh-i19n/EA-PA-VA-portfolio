@@ -10,7 +10,7 @@ export function PortfolioIntroduction() {
       className="bg-sheet py-14 sm:py-20"
       aria-labelledby="introduction-title"
     >
-      <div className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] items-center gap-9 sm:w-[calc(100%-5rem)] md:grid-cols-[minmax(0,.7fr)_minmax(0,1.3fr)] md:gap-12 lg:gap-16 xl:grid-cols-[420px_minmax(0,1fr)]">
+      <div className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] items-center gap-9 sm:w-[calc(100%-5rem)] md:grid-cols-[minmax(0,.7fr)_minmax(0,1.3fr)] md:gap-12 lg:gap-16 xl:grid-cols-[420px_minmax(0,560px)] xl:justify-center">
         <PortfolioVisual className="relative aspect-[1.12] w-full max-w-[420px] bg-mist">
           <Image
             src={siteImages.introductionPortrait}
@@ -20,7 +20,7 @@ export function PortfolioIntroduction() {
             className="object-cover object-center"
           />
         </PortfolioVisual>
-        <div className="min-w-0 xl:grid xl:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] xl:items-center xl:gap-8">
+        <div className="min-w-0 xl:flex xl:flex-col xl:items-start xl:gap-8">
           <h2
             id="introduction-title"
             className="font-display text-[clamp(34px,4.2vw,60px)] font-medium leading-[1.12] tracking-[-.035em] xl:text-[clamp(42px,3.4vw,60px)]"
@@ -37,7 +37,7 @@ export function PortfolioIntroduction() {
               leaders. I bring judgment, discretion and follow-through to complex
               calendars, decision-ready meetings and the work around your work.
             </p>
-            <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 xl:flex-col xl:items-start xl:gap-y-2">
+            <div className="mt-6 flex flex-row flex-wrap items-center justify-start gap-x-8 gap-y-3">
               <PortfolioLink href="/about" quiet>Get to know AY</PortfolioLink>
               <PortfolioLink href="/contact" quiet>Discuss your support</PortfolioLink>
             </div>

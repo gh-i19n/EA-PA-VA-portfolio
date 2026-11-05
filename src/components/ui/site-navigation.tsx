@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { motion } from "~/config/motion";
 import { primaryNavigation, siteImages, siteNavigation } from "~/config/site";
+import { BrandMark } from "./brand-mark";
 
 gsap.registerPlugin(useGSAP);
 
@@ -110,12 +111,10 @@ export function SiteNavigation() {
     >
       <Link
         href="/"
-        aria-label="AY, executive assistant. Home"
-        className="flex shrink-0 items-center"
+        aria-label="Ayomide Ajibola. Home"
+        className="flex min-h-11 shrink-0 items-center"
       >
-        <span className="font-display text-[38px] font-black leading-none tracking-[-.055em]">
-          AY
-        </span>
+        <BrandMark className="h-9 w-[81px]" />
       </Link>
       <nav
         aria-label="Main navigation"
@@ -173,10 +172,11 @@ export function SiteNavigation() {
           <div className="flex min-h-[88px] items-center justify-between sm:min-h-[100px]">
             <Link
               onClick={finishClose}
-              className="font-display text-[38px] font-bold tracking-[-.055em]"
+              className="flex min-h-11 items-center"
               href="/"
+              aria-label="Ayomide Ajibola. Home"
             >
-              AY
+              <BrandMark className="h-9 w-[81px]" />
             </Link>
             <button
               type="button"
