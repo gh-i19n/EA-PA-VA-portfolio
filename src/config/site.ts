@@ -12,7 +12,6 @@ export const primaryNavigation = siteNavigation.filter(
 );
 
 export const siteImages = {
-  heroPortrait: "/images/folio/ay-smiling-portrait.jpeg",
   introductionPortrait: "/images/ay-at-work.png",
   aboutPortrait: "/images/ay-a.png",
 } as const;

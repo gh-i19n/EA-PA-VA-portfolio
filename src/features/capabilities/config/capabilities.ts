@@ -1,26 +1,31 @@
 export const skillGroups = [
   {
     id: "executive-organisation",
-    title: "Executive organisation",
+    title: "Executive Support",
     description:
       "Balancing access, priorities and preparation in a complex working day.",
-    keywords: ["Calendar strategy", "Inbox judgment", "Priority management"],
+    keywords: [
+      "Administrative Support",
+      "Calendar Management",
+      "Email Management",
+      "Scheduling",
+    ],
     images: ["/images/work/calendar-availability.png", "/images/work/meeting-agenda.png"],
   },
   {
     id: "communication",
-    title: "Communication",
+    title: "Communications",
     description:
       "Giving each person the information they need, in the right tone and at the right time.",
-    keywords: ["Executive correspondence", "Stakeholder liaison", "Discretion"],
+    keywords: ["Email Communication", "Meeting Agendas"],
     images: ["/images/work/speaker-outreach.png", "/images/work/event-communication.png"],
   },
   {
     id: "coordination",
-    title: "Coordination",
+    title: "Task Coordination",
     description:
       "Connecting owners, dependencies and deadlines so commitments move forward.",
-    keywords: ["Action tracking", "Travel logistics", "Project coordination"],
+    keywords: ["Project Management", "Travel Planning"],
     images: ["/images/work/trello-workflow.jpg", "/images/work/travel-itinerary.png"],
   },
   {
@@ -28,7 +33,7 @@ export const skillGroups = [
     title: "Information",
     description:
       "Turning scattered information into a concise, useful reference for a decision.",
-    keywords: ["Research", "Briefing documents", "Process documentation"],
+    keywords: ["File Management", "Research"],
     images: ["/images/work/research-writing.png", "/images/work/excel-reporting.jpg"],
   },
 ] as const;

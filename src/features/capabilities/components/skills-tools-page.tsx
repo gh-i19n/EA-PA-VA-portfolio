@@ -1,23 +1,18 @@
-import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
 import { PointerImageTrail } from "~/components/ui/pointer-image-trail";
 import { skillGroups, toolGroups } from "../config/capabilities";
 import { ToolBrand } from "./tool-brand";
+import { SkillsToolsHero } from "./skills-tools-hero";
 
 export function SkillsToolsPage() {
   return (
     <>
-      <EditorialPageIntro
-        title={"Skills &\nsystems."}
-        description="Judgment makes the work effective. Familiar systems make it dependable. My approach connects both to the way you already work."
-      />
+      <SkillsToolsHero />
       <div className="bg-sheet pt-12 sm:pt-20">
         <section
+          id="skills-title"
           className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-28"
-          aria-labelledby="skills-title"
+          aria-label="Skills"
         >
-          <h2 id="skills-title" className="font-medium mb-8 text-label text-muted">
-            The human skills
-          </h2>
           {skillGroups.map((group) => (
             <article
               key={group.id}
