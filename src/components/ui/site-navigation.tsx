@@ -8,7 +8,10 @@ import { ArrowUpRight, Plus } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { motion } from "~/config/motion";
-import { primaryNavigation, siteImages, siteNavigation } from "~/config/site";
+import {
+  primaryNavigation,
+  siteImages,
+} from "~/config/site";
 import { BrandMark } from "./brand-mark";
 
 gsap.registerPlugin(useGSAP);
@@ -19,18 +22,33 @@ const covers = [
     description: "The person behind the preparation",
     href: "/about",
     image: siteImages.aboutPortrait,
+    imagePosition: "50% 10%",
   },
   {
-    title: "Services",
-    description: "The responsibility I can carry",
+    title: "Services & tools",
+    description: "The support I offer and the tools behind it",
     href: "/services",
     image: "/images/ay-editorial-desk.png",
   },
   {
-    title: "Selected work",
+    title: "Project",
     description: "A closer look at the thinking",
     href: "/case-studies",
     image: "/images/folio/meeting-room.jpg",
+  },
+  {
+    title: "Trust & credentials",
+    description: "Experience, standards and credentials",
+    href: "/credentials",
+    image: "/images/credentials/ay-cv-preview.png",
+    imageFit: "contain",
+  },
+  {
+    title: "Contact",
+    description: "Start a conversation with AY",
+    href: "/contact",
+    image: "/images/work/calendar-availability.png",
+    imagePosition: "50% 50%",
   },
 ] as const;
 
@@ -196,7 +214,7 @@ export function SiteNavigation() {
           </div>
           <nav
             aria-label="Portfolio page index"
-            className="grid gap-5 md:grid-cols-3 md:gap-6 lg:gap-10"
+            className="grid items-stretch gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3 xl:gap-6"
           >
             {covers.map((cover) => (
               <Link
@@ -205,16 +223,22 @@ export function SiteNavigation() {
                 href={cover.href}
                 onClick={finishClose}
                 aria-current={active(cover.href) ? "page" : undefined}
-                className="group flex min-h-[230px] flex-col rounded-[calc(var(--radius-inset)+1.25rem)] bg-paper p-5 text-ink md:min-h-[min(65dvh,650px)] md:rounded-[calc(var(--radius-inset)+1.5rem)] md:p-6"
+                className="group flex min-h-[360px] flex-col rounded-[calc(var(--radius-inset)+1.25rem)] bg-paper p-5 text-ink md:min-h-[min(48dvh,440px)] md:rounded-[calc(var(--radius-inset)+1.5rem)] md:p-6"
               >
                 <span className="flex items-center justify-between text-caption text-muted">
                   AY / Portfolio
                   <ArrowUpRight size={15} aria-hidden="true" />
                 </span>
-                <span className="mb-8 mt-6 font-display text-[clamp(35px,3.6vw,58px)] font-medium leading-[1.05] tracking-[-.04em]">
+                <span className="mb-6 mt-5 font-display text-[clamp(30px,3vw,48px)] font-medium leading-[1.05] tracking-[-.04em]">
                   {cover.title}
                 </span>
-                <div className="relative mt-auto aspect-[1.8] overflow-hidden rounded-inset md:aspect-[1.2]">
+                <div
+                  className={`relative mt-auto aspect-[1.8] overflow-hidden rounded-inset ${
+                    "imageFit" in cover && cover.imageFit === "contain"
+                      ? "bg-mist"
+                      : ""
+                  }`}
+                >
                   {open && (
                     <Image
                       src={cover.image}
@@ -222,34 +246,23 @@ export function SiteNavigation() {
                       fill
                       loading="eager"
                       sizes="(max-width: 768px) 90vw, 30vw"
-                      className="object-cover saturate-[.5] transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105 motion-reduce:transition-none"
+                      style={{
+                        objectPosition:
+                          "imagePosition" in cover
+                            ? cover.imagePosition
+                            : "center",
+                      }}
+                      className={`transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] motion-reduce:transition-none ${
+                        "imageFit" in cover && cover.imageFit === "contain"
+                          ? "object-contain p-4"
+                          : "object-cover saturate-[.5] group-hover:scale-105"
+                      }`}
                     />
                   )}
                 </div>
                 <span className="mt-4 text-caption text-muted">
                   {cover.description}
                 </span>
-              </Link>
-            ))}
-          </nav>
-          <nav
-            aria-label="More portfolio pages"
-            className="mt-8 flex flex-wrap gap-x-10 gap-y-2 border-t border-paper/20 pt-5 sm:mt-10"
-          >
-            {[
-              siteNavigation[0],
-              siteNavigation[4],
-              siteNavigation[5],
-              { href: "/contact", label: "Contact" },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={finishClose}
-                className="py-3 text-support underline-offset-4 hover:underline"
-                aria-current={active(item.href) ? "page" : undefined}
-              >
-                {item.label}
               </Link>
             ))}
           </nav>

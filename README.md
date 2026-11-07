@@ -11,6 +11,20 @@ pnpm install
 pnpm dev
 ```
 
+## Contact email delivery
+
+The contact form sends requests through Resend from the server. Set these in
+`.env.local` for local development and in the deployment environment for the
+hosted site:
+
+```dotenv
+RESEND_API_KEY=re_your_resend_api_key
+RESEND_FROM_EMAIL="Ayomide Ajibola <contact@your-verified-domain.com>"
+```
+
+The sender address must use a domain verified in Resend. Keep the API key out of
+source control and browser code.
+
 Useful checks:
 
 ```bash

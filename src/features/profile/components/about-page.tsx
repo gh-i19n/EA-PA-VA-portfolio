@@ -2,6 +2,7 @@ import { IntroductionVideo } from "~/components/ui/introduction-video";
 import { PortfolioLink } from "~/components/ui/portfolio-link";
 import { introductionVideo } from "~/config/site";
 import { AboutHero } from "./about-hero";
+import { AboutQualities } from "./about-qualities";
 
 const principles = [
   {
@@ -60,6 +61,7 @@ export function AboutPage() {
           </div>
         </section>
       </div>
+      <AboutQualities />
       <section
         className="bg-mist py-16 sm:py-24"
         aria-labelledby="principles-title"
