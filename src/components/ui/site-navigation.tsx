@@ -25,22 +25,16 @@ const covers = [
     imagePosition: "50% 10%",
   },
   {
-    title: "Services",
-    description: "The responsibility I can carry",
+    title: "Services & tools",
+    description: "The support I offer and the tools behind it",
     href: "/services",
     image: "/images/ay-editorial-desk.png",
   },
   {
-    title: "Selected work",
+    title: "Project",
     description: "A closer look at the thinking",
     href: "/case-studies",
     image: "/images/folio/meeting-room.jpg",
-  },
-  {
-    title: "Skills & tools",
-    description: "The methods and systems behind the support",
-    href: "/skills-and-tools",
-    image: "/images/work/trello-workflow.jpg",
   },
   {
     title: "Trust & credentials",

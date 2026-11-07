@@ -1,0 +1,29 @@
+.logo {
+  transform: translateY(0);
+}
+
+.control {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: gentle-drift 12s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+    animation-delay: var(--drift-delay);
+    animation-play-state: paused;
+  }
+
+  .visual[data-in-view="true"][data-paused="false"] .logo {
+    animation-play-state: running;
+  }
+}
+
+@keyframes gentle-drift {
+  0%,
+  100% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}

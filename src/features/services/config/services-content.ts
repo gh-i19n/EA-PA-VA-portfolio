@@ -1,42 +1,62 @@
 export const serviceAreas = [
   {
     id: "executive-time",
-    title: "Time & communication",
+    title: "Executive Support",
     introduction: "A working day shaped around your priorities.",
     description:
-      "I manage the flow of requests around you: assessing urgency, resolving calendar conflicts and making sure the right conversations receive your attention.",
+      "I organise your calendar, manage incoming email and handle everyday administration. Appointments, requests and follow-ups stay connected, so you can focus on the work that needs you.",
     capabilities: [
-      "Complex calendars & time zones",
-      "Inbox triage & correspondence",
-      "Focus time & preparation buffers",
-      "Stakeholder coordination",
+      "Calendar Management",
+      "Scheduling",
+      "Email Management",
+      "Email Communication",
+      "Administrative Support",
     ],
+    sample: {
+      image: "/images/work/calendar-availability.png",
+      alt: "AY’s calendar scheduling sample showing recurring appointment availability",
+      label: "Calendar scheduling",
+      href: "/case-studies/the-executive-week",
+    },
   },
   {
     id: "decision-support",
-    title: "Meeting & decision support",
+    title: "Meetings & research",
     introduction: "Arrive with the context. Leave with a next step.",
     description:
       "From leadership reviews to important partner conversations, I bring the agenda, background and outstanding decisions together, then keep the follow-up visible.",
     capabilities: [
-      "Agendas & executive briefs",
-      "Research & background notes",
-      "Meeting logistics & materials",
-      "Decisions, actions & follow-up",
+      "Meeting Agendas",
+      "Research",
+      "Documentation & Report Writing",
+      "Presentations",
     ],
+    sample: {
+      image: "/images/work/meeting-agenda.png",
+      alt: "AY’s team-alignment meeting agenda with opening remarks, updates and reporting roles",
+      label: "Meeting preparation",
+      href: "/case-studies/the-executive-week",
+    },
   },
   {
     id: "operations",
-    title: "Operations & follow-through",
+    title: "Projects & coordination",
     introduction: "A dependable point of coordination.",
     description:
       "I connect people, information and deadlines across the work you delegate. Dependencies are tracked, owners stay informed and issues reach you with context and options.",
     capabilities: [
-      "Project & deadline coordination",
-      "Processes & documentation",
-      "Supplier & team liaison",
-      "Progress reporting & escalation",
+      "Project Management",
+      "Task Coordination",
+      "File Management",
+      "Communications",
+      "Progress Reporting",
     ],
+    sample: {
+      image: "/images/work/trello-workflow.jpg",
+      alt: "AY’s Trello workflow with task stages, owners, due dates and checklists",
+      label: "Task coordination",
+      href: "/case-studies/closing-the-loop",
+    },
   },
   {
     id: "personal-logistics",
@@ -45,11 +65,17 @@ export const serviceAreas = [
     description:
       "Business commitments and personal arrangements often share a calendar. I coordinate the details around both, with clear preferences, agreed authority and discretion.",
     capabilities: [
-      "Business travel & itineraries",
-      "Reservations & appointments",
-      "Event & offsite logistics",
-      "Personal administration",
+      "Travel Planning",
+      "Itineraries & Reservations",
+      "Appointments & Personal Administration",
+      "Event & Offsite Logistics",
     ],
+    sample: {
+      image: "/images/work/travel-itinerary.png",
+      alt: "AY’s Lagos–Abuja itinerary with travel times, accommodation and meeting arrangements",
+      label: "Travel planning",
+      href: "/case-studies/every-journey-considered",
+    },
   },
 ] as const;
 

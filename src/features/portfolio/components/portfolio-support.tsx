@@ -15,7 +15,7 @@ export function PortfolioSupport() {
             What I can take<br />off your plate.
           </h2>
         </div>
-        <PortfolioLink href="/services" quiet>Explore all services</PortfolioLink>
+        <PortfolioLink href="/services" quiet>Explore services & tools</PortfolioLink>
       </div>
       {portfolioSupport.map((item) => (
         <Link

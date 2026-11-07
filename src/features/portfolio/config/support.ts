@@ -1,6 +1,6 @@
 export const portfolioSupport = [
   {
-    title: "Executive organisation",
+    title: "Executive Support",
     detail: "Calendars, inbox & priorities",
     href: "/services#executive-time",
   },

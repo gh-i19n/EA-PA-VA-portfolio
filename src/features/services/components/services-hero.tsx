@@ -1,27 +1,28 @@
-import Image from "next/image";
 import { ArrowDown } from "lucide-react";
+import { PortfolioContours } from "~/components/ui/portfolio-contours";
 import { PortfolioPageTitle } from "~/components/ui/portfolio-page-title";
-import { PortfolioVisual } from "~/components/ui/portfolio-visual";
+import { ServicesToolVisual } from "./services-tool-visual";
 
-export function SkillsToolsHero() {
+export function ServicesHero() {
   return (
-    <header className="mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] items-center gap-10 pb-12 pt-8 sm:w-[calc(100%-5rem)] sm:py-12 md:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-16 xl:gap-24">
-      <div className="min-w-0">
-        <PortfolioPageTitle title={"Skills &\ntools."} />
+    <header className="relative isolate mx-auto grid w-[calc(100%-2.5rem)] max-w-[1440px] items-center gap-10 overflow-hidden pb-14 pt-8 sm:w-[calc(100%-5rem)] sm:py-14 md:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-16 xl:gap-24">
+      <PortfolioContours appearance="services" />
+      <div className="relative z-10 min-w-0 [&_h1]:text-[clamp(52px,8.5vw,124px)]">
+        <PortfolioPageTitle title={"Services &\ntools."} />
         <p className="mt-7 max-w-[460px] text-pretty text-body text-muted sm:mt-9">
-          I keep calendars, communication and day-to-day tasks organised,
-          bringing structure to your work with practical skills and familiar
-          tools.
+          I manage the calendars, communication and coordination around your
+          work, giving your priorities the attention they need. Here is what you
+          can put in my hands, and the tools I use to keep it moving.
         </p>
         <nav
-          aria-label="Explore skills and tools"
+          aria-label="Explore services and tools"
           className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 sm:mt-9"
         >
           <a
             href="#skills-title"
             className="group inline-flex min-h-11 items-center gap-4 border-b border-rule py-2 text-label"
           >
-            Explore my skills
+            Explore services
             <ArrowDown
               size={15}
               strokeWidth={1.4}
@@ -43,19 +44,7 @@ export function SkillsToolsHero() {
           </a>
         </nav>
       </div>
-      <PortfolioVisual
-        reveal="arrival"
-        className="relative aspect-[1.2] w-full bg-mist md:aspect-[.85] lg:aspect-[1.2]"
-      >
-        <Image
-          src="/images/ay-editorial-desk.png"
-          alt="An open notebook and pen on a carefully arranged desk"
-          fill
-          loading="eager"
-          sizes="(min-width: 1520px) 690px, (min-width: 768px) 48vw, 95vw"
-          className="object-cover object-[center_65%]"
-        />
-      </PortfolioVisual>
+      <ServicesToolVisual />
     </header>
   );
 }
