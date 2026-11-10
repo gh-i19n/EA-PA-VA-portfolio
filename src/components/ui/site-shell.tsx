@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { siteNavigation, siteContact } from "~/config/site";
+import { footerNavigation, siteContact } from "~/config/site";
 import { SiteNavigation } from "./site-navigation";
 import { PortfolioContours } from "./portfolio-contours";
 import { ContactChannels } from "./contact-channels";
@@ -36,21 +36,14 @@ export function SiteShell({ children }: { children: ReactNode }) {
       <footer className="relative isolate overflow-hidden rounded-t-feature bg-ink text-paper">
         <PortfolioContours appearance="footer" />
         <div className="relative mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-6 pt-14 sm:w-[calc(100%-5rem)] sm:pt-20">
-          <div className="flex flex-col justify-between gap-6 text-label sm:flex-row">
-            <p className="max-w-[310px] text-paper/75">
-              Executive assistance, with the foresight
-              <br />
-              to keep you a step ahead.
-            </p>
-            <div className="flex flex-col items-start gap-2 sm:items-end">
-              <a
-                href={siteContact.mailto}
-                className="w-fit py-2 text-support underline-offset-4 hover:underline"
-              >
-                {siteContact.email}
-              </a>
-              <ContactChannels appearance="dark" label="Contact AY" />
-            </div>
+          <div className="flex flex-col items-start gap-2 text-label sm:items-end">
+            <a
+              href={siteContact.mailto}
+              className="w-fit py-2 text-support underline-offset-4 hover:underline"
+            >
+              {siteContact.email}
+            </a>
+            <ContactChannels appearance="dark" label="Contact AY" />
           </div>
           <Link
             href="/contact"
@@ -71,7 +64,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             aria-label="Footer navigation"
             className="flex flex-wrap gap-x-7 gap-y-1 border-t border-paper/20 pt-6 sm:gap-x-10"
           >
-            {siteNavigation.map((item) => (
+            {footerNavigation.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -81,9 +74,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <div className="mt-7 text-caption text-paper/70">
-            <span>AY / Executive assistant</span>
-          </div>
         </div>
       </footer>
     </div>

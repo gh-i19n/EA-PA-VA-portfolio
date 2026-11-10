@@ -2,32 +2,25 @@ import Image from "next/image";
 
 type ToolBrandProps = {
   name: string;
-  logo: {
-    src: string;
-    width: number;
-    height: number;
-    displayWidth: number;
-    kind: "wordmark" | "symbol";
-  };
+  symbolSrc: string;
 };
 
-export function ToolBrand({ name, logo }: ToolBrandProps) {
+export function ToolBrand({ name, symbolSrc }: ToolBrandProps) {
   return (
-    <div className="flex min-h-16 items-center gap-4">
-      <Image
-        src={logo.src}
-        alt={logo.kind === "wordmark" ? name : ""}
-        width={logo.width}
-        height={logo.height}
-        sizes={`${logo.displayWidth}px`}
-        style={{ width: logo.displayWidth }}
-        className="h-auto max-w-full object-contain object-left"
-      />
-      {logo.kind === "symbol" && (
-        <span className="font-display text-[clamp(26px,3.2vw,38px)] font-medium leading-[1.1] tracking-[-.03em]">
-          {name}
-        </span>
-      )}
+    <div className="flex min-w-0 flex-col items-center gap-2">
+      <div className="grid size-16 place-items-center" aria-hidden="true">
+        <Image
+          src={symbolSrc}
+          alt=""
+          width={64}
+          height={64}
+          unoptimized
+          className="size-12 object-contain"
+        />
+      </div>
+      <span className="whitespace-nowrap text-center text-[13px] font-medium leading-[1.35] sm:text-sm">
+        {name}
+      </span>
     </div>
   );
 }

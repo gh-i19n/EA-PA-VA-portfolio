@@ -37,8 +37,8 @@ export function PortfolioHero() {
               I&apos;m Ayomide Ajibola.
             </p>
             <p className="mt-4 max-w-[360px] text-support text-white/85 sm:ml-auto">
-              I help founders and senior leaders stay focused, prepared and a
-              step ahead.
+              I work behind the scenes, helping CEOs, executives, and founders
+              stay organised, focused, and ahead of their priorities.
             </p>
           </div>
           <HeroRoleTitle id="hero-title" />
