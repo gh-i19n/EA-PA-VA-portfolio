@@ -48,13 +48,16 @@ export function IntroductionVideo({
   captions,
   duration,
   className,
+  appearance = "default",
 }: {
   src: string;
   poster: string;
   captions: string;
   duration: string;
   className?: string;
+  appearance?: "default" | "editorial";
 }) {
+  const isEditorial = appearance === "editorial";
   const titleId = useId();
   const dialog = useRef<HTMLDialogElement>(null);
   const video = useRef<HTMLVideoElement>(null);
@@ -121,20 +124,43 @@ export function IntroductionVideo({
         onClick={play}
         aria-label={`Watch AY’s introduction (${duration})`}
         aria-haspopup="dialog"
-        className="group relative block aspect-[1.12] w-full overflow-hidden rounded-frame bg-ink text-left text-white"
+        className={cn(
+          "group relative block w-full overflow-hidden bg-ink text-left text-white",
+          isEditorial
+            ? "aspect-[16/10] rounded-frame sm:aspect-[2/1]"
+            : "aspect-[1.12] rounded-frame",
+        )}
       >
         <Image
           src={poster}
           alt="AY introducing herself on camera"
           fill
-          sizes="(max-width:768px) 90vw, (max-width:1024px) 45vw, 550px"
-          className="object-cover object-[center_40%] transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none"
+          sizes={
+            isEditorial
+              ? "(max-width:1040px) 90vw, 780px"
+              : "(max-width:768px) 90vw, (max-width:1024px) 45vw, 550px"
+          }
+          className={cn(
+            "object-cover transition-transform duration-700 group-hover:scale-105 motion-reduce:transition-none",
+            isEditorial ? "object-[center_42%]" : "object-[center_40%]",
+          )}
         />
         <span className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" aria-hidden="true" />
         <span className="absolute inset-x-5 bottom-5 flex items-center justify-between gap-4 sm:inset-x-6 sm:bottom-6">
           <span>
-            <span className="block font-display text-[28px] font-medium leading-tight tracking-[-.03em]">Meet AY</span>
-            <span className="mt-1 block text-label text-white/85">A personal introduction · {duration}</span>
+            <span
+              className={cn(
+                "block text-[28px] font-medium leading-tight tracking-[-.03em]",
+                !isEditorial && "font-display",
+              )}
+            >
+              {isEditorial ? `Meet AY · ${duration}` : "Meet AY"}
+            </span>
+            {!isEditorial && (
+              <span className="mt-1 block text-label text-white/85">
+                A personal introduction · {duration}
+              </span>
+            )}
           </span>
           <span className="grid size-14 shrink-0 place-items-center rounded-full border border-white/60 bg-white/10 backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-ink motion-reduce:transition-none">
             <Play size={21} fill="currentColor" aria-hidden="true" />
