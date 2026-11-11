@@ -13,10 +13,12 @@ export function PortfolioPageTitle({
   title,
   appearance = "page",
   id,
+  lineClassNames,
 }: {
   title: string;
   appearance?: "page" | "portrait";
   id?: string;
+  lineClassNames?: readonly string[];
 }) {
   const heading = useRef<HTMLHeadingElement>(null);
   const label = title.replace(/\n/g, " ");
@@ -64,7 +66,11 @@ export function PortfolioPageTitle({
       {title.split("\n").map((line, index) => (
         <Fragment key={line}>
           {index > 0 && <br />}
-          {line}
+          {lineClassNames?.[index] ? (
+            <span className={lineClassNames[index]}>{line}</span>
+          ) : (
+            line
+          )}
         </Fragment>
       ))}
     </h1>

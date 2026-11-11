@@ -4,21 +4,6 @@ import { introductionVideo } from "~/config/site";
 import { AboutHero } from "./about-hero";
 import { AboutQualities } from "./about-qualities";
 
-const principles = [
-  {
-    title: "Judgment",
-    text: "I learn your priorities, preferences and decision-making style. That context helps me assess a request, anticipate a dependency and bring a recommendation when a choice needs your attention.",
-  },
-  {
-    title: "Discretion",
-    text: "Sensitive conversations and personal arrangements are handled with care. Access, delegated authority and approval limits are agreed at the beginning of the relationship.",
-  },
-  {
-    title: "Ownership",
-    text: "I keep track of the next step, confirm who is responsible and make progress visible. You should know where things stand without having to chase the details.",
-  },
-];
-
 export function AboutPage() {
   return (
     <>
@@ -62,29 +47,6 @@ export function AboutPage() {
         </section>
       </div>
       <AboutQualities />
-      <section
-        className="bg-mist py-16 sm:py-24"
-        aria-labelledby="principles-title"
-      >
-        <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
-          <p className="mb-10 text-label text-muted" id="principles-title">
-            How I work
-          </p>
-          {principles.map((item) => (
-            <article
-              key={item.title}
-              className="grid gap-5 border-t border-rule py-8 md:grid-cols-[1.1fr_1fr] md:gap-24 md:py-10"
-            >
-              <h2 className="font-display font-medium text-[clamp(35px,5.2vw,75px)] leading-none tracking-[-.035em]">
-                {item.title}
-              </h2>
-              <p className="max-w-[480px] text-body text-muted md:pt-1">
-                {item.text}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
     </>
   );
 }

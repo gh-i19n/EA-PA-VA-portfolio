@@ -21,7 +21,13 @@ export function AboutHero() {
           />
         </PortfolioVisual>
         <div className="relative flex min-h-[600px] flex-col justify-end px-5 pb-8 pt-16 sm:min-h-[650px] sm:px-10 sm:pb-12 lg:min-h-[min(76dvh,760px)] lg:px-14 lg:pb-14">
-          <PortfolioPageTitle id="about-title" title={"AY, at\nyour side."} />
+          <div className="max-w-[760px] sm:max-w-[58%] [&_h1]:text-[clamp(46px,7vw,104px)]">
+            <PortfolioPageTitle
+              id="about-title"
+              title={"Introducing\nAyomide Ajibola"}
+              lineClassNames={["", "text-mustard"]}
+            />
+          </div>
           <p className="mt-6 max-w-[440px] text-pretty text-body text-muted sm:mt-8">
             An experienced executive assistant. A steady point of coordination. A
             person who takes your priorities personally.

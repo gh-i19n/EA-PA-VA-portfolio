@@ -5,6 +5,42 @@ import { useEffect, useId, useRef, useState } from "react";
 import { Play, X } from "lucide-react";
 import { cn } from "~/shared/ui/utils";
 
+function waitForPicture(player: HTMLVideoElement, signal: AbortSignal) {
+  if (signal.aborted) return Promise.reject(signal.reason);
+  if (player.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    return Promise.resolve();
+  }
+
+  return new Promise<void>((resolve, reject) => {
+    function cleanup() {
+      player.removeEventListener("loadeddata", ready);
+      player.removeEventListener("canplay", ready);
+      player.removeEventListener("error", fail);
+      signal.removeEventListener("abort", cancel);
+    }
+    function ready() {
+      if (player.readyState < HTMLMediaElement.HAVE_CURRENT_DATA) return;
+      cleanup();
+      resolve();
+    }
+    function fail() {
+      cleanup();
+      reject(new Error("The video could not load."));
+    }
+    function cancel() {
+      cleanup();
+      reject(signal.reason);
+    }
+
+    player.addEventListener("loadeddata", ready);
+    player.addEventListener("canplay", ready);
+    player.addEventListener("error", fail);
+    signal.addEventListener("abort", cancel, { once: true });
+    player.preload = "auto";
+    player.load();
+  });
+}
+
 /** A lightweight preview that opens a user-controlled, portrait video player. */
 export function IntroductionVideo({
   src,
@@ -23,8 +59,14 @@ export function IntroductionVideo({
   const dialog = useRef<HTMLDialogElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+  const pendingPlay = useRef<AbortController | null>(null);
   const [failed, setFailed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isPreparing, setIsPreparing] = useState(false);
+
+  useEffect(() => () => {
+    pendingPlay.current?.abort();
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -33,16 +75,40 @@ export function IntroductionVideo({
     return () => { document.body.style.overflow = previousOverflow; };
   }, [isOpen]);
 
-  function play() {
+  async function play() {
+    const player = video.current;
+    if (!player || pendingPlay.current) return;
+
     setFailed(false);
     if (!dialog.current?.open) dialog.current?.showModal();
     setIsOpen(true);
-    // If playback is blocked, the native controls remain available.
-    void video.current?.play().catch(() => undefined);
+    setIsPreparing(true);
+    const controller = new AbortController();
+    pendingPlay.current = controller;
+
+    try {
+      await waitForPicture(player, controller.signal);
+      // Start only once the browser has decoded a video frame.
+      if (controller.signal.aborted || !dialog.current?.open) return;
+      setIsPreparing(false);
+      await player.play();
+      if (controller.signal.aborted || !dialog.current?.open) player.pause();
+    } catch {
+      // Autoplay restrictions leave native controls available for a manual start.
+      if (!controller.signal.aborted && player.error) setFailed(true);
+    } finally {
+      if (pendingPlay.current === controller) {
+        pendingPlay.current = null;
+        setIsPreparing(false);
+      }
+    }
   }
 
   function finishClose() {
+    pendingPlay.current?.abort();
+    pendingPlay.current = null;
     video.current?.pause();
+    setIsPreparing(false);
     setIsOpen(false);
     trigger.current?.focus({ preventScroll: true });
   }
@@ -100,9 +166,10 @@ export function IntroductionVideo({
           poster={poster}
           width={720}
           height={960}
-          controls
+          controls={!isPreparing}
           playsInline
-          preload="none"
+          preload="metadata"
+          aria-busy={isPreparing}
           aria-label="Ayomide Ajibola’s personal introduction"
           onError={() => setFailed(true)}
           className="mx-auto block max-h-[76dvh] w-auto max-w-full rounded-document bg-black"
@@ -110,11 +177,16 @@ export function IntroductionVideo({
           <track src={captions} kind="captions" srcLang="en" label="English" />
           Your browser cannot play this video. <a href={src}>Open AY’s introduction video</a>.
         </video>
+        {isPreparing && (
+          <p role="status" className="mt-3 text-label text-paper/75">
+            Preparing video…
+          </p>
+        )}
         {failed && (
           <p role="alert" className="mt-4 text-support">
             The video could not load. {" "}
             <a href={src} className="underline underline-offset-4">Open it directly</a> or{" "}
-            <button type="button" className="underline underline-offset-4" onClick={() => { video.current?.load(); play(); }}>try again</button>.
+            <button type="button" className="underline underline-offset-4" onClick={play}>try again</button>.
           </p>
         )}
       </dialog>
