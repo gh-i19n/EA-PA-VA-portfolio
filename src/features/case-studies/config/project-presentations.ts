@@ -1,26 +1,25 @@
-import type { WorkSampleId } from "../types/work-sample";
-
 export const projectPresentations = {
-  brief: {
-    category: "Executive Support",
-    title: "Calendar & meeting preparation",
-    contents: ["Appointment schedule", "Meeting agenda"],
+  "the-executive-week": {
+    title: "Scheduling & everyday administration",
+    contents: ["Calendar planning", "Inbox & email", "Records & data"],
     format: "landscape",
   },
-  travel: {
-    category: "Travel planning",
+  "every-journey-considered": {
     title: "Executive travel planning",
     contents: ["Itinerary", "Budget", "Travel checklist"],
     format: "document",
   },
-  handoff: {
-    category: "Project coordination",
+  "closing-the-loop": {
     title: "Task & project coordination",
-    contents: ["Trello board", "Video walkthrough"],
+    contents: ["Task boards", "Handoffs", "Live production"],
     format: "landscape",
   },
-} as const satisfies Record<WorkSampleId, {
-  category: string;
+  "documents-and-communication": {
+    title: "Documents, reporting & communication",
+    contents: ["Reports", "Agendas", "Presentations", "Research"],
+    format: "landscape",
+  },
+} as const satisfies Record<string, {
   title: string;
   contents: readonly string[];
   format: "landscape" | "document";

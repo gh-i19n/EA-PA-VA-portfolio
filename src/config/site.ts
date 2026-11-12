@@ -1,13 +1,17 @@
 export const siteNavigation = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services & tools", href: "/services" },
   { label: "Project", href: "/case-studies" },
-  { label: "Trust & credentials", href: "/credentials" },
+  { label: "Services & tools", href: "/services" },
+  { label: "Credentials", href: "/credentials" },
 ] as const;
 
 export const primaryNavigation = siteNavigation.filter(
-  (item) => item.href !== "/" && item.href !== "/credentials",
+  (item) => item.href !== "/",
+);
+
+export const footerNavigation = siteNavigation.filter(
+  (item) => item.href !== "/",
 );
 
 export const siteImages = {
@@ -23,8 +27,8 @@ export const siteContact = {
 };
 
 export const introductionVideo = {
-  src: "/videos/ay-meet-ay-3x4.mp4",
+  src: "/videos/ay-meet-ay-3x4.mp4?v=c12596b03c28",
   poster: "/images/ay-introduction-poster.jpg",
-  captions: "/videos/ay-meet-ay-3x4.en.vtt",
-  duration: "1:50",
+  captions: "/videos/ay-meet-ay-3x4.en.vtt?v=synced-20261111",
+  duration: "1:39",
 } as const;

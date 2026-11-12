@@ -1,95 +1,52 @@
+import { serviceCategories } from "~/config/service-categories";
+
 export const serviceAreas = [
   {
-    id: "executive-time",
-    title: "Executive Support",
+    ...serviceCategories.executive,
     introduction: "A working day shaped around your priorities.",
     description:
       "I organise your calendar, manage incoming email and handle everyday administration. Appointments, requests and follow-ups stay connected, so you can focus on the work that needs you.",
-    capabilities: [
-      "Calendar Management",
-      "Scheduling",
-      "Email Management",
-      "Email Communication",
-      "Administrative Support",
-    ],
     sample: {
-      image: "/images/work/calendar-availability.png",
-      alt: "AY’s calendar scheduling sample showing recurring appointment availability",
-      label: "Calendar scheduling",
+      image: "/images/services/ay-executive-support.png",
+      alt: "Ayomide Ajibola's Executive Support services: calendars and appointments, inbox management, meeting preparation, project coordination, records management and administrative follow-ups",
+      label: "Executive support",
       href: "/case-studies/the-executive-week",
     },
   },
   {
-    id: "decision-support",
-    title: "Meetings & research",
-    introduction: "Arrive with the context. Leave with a next step.",
-    description:
-      "From leadership reviews to important partner conversations, I bring the agenda, background and outstanding decisions together, then keep the follow-up visible.",
-    capabilities: [
-      "Meeting Agendas",
-      "Research",
-      "Documentation & Report Writing",
-      "Presentations",
-    ],
-    sample: {
-      image: "/images/work/meeting-agenda.png",
-      alt: "AY’s team-alignment meeting agenda with opening remarks, updates and reporting roles",
-      label: "Meeting preparation",
-      href: "/case-studies/the-executive-week",
-    },
-  },
-  {
-    id: "operations",
-    title: "Projects & coordination",
+    ...serviceCategories.operations,
     introduction: "A dependable point of coordination.",
     description:
       "I connect people, information and deadlines across the work you delegate. Dependencies are tracked, owners stay informed and issues reach you with context and options.",
-    capabilities: [
-      "Project Management",
-      "Task Coordination",
-      "File Management",
-      "Communications",
-      "Progress Reporting",
-    ],
     sample: {
-      image: "/images/work/trello-workflow.jpg",
-      alt: "AY’s Trello workflow with task stages, owners, due dates and checklists",
-      label: "Task coordination",
+      image: "/images/services/ay-project-operations.png",
+      alt: "Ayomide Ajibola's Project and Operations Management flyer: project coordination, task and deadline tracking, workflow coordination and AI-powered workflow automation",
+      label: "Project and operations management",
       href: "/case-studies/closing-the-loop",
     },
   },
   {
-    id: "personal-logistics",
-    title: "Travel & personal logistics",
-    introduction: "Considered arrangements for the whole person.",
+    ...serviceCategories.documentation,
+    introduction: "Clear documents. Considered communication.",
     description:
-      "Business commitments and personal arrangements often share a calendar. I coordinate the details around both, with clear preferences, agreed authority and discretion.",
-    capabilities: [
-      "Travel Planning",
-      "Itineraries & Reservations",
-      "Appointments & Personal Administration",
-      "Event & Offsite Logistics",
-    ],
+      "I prepare reports, meeting agendas and presentations, research and write articles, and proofread, edit and format documents so information is clear and ready to use.",
     sample: {
-      image: "/images/work/travel-itinerary.png",
-      alt: "AY’s Lagos–Abuja itinerary with travel times, accommodation and meeting arrangements",
-      label: "Travel planning",
-      href: "/case-studies/every-journey-considered",
+      image: "/images/services/ay-documentation-communication.png",
+      alt: "Ayomide Ajibola's Documentation and Communication flyer: report writing, meeting preparation, presentations, proofreading, research, article writing and PDF formatting",
+      label: "Documentation and communication",
+      href: "/case-studies/documents-and-communication",
     },
   },
-] as const;
-
-export const onboardingSteps = [
   {
-    title: "Understand the pressure points",
-    text: "We identify what is taking your attention, how you make decisions and what you would like to delegate.",
-  },
-  {
-    title: "Agree the working relationship",
-    text: "We define responsibilities, access, approval limits, communication and the decisions that stay with you.",
-  },
-  {
-    title: "Build a dependable rhythm",
-    text: "A practical handover, a clear priority list and regular check-ins give the partnership a considered start.",
+    ...serviceCategories.travel,
+    introduction: "Clear arrangements, from planning to departure.",
+    description:
+      "I coordinate travel plans, prepare itineraries and organise flight, accommodation and appointment bookings. I keep the details connected so you have a clear plan before you travel.",
+    sample: {
+      image: "/images/services/ay-travel-logistics.png",
+      alt: "Ayomide Ajibola's Travel and Logistics Management flyer: travel planning, itinerary preparation, flight and accommodation arrangements, appointments and bookings",
+      label: "Travel and logistics management",
+      href: "/case-studies/every-journey-considered",
+    },
   },
 ] as const;

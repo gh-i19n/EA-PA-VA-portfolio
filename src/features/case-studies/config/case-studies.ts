@@ -5,59 +5,60 @@ export const caseStudies = [
   {
     slug: "the-executive-week",
     title: "The executive week.",
-    category: "Executive organisation",
+    serviceCategory: "executive",
     sample: "brief",
     summary:
-      "Bookable availability and a prepared meeting agenda, brought into a clearer working rhythm.",
+      "Calendar planning, appointment bookings, inbox workflows, digital filing and spreadsheet summaries, shown through the supplied recordings.",
     image: "/images/work/calendar-availability.png",
     alt: "AY’s Google Calendar appointment schedule with recurring training availability",
     challenge:
-      "The scheduling sample sets out bookable windows for training sessions. A separate team-meeting agenda shows how opening remarks, progress updates and role-based reports are prepared before a conversation.",
+      "These samples show the administrative work around a busy schedule: coordinating calendar windows, making appointments bookable, organising shared files and setting up repeatable inbox actions. The speaker-email template and aggregate enrolment summary show supporting communication and spreadsheet work.",
     constraints: [
-      "A defined appointment duration",
-      "Availability varies across weekdays",
-      "Separate scheduling and meeting-agenda samples"
+      "Availability varies across weekdays and booking tools",
+      "Reusable email actions and shared filing structures",
+      "Aggregate spreadsheet views with individual student records excluded"
     ],
     approach: [
       {
         title: "Define the available windows",
         text:
-          "The calendar sample sets a session duration and recurring availability across the working week, giving booking requests a clear set of options."
+          "Google Calendar, Calendly and Selar show scheduled sessions and bookable appointment windows, giving requests a clear set of timing options."
       },
       {
-        title: "Prepare the conversation",
+        title: "Organise the inbox and shared files",
         text:
-          "The supplied agenda sets out the meeting time, platform, opening remarks and progress-update section, with the reporting roles identified."
+          "The Gmail filter, Outlook scheduling and Google Drive samples show how repeatable actions and a clear folder structure support everyday administration."
       },
       {
-        title: "Make the next step visible",
+        title: "Prepare reusable messages and data views",
         text:
-          "Availability and preparation sit in documents people can consult before the meeting, so timing and purpose are easier to understand."
+          "The speaker-outreach template provides a reusable starting point for email. The Excel sample summarises enrolment in a pivot table and chart."
       }
     ],
     deliverables: [
-      "Google Calendar appointment-schedule sample",
-      "Recurring availability and session duration",
-      "Team-meeting agenda prepared by AY",
-      "Progress-update and reporting sections"
+      "Google Calendar planning and weekly schedules",
+      "Calendly and Selar booking walkthroughs",
+      "Digital filing, inbox filters and scheduled email",
+      "Reusable speaker-email template",
+      "Aggregate enrolment spreadsheet summary"
     ],
     judgment:
-      "A useful calendar shows when a conversation can happen. A useful agenda explains what needs attention when people arrive.",
+      "Clear availability, organised records and repeatable email actions help keep everyday administrative work connected.",
     intendedResult:
-      "The schedule makes available meeting windows visible; the agenda gives participants a clear order for updates and discussion.",
+      "The samples bring appointments, inbox organisation, shared records and spreadsheet summaries into a clearer working rhythm.",
     artifact: {
-      href: "/images/work/meeting-agenda.png",
-      preview: "/images/work/meeting-agenda.png",
-      alt: "AY’s supplied weekly team-alignment meeting agenda",
-      label: "Open the meeting-agenda sample",
-      width: 807,
-      height: 815
+      href: "/videos/excel-reporting.mp4",
+      preview: "/images/work/excel-reporting.jpg",
+      alt: "An aggregate student-enrolment summary with a pivot table and chart",
+      label: "Open the Excel reporting sample (silent)",
+      width: 1440,
+      height: 762
     }
   },
   {
     slug: "every-journey-considered",
     title: "Every journey, considered.",
-    category: "Travel & personal logistics",
+    serviceCategory: "travel",
     sample: "travel",
     summary:
       "A Lagos–Abuja planning sample connecting the schedule, estimated budget and travel checklist.",
@@ -108,16 +109,15 @@ export const caseStudies = [
   },
   {
     slug: "closing-the-loop",
-    title: "Closing the loop.",
-    category: "Operations & follow-through",
+    title: "Keeping projects on track.",
+    serviceCategory: "operations",
     sample: "handoff",
     summary:
-      "A Trello walkthrough showing task stages, due dates and checklist-based follow-through.",
+      "Task boards, written handoffs and a live-production excerpt, grouped as project and operations work samples.",
     image: "/images/work/trello-workflow.jpg",
     alt: "AY’s supplied Trello board showing To-do, In Progress and Done lists",
-    recording: "/videos/trello-workflow.mp4",
     challenge:
-      "The supplied recording shows a team board organised into To-do, In Progress and Done. Opening individual cards reveals task descriptions, checklists, due dates and completion indicators.",
+      "The supplied Trello recording shows a team board organised into To-do, In Progress and Done. Airtable shows project stages, dates and descriptions, while a written handoff groups tasks for follow-through. The collection also includes an excerpt from a live theatre production.",
     constraints: [
       "Several team members and task stages",
       "Due dates attached to individual cards",
@@ -144,7 +144,9 @@ export const caseStudies = [
       "Trello board with distinct workflow stages",
       "Task descriptions and checklists",
       "Visible due dates and completion indicators",
-      "A silent walkthrough of the supplied board"
+      "An Airtable project-tracking walkthrough",
+      "A written action-handoff sample",
+      "A live-production project-management sample"
     ],
     judgment:
       "A board is most useful when its overview and card detail agree. Clear stages, dates and checklists make it easier to see what needs attention.",
@@ -157,6 +159,54 @@ export const caseStudies = [
       label: "Watch the Trello workflow (silent)",
       width: 1280,
       height: 724
+    }
+  },
+  {
+    slug: "documents-and-communication",
+    title: "Documents that do the work.",
+    serviceCategory: "documentation",
+    summary:
+      "Presentations, meeting documents, communication templates, research and survey summaries, shown in the supplied work samples.",
+    image: "/images/projects/presentation-design.jpg",
+    alt: "A slide from the supplied Bridge500 presentation",
+    challenge:
+      "Different pieces of work need different formats. These recordings show presentation slides, communication templates, meeting documents, research questionnaires and survey summaries, each arranged so its information can be read and used.",
+    constraints: [
+      "Several document formats and audiences",
+      "Reusable templates alongside completed work samples",
+      "Separate research documents and aggregate survey summaries"
+    ],
+    approach: [
+      {
+        title: "Give information a clear structure",
+        text: "Agendas, meeting reports and presentations group the main points into sections, making the purpose and order of the document visible."
+      },
+      {
+        title: "Prepare repeatable communication",
+        text: "The communication templates set out message content, channel choices, approval steps and timing for recurring coordination."
+      },
+      {
+        title: "Summarise the supporting detail",
+        text: "Meeting reports group discussion points and follow-up actions. The questionnaire and survey samples show research questions and aggregate response charts."
+      }
+    ],
+    deliverables: [
+      "Presentation slides and Figma speaker-profile layouts",
+      "Communication templates and channel guidance",
+      "Meeting agenda and report excerpts",
+      "Research documents, questionnaire and survey summaries"
+    ],
+    judgment:
+      "The format should suit the reader: a clear agenda before a meeting, a concise message for coordination and a useful summary when the underlying data is detailed.",
+    intendedResult:
+      "The collection brings reusable communication, meeting preparation, research and reporting into formats that readers can follow and revisit.",
+    artifact: {
+      href: "/images/work/meeting-agenda.png",
+      preview: "/images/work/meeting-agenda.png",
+      alt: "AY’s supplied weekly team-alignment meeting agenda",
+      label: "Open the meeting-agenda sample",
+      width: 807,
+      height: 815
     }
   }
 ] as const satisfies readonly CaseStudy[];

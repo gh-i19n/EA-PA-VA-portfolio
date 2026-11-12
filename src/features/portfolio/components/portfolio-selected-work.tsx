@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PortfolioVisual } from "~/components/ui/portfolio-visual";
 import { PortfolioLink } from "~/components/ui/portfolio-link";
-import { caseStudies } from "~/features/case-studies/config/case-studies";
+import travelCoordinationImage from "../../../../public/images/work/travel-coordination.png";
 
 export function PortfolioSelectedWork() {
   return (
@@ -15,7 +15,7 @@ export function PortfolioSelectedWork() {
               id="work-title"
               className="font-display font-medium text-[clamp(43px,7vw,102px)] leading-none tracking-[-.045em]"
             >
-              Behind the day.
+              Behind the scenes.
             </h2>
           </div>
           <PortfolioLink href="/case-studies" quiet>
@@ -28,31 +28,26 @@ export function PortfolioSelectedWork() {
               href="/case-studies/the-executive-week"
               className="group block"
             >
-              <PortfolioVisual className="relative aspect-[1.6] overflow-hidden bg-rule">
+              <PortfolioVisual className="relative overflow-hidden bg-rule">
                 <Image
-                  src={caseStudies[0].image}
-                  alt={caseStudies[0].alt}
-                  fill
-                  sizes="(max-width: 768px) 90vw, 52vw"
-                  className="object-cover object-center saturate-[.35] transition-transform duration-1000 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105 motion-reduce:transition-none"
+                  src="/images/work/calendar-month-view.png"
+                  alt="Google Calendar month view with scheduled meetings, sessions, and follow-ups"
+                  width={1913}
+                  height={931}
+                  unoptimized
+                  className="block h-auto w-full"
                 />
-                <span className="absolute bottom-5 right-5 grid size-11 place-items-center rounded-full bg-paper text-ink">
+              </PortfolioVisual>
+              <h3 className="mt-5 flex items-center justify-between gap-4 font-display font-medium text-[clamp(27px,2.9vw,42px)] tracking-[-.03em]">
+                <span>Calendar scheduling.</span>
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-paper text-ink">
                   <ArrowUpRight
                     size={20}
                     strokeWidth={1.2}
                     aria-hidden="true"
                   />
                 </span>
-              </PortfolioVisual>
-              <p className="mb-3 mt-5 text-caption text-muted">
-                Executive organisation / Work sample
-              </p>
-              <h3 className="font-display font-medium text-[clamp(27px,2.9vw,42px)] tracking-[-.03em]">
-                The executive week.
               </h3>
-              <p className="mt-3 max-w-[480px] text-body text-muted">
-                {caseStudies[0].summary}
-              </p>
             </Link>
           </article>
           <article className="md:mt-12">
@@ -60,31 +55,26 @@ export function PortfolioSelectedWork() {
               href="/case-studies/every-journey-considered"
               className="group block"
             >
-              <PortfolioVisual className="relative aspect-[1.45] overflow-hidden bg-rule">
+              <PortfolioVisual className="relative overflow-hidden bg-rule">
                 <Image
-                  src={caseStudies[1].image}
-                  alt={caseStudies[1].alt}
-                  fill
-                  sizes="(max-width: 768px) 90vw, 40vw"
-                  className="object-cover saturate-[.35] transition-transform duration-1000 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105 motion-reduce:transition-none"
+                  src={travelCoordinationImage}
+                  alt="Travel coordination overview showing a Lagos–Abuja itinerary and boarding pass, with a separate Abuja–Lagos flight record"
+                  width={1800}
+                  height={1200}
+                  unoptimized
+                  className="block h-auto w-full"
                 />
-                <span className="absolute bottom-5 right-5 grid size-11 place-items-center rounded-full bg-paper text-ink">
+              </PortfolioVisual>
+              <h3 className="mt-5 flex items-center justify-between gap-4 font-display font-medium text-[clamp(27px,2.9vw,42px)] tracking-[-.03em]">
+                <span>Travel Booking</span>
+                <span className="grid size-11 shrink-0 place-items-center rounded-full bg-paper text-ink">
                   <ArrowUpRight
                     size={20}
                     strokeWidth={1.2}
                     aria-hidden="true"
                   />
                 </span>
-              </PortfolioVisual>
-              <p className="mb-3 mt-5 text-caption text-muted">
-                Travel & personal logistics / Work sample
-              </p>
-              <h3 className="font-display font-medium text-[clamp(27px,2.9vw,42px)] tracking-[-.03em]">
-                Every journey, considered.
               </h3>
-              <p className="mt-3 max-w-[440px] text-body text-muted">
-                {caseStudies[1].summary}
-              </p>
             </Link>
           </article>
         </div>

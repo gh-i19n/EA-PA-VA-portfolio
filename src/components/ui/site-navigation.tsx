@@ -25,19 +25,19 @@ const covers = [
     imagePosition: "50% 10%",
   },
   {
-    title: "Services & tools",
-    description: "The support I offer and the tools behind it",
-    href: "/services",
-    image: "/images/ay-editorial-desk.png",
-  },
-  {
     title: "Project",
     description: "A closer look at the thinking",
     href: "/case-studies",
     image: "/images/folio/meeting-room.jpg",
   },
   {
-    title: "Trust & credentials",
+    title: "Services & tools",
+    description: "The support I offer and the tools behind it",
+    href: "/services",
+    image: "/images/ay-editorial-desk.png",
+  },
+  {
+    title: "Credentials",
     description: "Experience, standards and credentials",
     href: "/credentials",
     image: "/images/credentials/ay-cv-preview.png",

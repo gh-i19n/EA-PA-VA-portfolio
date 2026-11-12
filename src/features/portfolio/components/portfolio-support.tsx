@@ -1,42 +1,39 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { PortfolioLink } from "~/components/ui/portfolio-link";
-import { portfolioSupport } from "../config/support";
 
 export function PortfolioSupport() {
   return (
     <section
-      className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] py-16 sm:w-[calc(100%-5rem)] sm:py-24"
+      hidden
+      className="bg-sheet px-5 py-20 sm:px-10 sm:py-28"
       aria-labelledby="support-title"
     >
-      <div className="mb-6 flex flex-col justify-between gap-6 border-b border-rule pb-8 lg:flex-row lg:items-end">
-        <div>
-          <h2 id="support-title" className="max-w-[800px] font-display text-[clamp(36px,5.5vw,78px)] font-medium leading-[1.05] tracking-[-.04em]">
-            What I can take<br />off your plate.
-          </h2>
-        </div>
-        <PortfolioLink href="/services" quiet>Explore services & tools</PortfolioLink>
-      </div>
-      {portfolioSupport.map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          className="group grid grid-cols-[minmax(0,1fr)] items-center gap-3 border-b border-rule py-7 sm:py-9 md:grid-cols-[minmax(0,1fr)_auto] md:gap-10"
+      <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
+        <p className="text-label text-muted">Services &amp; tools</p>
+        <h2
+          id="support-title"
+          className="mt-4 text-balance font-display text-[clamp(38px,6vw,72px)] font-medium leading-[1.02] tracking-[-.045em]"
         >
-          <span className="font-display text-[clamp(26px,4vw,58px)] font-medium leading-[1.1] tracking-[-.035em] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-3 motion-reduce:transition-none">
-            {item.title}
-          </span>
-          <span className="flex min-w-0 items-center justify-between gap-5 text-label text-muted md:min-w-[290px]">
-            <span className="min-w-0 [overflow-wrap:anywhere]">{item.detail}</span>
-            <ArrowUpRight
-              size={22}
-              strokeWidth={1.2}
-              className="shrink-0 text-ink transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:rotate-45 motion-reduce:transition-none"
-              aria-hidden="true"
-            />
-          </span>
+          Find the support you need.
+        </h2>
+        <p className="mt-5 max-w-[620px] text-pretty text-body text-muted">
+          From everyday administration to projects, documents and travel,
+          explore support designed to keep your work organised and moving
+          forward.
+        </p>
+        <Link
+          href="/services"
+          className="group mt-8 inline-flex min-h-12 w-fit items-center gap-3 rounded-full bg-ink px-5 py-3 text-label font-medium text-sheet transition-colors hover:bg-ink/85 focus-visible:outline-ink! motion-reduce:transition-none sm:px-6"
+        >
+          Explore services
+          <ArrowUpRight
+            size={18}
+            strokeWidth={1.5}
+            aria-hidden="true"
+            className="transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 motion-reduce:transition-none"
+          />
         </Link>
-      ))}
+      </div>
     </section>
   );
 }
