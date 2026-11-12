@@ -7,6 +7,7 @@ import { cn } from "~/shared/ui/utils";
 import { serviceCategories, type ServiceCategoryId } from "~/config/service-categories";
 import { useProjectPlayback } from "../hooks/use-project-playback";
 import type { ProjectRecording } from "../types/project-recording";
+import { ProjectSampleDetails } from "./project-sample-details";
 
 function RecordingPlayer({ recording, id, userInitiated }: {
   recording: ProjectRecording;
@@ -102,7 +103,7 @@ export function ProjectRecordingGallery({ recordings, serviceCategory }: {
                   type="button"
                   aria-label={`Play ${recording.title}`}
                   aria-pressed={selection.index === index}
-                  aria-controls={`${id}-player`}
+                  aria-controls={`${id}-player ${id}-details`}
                   aria-describedby={`${id}-capability-${groupIndex}`}
                   onClick={() => setSelection((previous) => ({ index, userInitiated: true, version: previous.version + 1 }))}
                   className={cn("flex min-h-24 w-full items-center gap-3 rounded-control border p-3 text-left transition-colors motion-reduce:transition-none", selection.index === index ? "border-mustard bg-mist" : "border-rule/70 bg-sheet hover:bg-mist")}
@@ -118,6 +119,16 @@ export function ProjectRecordingGallery({ recordings, serviceCategory }: {
           </ol>
         </nav>
       </div>
+      <p role="status" aria-atomic="true" className="sr-only">
+        Showing the video and details for {selected.title}.
+      </p>
+      <ProjectSampleDetails
+        key={selected.id}
+        id={`${id}-details`}
+        title={selected.title}
+        story={selected.story}
+        imageSrc={selected.poster}
+      />
     </section>
   );
 }

@@ -109,7 +109,7 @@ export const caseStudies = [
   },
   {
     slug: "closing-the-loop",
-    title: "Closing the loop.",
+    title: "Keeping projects on track.",
     serviceCategory: "operations",
     sample: "handoff",
     summary:

@@ -1,10 +1,11 @@
 import type { ServiceCapability, ServiceCategoryId } from "~/config/service-categories";
 import type { ProjectRecording } from "../types/project-recording";
+import { projectStories } from "./project-stories";
 
 function recording<Category extends ServiceCategoryId>(
   serviceCategory: Category,
   capability: ServiceCapability<Category>,
-  id: string,
+  id: Exclude<keyof typeof projectStories, "travel-itinerary">,
   title: string,
   description: string,
 ): ProjectRecording<Category> {
@@ -16,6 +17,7 @@ function recording<Category extends ServiceCategoryId>(
     description,
     src: `/videos/projects/${id}.mp4`,
     poster: `/images/projects/${id}.jpg`,
+    story: projectStories[id],
   };
 }
 
@@ -38,6 +40,7 @@ export const projectRecordings = {
       description: "An aggregate enrolment summary with pivot tables and a chart. Individual student records are excluded.",
       src: "/videos/excel-reporting.mp4",
       poster: "/images/work/excel-reporting.jpg",
+      story: projectStories["excel-reporting"],
     },
   ],
   operations: [
@@ -49,11 +52,12 @@ export const projectRecordings = {
       description: "Task stages, due dates and checklists in the supplied team board.",
       src: "/videos/trello-workflow.mp4",
       poster: "/images/work/trello-workflow.jpg",
+      story: projectStories["trello-workflow"],
     },
     recording("operations", "Project coordination and management", "airtable-tracking", "Airtable project tracking", "Project stages, dates and task descriptions arranged in an Airtable tracker."),
     recording("operations", "Workflow coordination", "action-deliverables", "Action handoff", "A written handoff grouping the next tasks, deadlines and follow-up actions."),
     {
-      ...recording("operations", "Project coordination and management", "project-management-production", "Project management", "A supplied excerpt from a live theatre production."),
+      ...recording("operations", "Project coordination and management", "project-management-production", "Project management", "An excerpt from a theatre production I directed."),
       hasAudio: true,
     },
   ],

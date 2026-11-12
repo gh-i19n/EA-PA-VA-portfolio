@@ -17,7 +17,7 @@ The desktop playlist stretches to the height of the player, title and descriptio
 - Calendar clips exclude the sidebar with account calendars. The Gmail excerpt shows only filter controls. The Outlook excerpt focuses on the scheduling dialog. Airtable client/contact columns are cropped out and budget values are covered.
 - The existing Excel clip shows aggregate reporting, excluding individual student records.
 - The cohort-onboarding clip was removed from the public library at the user's request. Its original upload is retained.
-- The theatre clip is assigned to Project & Operations Management and labelled “Project management” following the user’s instruction. Its description does not infer a specific production role.
+- The theatre clip is assigned to Project & Operations Management and labelled “Project management” following the user’s instruction. The user confirmed that she directed this production; the recording description and explanation use that role.
 - ARCON annual and weekly income reports remain private pending permission to publish. Raw inbox listings, identifiable student records and membership/giving sheets are also excluded from public copies.
 - Short or repeated recordings are represented by the clearer recording of the same work. Some document and booking clips are excerpts.
 
@@ -56,3 +56,11 @@ Visible recordings start automatically, muted and inline. Moving off-screen or h
 The theatre recording retains its production audio; native player controls let the visitor turn on sound.
 
 Each detail page loads only its selected recording. Choosing another recording stops the previous player and starts the selected clip when it is visible. Native controls support seeking, pausing and fullscreen playback.
+
+## Explanations
+
+Each recording has its own Problem, Solution and Approach in `project-stories.ts`. The same selected recording supplies the player and these explanations, so playlist changes update them together. Choosing a different recording reopens Problem; selecting the same recording again preserves the open explanation.
+
+The illustrated accordion uses the recording's existing public still on the right of its text, with the image below the text on smaller screens. The copy describes the supplied work and its intended purpose without claiming measured results. The travel document has the same three-part explanation and retains its PDF link.
+
+The old brief, approach, handoff, outcome and next-work-sample sections are removed from the detail-page layout. The site footer remains shared across pages.
