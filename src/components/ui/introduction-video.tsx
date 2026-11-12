@@ -122,7 +122,7 @@ export function IntroductionVideo({
         ref={trigger}
         type="button"
         onClick={play}
-        aria-label={`Watch AY’s introduction (${duration})`}
+        aria-label={`Watch AA’s introduction (${duration})`}
         aria-haspopup="dialog"
         className={cn(
           "group relative block w-full overflow-hidden bg-ink text-left text-white",
@@ -133,7 +133,7 @@ export function IntroductionVideo({
       >
         <Image
           src={poster}
-          alt="AY introducing herself on camera"
+          alt="AA introducing herself on camera"
           fill
           sizes={
             isEditorial
@@ -154,7 +154,7 @@ export function IntroductionVideo({
                 !isEditorial && "font-display",
               )}
             >
-              {isEditorial ? `Meet AY · ${duration}` : "Meet AY"}
+              {isEditorial ? `Meet AA · ${duration}` : "Meet AA"}
             </span>
             {!isEditorial && (
               <span className="mt-1 block text-label text-white/85">
@@ -201,7 +201,7 @@ export function IntroductionVideo({
           className="mx-auto block max-h-[76dvh] w-auto max-w-full rounded-document bg-black"
         >
           <track src={captions} kind="captions" srcLang="en" label="English" />
-          Your browser cannot play this video. <a href={src}>Open AY’s introduction video</a>.
+          Your browser cannot play this video. <a href={src}>Open AA’s introduction video</a>.
         </video>
         {isPreparing && (
           <p role="status" className="mt-3 text-label text-paper/75">

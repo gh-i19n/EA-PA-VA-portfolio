@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 export function PortfolioSupport() {
   return (
     <section
+      hidden
       className="bg-sheet px-5 py-20 sm:px-10 sm:py-28"
       aria-labelledby="support-title"
     >

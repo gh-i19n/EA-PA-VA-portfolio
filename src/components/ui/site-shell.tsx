@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { footerNavigation, siteContact } from "~/config/site";
 import { SiteNavigation } from "./site-navigation";
+import { SiteHeader } from "./site-header";
 import { PortfolioContours } from "./portfolio-contours";
 import { ContactChannels } from "./contact-channels";
 
@@ -11,26 +12,28 @@ export function SiteShell({ children }: { children: ReactNode }) {
   return (
     <div>
       <a
-        className="fixed left-4 top-3 z-40 -translate-y-[160%] bg-ink px-6 py-4 text-support text-paper focus:translate-y-0"
+        className="fixed left-4 top-3 z-[100] -translate-y-[160%] bg-ink px-6 py-4 text-support text-paper focus:translate-y-0"
         href="#main"
       >
         Skip to content
       </a>
-      <Suspense
-        fallback={
-          <header className="mx-auto flex min-h-[100px] w-[calc(100%-5rem)] max-w-[1440px] items-center justify-between">
-            <Link href="/" className="font-display text-4xl font-bold tracking-[-.045em]">
-              AY
-            </Link>
-            <Link href="/contact" className="text-label">
-              Contact
-            </Link>
-          </header>
-        }
-      >
-        <SiteNavigation />
-      </Suspense>
-      <main id="main" tabIndex={-1}>
+      <SiteHeader>
+        <Suspense
+          fallback={
+            <header className="mx-auto flex min-h-[88px] w-[calc(100%-2.5rem)] max-w-[1440px] items-center justify-between sm:min-h-[100px] sm:w-[calc(100%-5rem)]">
+              <Link href="/" className="font-display text-4xl font-bold tracking-[-.045em]">
+                AY
+              </Link>
+              <Link href="/contact" className="text-label">
+                Contact
+              </Link>
+            </header>
+          }
+        >
+          <SiteNavigation />
+        </Suspense>
+      </SiteHeader>
+      <main id="main" tabIndex={-1} className="pt-(--site-header-height)">
         {children}
       </main>
       <footer className="relative isolate overflow-hidden rounded-t-feature bg-ink text-paper">

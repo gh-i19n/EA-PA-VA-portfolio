@@ -43,6 +43,7 @@
 
 :root {
   color-scheme: light;
+  --site-header-height: calc(88px + env(safe-area-inset-top, 0px));
   --background: #e9e9e6;
   --foreground: #252725;
   --muted: #5d605a;
@@ -55,10 +56,17 @@
   --accent-deep: var(--accent);
   --highlight: #d2d3cd;
 }
+
+@media (min-width: 640px) {
+  :root {
+    --site-header-height: calc(100px + env(safe-area-inset-top, 0px));
+  }
+}
+
 @layer base {
   html {
     min-width: 320px;
-    scroll-padding-top: 32px;
+    scroll-padding-top: calc(var(--site-header-height) + 32px);
   }
   body {
     margin: 0;

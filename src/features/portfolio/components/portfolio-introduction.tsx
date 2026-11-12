@@ -48,7 +48,7 @@ export function PortfolioIntroduction() {
             </div>
             <div className="mt-6 flex flex-row flex-wrap items-center justify-start gap-x-8 gap-y-3">
               <PortfolioLink href="/about" quiet>More about me</PortfolioLink>
-              <PortfolioLink href="/contact" quiet>Discuss your support</PortfolioLink>
+              <PortfolioLink href="/case-studies" quiet>Explore projects</PortfolioLink>
             </div>
           </div>
         </div>
