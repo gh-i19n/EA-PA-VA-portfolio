@@ -4,11 +4,16 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
 import { caseStudies, type CaseStudy } from "../config/case-studies";
+import { serviceCategories } from "~/config/service-categories";
+import { projectRecordings } from "../config/project-recordings";
 import { WorkDocument } from "./work-document";
+import { ProjectRecordingGallery } from "./project-recording-gallery";
 
 export function CaseStudyDetail({ study }: { study: CaseStudy }) {
-  const index = caseStudies.findIndex((item) => item.slug === study.slug);
-  const next = caseStudies[(index + 1) % caseStudies.length];
+  const orderedStudies = [...caseStudies].sort((a, b) => serviceCategories[a.serviceCategory].order - serviceCategories[b.serviceCategory].order);
+  const index = orderedStudies.findIndex((item) => item.slug === study.slug);
+  const next = orderedStudies[(index + 1) % orderedStudies.length];
+  const recordings = projectRecordings[study.serviceCategory];
   return (
     <>
       <div className="mx-auto mt-6 w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
@@ -25,20 +30,10 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
         description={study.summary}
       />
       <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] sm:w-[calc(100%-5rem)]">
-        <PortfolioVisual className="relative aspect-[1.2] overflow-hidden bg-mist sm:aspect-[2.1]">
-          {study.recording ? (
-            <video
-              src={study.recording}
-              poster={study.image}
-              controls
-              playsInline
-              preload="none"
-              aria-label={`${study.title} Silent workflow recording`}
-              className="h-full w-full object-contain"
-            >
-              <a href={study.recording}>Open the workflow recording</a>
-            </video>
-          ) : (
+        {recordings.length ? (
+          <ProjectRecordingGallery recordings={recordings} serviceCategory={study.serviceCategory} />
+        ) : (
+          <PortfolioVisual className="relative aspect-[1.2] overflow-hidden bg-mist sm:aspect-[2.1]">
             <Image
               src={study.image}
               alt={study.alt}
@@ -47,8 +42,8 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
               sizes="95vw"
               className="object-cover object-[center_45%] saturate-[.3]"
             />
-          )}
-        </PortfolioVisual>
+          </PortfolioVisual>
+        )}
       </div>
       <div className="bg-sheet mt-12 sm:mt-20">
         <section

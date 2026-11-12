@@ -1,0 +1,123 @@
+.card {
+  container: service-card / inline-size;
+}
+
+.details {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-rows: auto max-content;
+  gap: 1rem;
+  overflow-y: auto;
+  overscroll-behavior: auto;
+  padding: clamp(1rem, 3.5cqi, 1.75rem);
+  background: color-mix(in srgb, var(--foreground) 95%, transparent);
+  color: var(--surface-sheet);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-out;
+}
+
+.details[aria-hidden="false"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--foreground);
+}
+
+.title {
+  min-inline-size: 0;
+  align-self: center;
+  font-family: var(--site-display), sans-serif;
+  font-size: clamp(1.5rem, 5.4cqi, 2.375rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.copy {
+  min-inline-size: 0;
+  overflow-wrap: break-word;
+}
+
+.introduction {
+  max-inline-size: 48ch;
+  color: var(--color-mustard);
+  font-size: clamp(1.5rem, 3.5cqi, 1.625rem);
+  font-weight: 500;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+.description {
+  max-inline-size: 65ch;
+  margin-block-start: 0.75rem;
+  color: var(--background);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.capabilities {
+  margin-block-start: 1.25rem;
+}
+
+.listTitle {
+  color: var(--color-mustard);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.capabilitiesList {
+  display: grid;
+  gap: 0.625rem 1.75rem;
+  margin-block-start: 0.75rem;
+  padding-inline-start: 1.125rem;
+  list-style: disc;
+  font-size: var(--text-support);
+  line-height: 1.5;
+}
+
+@container service-card (min-width: 32rem) {
+  .details {
+    grid-template-rows: auto minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  .header {
+    position: static;
+    background: transparent;
+  }
+
+  .copy {
+    min-block-size: 0;
+    overflow-y: auto;
+    overscroll-behavior: auto;
+    padding-inline-end: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) var(--foreground);
+  }
+
+  .capabilitiesList {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .details {
+    transition: none;
+  }
+}

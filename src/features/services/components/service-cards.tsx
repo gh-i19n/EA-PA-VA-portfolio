@@ -18,7 +18,7 @@ export function ServiceCards() {
             How I can help.
           </h2>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 sm:gap-8">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,32rem),1fr))] gap-6 sm:gap-8">
           {serviceAreas.map((service) => (
             <ServiceFlyerCard key={service.id} service={service} />
           ))}

@@ -4,7 +4,9 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, X } from "lucide-react";
+import { cn } from "~/shared/ui/utils";
 import type { serviceAreas } from "../config/services-content";
+import styles from "./service-flyer-card.module.css";
 
 export function ServiceFlyerCard({
   service,
@@ -26,7 +28,10 @@ export function ServiceFlyerCard({
     <article
       id={service.id}
       aria-labelledby={`${service.id}-title`}
-      className="relative isolate aspect-[4/3] min-w-0 scroll-mt-10 overflow-hidden rounded-panel border border-rule/70 bg-paper"
+      className={cn(
+        "relative isolate aspect-[4/3] min-w-0 scroll-mt-10 overflow-hidden rounded-panel border border-rule/70 bg-paper",
+        styles.card,
+      )}
       onPointerEnter={(event) => {
         if (event.pointerType !== "touch") setIsOpen(true);
       }}
@@ -79,14 +84,12 @@ export function ServiceFlyerCard({
         id={detailsId}
         aria-hidden={!isOpen}
         inert={!isOpen}
-        className={`absolute inset-0 z-20 grid grid-rows-[auto_max-content_auto] gap-4 overflow-y-auto overscroll-contain bg-ink/95 p-5 text-sheet transition-opacity duration-300 ease-out motion-reduce:transition-none lg:grid-rows-[auto_minmax(0,1fr)_auto] lg:overflow-hidden lg:p-8 ${
-          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        className={styles.details}
       >
-        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 max-lg:bg-ink lg:static">
+        <div className={styles.header}>
           <h3
             id={`${service.id}-title`}
-            className="min-w-0 self-center font-display text-[clamp(26px,3vw,42px)] font-medium leading-[1.08] tracking-[-.035em]"
+            className={styles.title}
           >
             {service.title}
           </h3>
@@ -103,29 +106,32 @@ export function ServiceFlyerCard({
           role="region"
           aria-label={`${service.title} details`}
           tabIndex={0}
-          className="min-h-0 pr-2 focus-visible:-outline-offset-2 lg:overflow-y-auto lg:overscroll-contain"
+          className={cn(styles.copy, "focus-visible:-outline-offset-2")}
         >
-          <p className="text-[18px] leading-[1.45] tracking-[-.02em] sm:text-[20px]">
+          <p className={styles.introduction}>
             {service.introduction}
           </p>
-          <p className="mt-3 text-[16px] leading-relaxed text-sheet/85 sm:text-body">
+          <p className={styles.description}>
             {service.description}
           </p>
-          <ul className="mt-5 flex list-none flex-wrap gap-x-4 gap-y-2 border-t border-sheet/20 pt-4">
-            {service.capabilities.map((capability) => (
-              <li className="text-caption text-sheet/85" key={capability}>
-                {capability}
-              </li>
-            ))}
-          </ul>
+          <div className={styles.capabilities}>
+            <p className={styles.listTitle}>Support includes</p>
+            <ul className={styles.capabilitiesList}>
+              {service.capabilities.map((capability) => (
+                <li key={capability}>{capability}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <Link
-          href={"detailHref" in service ? service.detailHref : service.sample.href}
-          className="flex min-h-11 w-fit items-center gap-4 border-b border-sheet/40 text-label transition-colors hover:border-sheet motion-reduce:transition-none"
-        >
-          {"detailHref" in service ? "View service details" : "View work sample"}
-          <ArrowUpRight size={18} strokeWidth={1.4} aria-hidden="true" />
-        </Link>
+        {"href" in service.sample && (
+          <Link
+            href={service.sample.href}
+            className="flex min-h-12 w-fit items-center gap-3 rounded-full bg-sheet px-5 py-3 text-support font-medium text-ink transition-colors hover:bg-paper focus-visible:outline-sheet motion-reduce:transition-none"
+          >
+            View work sample
+            <ArrowUpRight size={18} strokeWidth={1.4} aria-hidden="true" />
+          </Link>
+        )}
       </div>
     </article>
   );

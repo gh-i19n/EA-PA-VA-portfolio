@@ -5,13 +5,6 @@ function symbolTool(name: string, purpose: string, fileName: string) {
     name,
     purpose,
     symbolSrc,
-    logo: {
-      src: symbolSrc,
-      width: 64,
-      height: 64,
-      displayWidth: 48,
-      kind: "symbol" as const,
-    },
   };
 }
 
@@ -105,13 +98,6 @@ const tools = {
     name: "Google Workspace",
     purpose: "Calendar, email, shared documents",
     symbolSrc: "/images/tools/symbols/google-workspace.svg",
-    logo: {
-      src: "/images/tools/google-workspace.svg",
-      width: 1525,
-      height: 192,
-      displayWidth: 278,
-      kind: "wordmark",
-    },
   },
   microsoft365: {
     name: "Microsoft 365",
@@ -119,73 +105,31 @@ const tools = {
     symbolSrc: "/images/tools/symbols/microsoft-365.svg",
     sampleHref: "/videos/excel-reporting.mp4",
     sampleLabel: "View Excel reporting sample (silent)",
-    logo: {
-      src: "/images/tools/microsoft-365.svg",
-      width: 1320,
-      height: 214,
-      displayWidth: 240,
-      kind: "wordmark",
-    },
   },
   calendly: {
     name: "Calendly",
     purpose: "Scheduling with clear availability",
     symbolSrc: "/images/tools/symbols/calendly.svg",
-    logo: {
-      src: "/images/tools/calendly.svg",
-      width: 148.337,
-      height: 32,
-      displayWidth: 176,
-      kind: "wordmark",
-    },
   },
   selar: {
     name: "Selar",
     purpose: "Session bookings and payments",
     symbolSrc: "/images/tools/symbols/selar.png",
-    logo: {
-      src: "/images/tools/symbols/selar.png",
-      width: 114,
-      height: 114,
-      displayWidth: 48,
-      kind: "symbol",
-    },
   },
   notion: {
     name: "Notion",
     purpose: "Briefs, processes, reference libraries",
     symbolSrc: "/images/tools/symbols/notion.svg",
-    logo: {
-      src: "/images/tools/notion.svg",
-      width: 105,
-      height: 30,
-      displayWidth: 147,
-      kind: "wordmark",
-    },
   },
   airtable: {
     name: "Airtable",
     purpose: "Structured records and shared project information",
     symbolSrc: "/images/tools/symbols/airtable.svg",
-    logo: {
-      src: "/images/tools/airtable.svg",
-      width: 24,
-      height: 24,
-      displayWidth: 36,
-      kind: "symbol",
-    },
   },
   asana: {
     name: "Asana",
     purpose: "Owners, dependencies, progress",
     symbolSrc: "/images/tools/symbols/asana.svg",
-    logo: {
-      src: "/images/tools/asana.svg",
-      width: 112,
-      height: 22,
-      displayWidth: 174,
-      kind: "wordmark",
-    },
   },
   trello: {
     name: "Trello",
@@ -193,73 +137,31 @@ const tools = {
     symbolSrc: "/images/tools/symbols/trello.svg",
     sampleHref: "/videos/trello-workflow.mp4",
     sampleLabel: "View Trello workflow sample (silent)",
-    logo: {
-      src: "/images/tools/trello.svg",
-      width: 312,
-      height: 105,
-      displayWidth: 154,
-      kind: "wordmark",
-    },
   },
   zapier: {
     name: "Zapier",
     purpose: "Workflow automation across everyday apps",
     symbolSrc: "/images/tools/symbols/zapier.svg",
-    logo: {
-      src: "/images/tools/zapier.svg",
-      width: 24,
-      height: 24,
-      displayWidth: 36,
-      kind: "symbol",
-    },
   },
   slack: {
     name: "Slack",
     purpose: "Team coordination and updates",
     symbolSrc: "/images/tools/symbols/slack.svg",
-    logo: {
-      src: "/images/tools/slack.png",
-      width: 201,
-      height: 75,
-      displayWidth: 150,
-      kind: "wordmark",
-    },
   },
   zoom: {
     name: "Zoom",
     purpose: "Meeting setup and remote logistics",
     symbolSrc: "/images/tools/symbols/zoom.svg",
-    logo: {
-      src: "/images/tools/zoom.png",
-      width: 232,
-      height: 52,
-      displayWidth: 150,
-      kind: "wordmark",
-    },
   },
   fathom: {
     name: "Fathom",
     purpose: "Meeting notes, summaries and action items",
     symbolSrc: "/images/tools/symbols/fathom.png",
-    logo: {
-      src: "/images/tools/symbols/fathom.png",
-      width: 512,
-      height: 512,
-      displayWidth: 48,
-      kind: "symbol",
-    },
   },
   microsoftTeams: {
     name: "Microsoft Teams",
     purpose: "Conversations, meetings, shared work",
     symbolSrc: "/images/tools/symbols/microsoft-teams.svg",
-    logo: {
-      src: "/images/tools/microsoft-teams.svg",
-      width: 48,
-      height: 48,
-      displayWidth: 48,
-      kind: "symbol",
-    },
   },
 } as const;
 
