@@ -1,0 +1,261 @@
+.folio {
+  container: recommendation-folio / inline-size;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-block-start: 1rem;
+}
+
+.arrow {
+  position: static;
+  inline-size: 3rem;
+  block-size: 3rem;
+  margin: 0;
+  border-radius: 50%;
+}
+
+.folio [data-slot="carousel-content"] {
+  block-size: var(--recommendation-height, auto);
+}
+
+.slides {
+  align-items: start;
+  margin: 0;
+  touch-action: pan-y pinch-zoom;
+}
+
+.panel {
+  min-inline-size: 0;
+  padding: clamp(2rem, 5cqi, 4.5rem) 0 1.5rem;
+}
+
+.layout {
+  display: grid;
+  min-inline-size: 0;
+  gap: 3rem;
+}
+
+.quote {
+  position: relative;
+  min-inline-size: 0;
+  margin: 0;
+}
+
+.quoteMark {
+  display: block;
+  block-size: 4.25rem;
+  margin-block-start: 1.75rem;
+  color: var(--color-mustard);
+  font-family: var(--site-display), sans-serif;
+  font-size: 7rem;
+  line-height: 1;
+}
+
+.quoteText {
+  max-inline-size: 27ch;
+  margin-block-start: 0.5rem;
+  font-family: var(--site-display), sans-serif;
+  font-size: clamp(1.875rem, 3.1cqi, 3.25rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+  text-wrap: pretty;
+}
+
+.attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-block-start: 2rem;
+  border-inline-start: 2px solid var(--color-mustard);
+  padding-inline-start: 1rem;
+}
+
+.author {
+  font-size: var(--text-support);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.role {
+  max-inline-size: 45ch;
+  color: var(--muted);
+  font-size: var(--text-caption);
+  line-height: 1.5;
+}
+
+.letterStack {
+  position: relative;
+  isolation: isolate;
+  min-inline-size: 0;
+  margin: 0.5rem 0.5rem 0.75rem;
+}
+
+.letterStack::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0.5rem -0.25rem -0.5rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-frame);
+  background: var(--surface-linen);
+  transform: rotate(1.75deg);
+  content: "";
+}
+
+.letter {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-frame);
+  background: var(--surface-sheet);
+  padding: clamp(1.25rem, 3.2cqi, 3rem);
+  box-shadow: 0 12px 32px -24px color-mix(in srgb, var(--foreground) 40%, transparent);
+}
+
+.letter::after {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  inline-size: 2rem;
+  block-size: 2rem;
+  background: var(--surface-linen);
+  clip-path: polygon(0 0, 100% 0, 100% 100%);
+  content: "";
+}
+
+.letterHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  border-block-end: 1px solid var(--border);
+  padding-block-end: 1rem;
+}
+
+.letterOrganisation {
+  font-size: var(--text-support);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.letterTitle {
+  max-inline-size: 30ch;
+  margin-block-start: 1.5rem;
+  font-family: var(--site-display), sans-serif;
+  font-size: clamp(1.375rem, 2cqi, 1.875rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.letterBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-inline-size: 65ch;
+  margin-block-start: 1.25rem;
+  color: var(--muted);
+  font-size: var(--text-support);
+  line-height: 1.75;
+}
+
+.disclosure {
+  margin-block-start: 1.25rem;
+}
+
+.readMore {
+  display: flex;
+  min-block-size: 3rem;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.75rem;
+  font-size: var(--text-label);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.readMore::-webkit-details-marker {
+  display: none;
+}
+
+.readMore:hover > span {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.expandIcon {
+  flex-shrink: 0;
+  transition: transform 180ms ease-out;
+}
+
+.disclosure[open] .expandIcon {
+  transform: rotate(45deg);
+}
+
+.whenOpen,
+.disclosure[open] .whenClosed {
+  display: none;
+}
+
+.disclosure[open] .whenOpen {
+  display: inline;
+}
+
+.continuation {
+  padding-block-end: 0.5rem;
+}
+
+.continuation .letterBody {
+  margin-block-start: 0.5rem;
+}
+
+.signOff {
+  margin-block-start: 1.5rem;
+  color: var(--muted);
+  font-size: var(--text-support);
+}
+
+.letterAttribution {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-block-start: 1.75rem;
+  border-block-start: 1px solid var(--border);
+  padding-block-start: 1.25rem;
+  font-size: var(--text-caption);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.letterAttribution > p:last-child {
+  max-inline-size: 45ch;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+@container recommendation-folio (min-width: 56rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(3rem, 6cqi, 6rem);
+  }
+
+  .letterStack {
+    margin-block-start: 2rem;
+    margin-inline-end: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .expandIcon {
+    transition: none;
+  }
+}
