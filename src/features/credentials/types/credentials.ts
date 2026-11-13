@@ -1,2 +1,12 @@
-export type Testimonial = { quote: string; name: string; role: string };
-export type Certificate = { title: string; issuer: string; issued: string; verificationUrl: string };
+export type Testimonial = {
+  id: string;
+  organisation: string;
+  quote: string;
+  name: string;
+  role: string;
+  recommendation: {
+    title: string;
+    paragraphs: readonly string[];
+    signOff?: string;
+  };
+};
