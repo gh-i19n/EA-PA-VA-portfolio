@@ -40,7 +40,7 @@ const covers = [
     title: "Credentials",
     description: "Experience, standards and credentials",
     href: "/credentials",
-    image: "/images/credentials/ay-cv-preview.png",
+    image: "/images/credentials/ay-ea-cv-preview.png",
     imageFit: "contain",
   },
   {

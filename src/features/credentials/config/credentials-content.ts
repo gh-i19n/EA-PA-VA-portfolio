@@ -1,9 +1,13 @@
 import type { Testimonial } from "../types/credentials";
 
 export const curriculumVitae = {
-  previewSrc: "/images/credentials/ay-cv-preview.png",
   previewWidth: 1273,
   previewHeight: 1800,
+  pages: [
+    { number: 1, src: "/images/credentials/ay-ea-cv-preview.png" },
+    { number: 2, src: "/images/credentials/ay-ea-cv-page-2.png" },
+    { number: 3, src: "/images/credentials/ay-ea-cv-page-3.png" },
+  ],
   documentHref: "/documents/ayomide-ajibola-cv.pdf",
 } as const;
 
