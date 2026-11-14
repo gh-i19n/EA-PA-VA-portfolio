@@ -1,15 +1,34 @@
 import type { Testimonial } from "../types/credentials";
 
-export const curriculumVitae = {
-  previewWidth: 1273,
-  previewHeight: 1800,
-  pages: [
-    { number: 1, src: "/images/credentials/ay-ea-cv-preview.png" },
-    { number: 2, src: "/images/credentials/ay-ea-cv-page-2.png" },
-    { number: 3, src: "/images/credentials/ay-ea-cv-page-3.png" },
-  ],
-  documentHref: "/documents/ayomide-ajibola-cv.pdf",
-} as const;
+export const curriculumVitae = [
+  {
+    id: "general",
+    label: "General CV",
+    description: "Executive support experience, skills and training.",
+    linkLabel: "View general CV",
+    previewWidth: 1273,
+    previewHeight: 1800,
+    pages: [
+      { number: 1, src: "/images/credentials/ay-ea-cv-preview.png" },
+      { number: 2, src: "/images/credentials/ay-ea-cv-page-2.png" },
+      { number: 3, src: "/images/credentials/ay-ea-cv-page-3.png" },
+    ],
+    documentHref: "/documents/ayomide-ajibola-cv.pdf",
+  },
+  {
+    id: "remote",
+    label: "Remote CV",
+    description: "Remote support across time zones and distributed teams.",
+    linkLabel: "View remote CV",
+    previewWidth: 1391,
+    previewHeight: 1800,
+    pages: [
+      { number: 1, src: "/images/credentials/ay-remote-cv-page-1.png" },
+      { number: 2, src: "/images/credentials/ay-remote-cv-page-2.png" },
+    ],
+    documentHref: "/documents/ayomide-ajibola-remote-cv.pdf",
+  },
+] as const;
 
 /** Recommendations supplied for publication; Bridge500 surname corrected as requested. */
 export const testimonials: readonly Testimonial[] = [
@@ -47,6 +66,26 @@ export const testimonials: readonly Testimonial[] = [
         "I particularly appreciate her dedication, versatility and the positive attitude she brings to the team. Her contributions have been valuable to the operations of Bridge500, and I am confident that she will continue to distinguish herself in any professional environment she finds herself.",
         "I therefore commend Ayomide Ajibola for her excellent service, dedication and contributions as Executive Assistant at Bridge500. She is an asset to any team, and I have no doubt that she will continue to demonstrate the same level of excellence, accountability and professionalism in her future endeavours.",
         "Please accept this commendation with confidence.",
+      ],
+      signOff: "Yours faithfully,",
+    },
+  },
+  {
+    id: "nilds",
+    organisation: "NILDS",
+    quote:
+      "I therefore recommend Ayomide Ajibola without reservation for opportunities requiring administrative excellence, executive support, effective coordination and professional responsibility.",
+    name: "Idowu Babatunde Henry, ARPA, ANIMN",
+    role: "ICT Officer, National Institute for Legislative and Democratic Studies (NILDS)",
+    recommendation: {
+      title: "Resourceful and dependable.",
+      paragraphs: [
+        "I am delighted to write this recommendation in support of Ayomide Ajibola, whom I consider a dedicated, responsible, resourceful and dependable individual with the qualities required to excel in the role of an Executive Assistant.",
+        "Having had the opportunity to observe Ayomide's approach to responsibilities and professional engagements, I have come to appreciate the importance attached to diligence, effective communication, interpersonal relationships, organisation and commitment to assigned duties. These qualities are essential to the successful execution of executive support functions, and I believe Ayomide possesses the right attributes to thrive in such a position.",
+        "An effective Executive Assistant must demonstrate discretion, sound judgement, emotional intelligence, excellent time management, administrative efficiency and the ability to manage competing priorities while maintaining professionalism. I am confident that Ayomide has the capacity to uphold these standards and contribute meaningfully to the smooth coordination of executive activities and institutional objectives.",
+        "Beyond professional competence, I particularly value individuals who demonstrate integrity, respect, adaptability, a willingness to learn and the ability to work collaboratively with others. These are qualities I believe Ayomide brings to the table. I am confident that Ayomide will approach every assignment with enthusiasm, accountability and a strong commitment to delivering results.",
+        "I therefore recommend Ayomide Ajibola without reservation for opportunities requiring administrative excellence, executive support, effective coordination and professional responsibility. I am optimistic that Ayomide will be a valuable addition to any organisation and will consistently demonstrate the character and competence expected of a trusted professional.",
+        "Please accept my recommendation with confidence.",
       ],
       signOff: "Yours faithfully,",
     },
