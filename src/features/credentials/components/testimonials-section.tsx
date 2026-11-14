@@ -12,7 +12,7 @@ export function TestimonialsSection() {
             Testimonials
           </h2>
           <p className="max-w-[440px] text-pretty text-body text-muted">
-            From my direct manager at ARCON and the founder of Bridge500.
+            Recommendations from people who know my work.
           </p>
         </header>
         <RecommendationFolio items={testimonials} />

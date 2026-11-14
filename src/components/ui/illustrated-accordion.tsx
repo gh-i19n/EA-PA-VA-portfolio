@@ -64,16 +64,11 @@ export function IllustratedAccordion({ items, label }: {
       aria-label={label}
       className="border-y border-rule"
     >
-      {items.map((item, index) => (
+      {items.map((item) => (
         <AccordionItem key={item.id} value={item.id}>
           <AccordionTrigger className="min-h-24 py-6 sm:py-7">
-            <span className="flex min-w-0 items-baseline gap-5 sm:gap-8">
-              <span aria-hidden="true" className="text-caption tabular-nums text-muted">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="font-display text-[clamp(28px,3.2vw,44px)] font-medium leading-tight tracking-[-.03em]">
-                {item.label}
-              </span>
+            <span className="min-w-0 font-display text-[clamp(28px,3.2vw,44px)] font-medium leading-tight tracking-[-.03em]">
+              {item.label}
             </span>
           </AccordionTrigger>
           <AccordionContent>
