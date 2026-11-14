@@ -1,0 +1,43 @@
+.playlist {
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) transparent;
+}
+
+.playlist:hover,
+.playlist:focus-within {
+  scrollbar-color: var(--color-mustard) transparent;
+}
+
+.playlist::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.playlist::-webkit-scrollbar-track,
+.playlist::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--muted);
+}
+
+.playlist:hover::-webkit-scrollbar-thumb,
+.playlist:focus-within::-webkit-scrollbar-thumb {
+  background: var(--color-mustard);
+}
+
+@media (forced-colors: active) {
+  .playlist,
+  .playlist:hover,
+  .playlist:focus-within {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+
+  .playlist::-webkit-scrollbar {
+    width: auto;
+    height: auto;
+  }
+}

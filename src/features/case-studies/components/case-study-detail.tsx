@@ -5,9 +5,8 @@ import { PortfolioVisual } from "~/components/ui/portfolio-visual";
 import { EditorialPageIntro } from "~/components/ui/editorial-page-intro";
 import type { CaseStudy } from "../types/case-study";
 import { projectRecordings } from "../config/project-recordings";
-import { projectStories } from "../config/project-stories";
-import { ProjectRecordingGallery } from "./project-recording-gallery";
-import { ProjectSampleDetails } from "./project-sample-details";
+import { projectWorkSamples } from "../config/project-work-samples";
+import { ProjectWorkShowcase } from "./project-work-showcase";
 
 export function CaseStudyDetail({ study }: { study: CaseStudy }) {
   const recordings = projectRecordings[study.serviceCategory];
@@ -22,10 +21,12 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
       </div>
       <EditorialPageIntro title={study.title} description={study.summary} />
       <div className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-16 sm:w-[calc(100%-5rem)] sm:pb-24">
-        {recordings.length ? (
-          <ProjectRecordingGallery recordings={recordings} serviceCategory={study.serviceCategory} />
-        ) : (
-          <>
+        <ProjectWorkShowcase
+          recordings={recordings}
+          serviceCategory={study.serviceCategory}
+          groups={Object.entries(projectWorkSamples[study.serviceCategory]).map(([capability, sample]) => ({ capability, ...sample }))}
+        >
+          {!recordings.length && <>
             <PortfolioVisual className="relative aspect-[1.2] overflow-hidden bg-mist sm:aspect-[2.1]">
               <Image
                 src={study.image}
@@ -48,16 +49,8 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
                 <ArrowUpRight size={18} aria-hidden="true" />
               </a>
             )}
-            {study.serviceCategory === "travel" && (
-              <ProjectSampleDetails
-                id={`${study.slug}-details`}
-                title="Executive travel planning"
-                story={projectStories["travel-itinerary"]}
-                imageSrc={study.artifact?.preview ?? study.image}
-              />
-            )}
-          </>
-        )}
+          </>}
+        </ProjectWorkShowcase>
       </div>
     </>
   );

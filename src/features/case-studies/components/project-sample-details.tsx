@@ -1,31 +1,88 @@
-import {
-  IllustratedAccordion,
-  type IllustratedAccordionItem,
-} from "~/components/ui/illustrated-accordion";
-import type { ProjectStory } from "../types/project-story";
+"use client";
 
-export function ProjectSampleDetails({ id, title, story, imageSrc }: {
+import { ArrowUpRight } from "lucide-react";
+import { ImageGallery } from "~/components/ui/image-gallery";
+import { SelectField } from "~/components/ui/select-field";
+import { cn } from "~/shared/ui/utils";
+import type { ProjectWorkSampleGroup } from "../types/project-work-sample";
+import styles from "./project-sample-details.module.css";
+
+/** A service remains selected while visitors inspect its images and context. */
+export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }: {
   id: string;
-  title: string;
-  story: ProjectStory;
-  imageSrc: string;
+  groups: readonly ProjectWorkSampleGroup[];
+  capability: string;
+  onServiceSelect: (capability: string) => void;
 }) {
-  const image = { src: imageSrc, alt: story.imageAlt, caption: story.imageCaption };
-  const items: readonly IllustratedAccordionItem[] = [
-    { id: "problem", label: "Problem", ...story.problem, image },
-    { id: "solution", label: "Solution", ...story.solution, image },
-    { id: "approach", label: "Approach", ...story.approach, image },
+  const activeIndex = Math.max(0, groups.findIndex((group) => group.capability === capability));
+  const active = groups[activeIndex] ?? groups[0];
+  if (!active) return null;
+
+  const notes = [
+    { label: "Problem", text: active.problem },
+    { label: "Solution", text: active.solution },
+    { label: "Approach", text: active.approach },
   ];
 
   return (
-    <section id={id} aria-labelledby={`${id}-title`} className="mt-12 sm:mt-16">
-      <header className="mb-6 flex flex-wrap items-baseline justify-between gap-3 sm:mb-8">
-        <h2 id={`${id}-title`} className="font-display text-[clamp(28px,4vw,44px)] font-medium leading-tight tracking-[-.03em]">
-          A closer look.
-        </h2>
-        <p className="text-support text-muted">{title}</p>
+    <section id={id} aria-labelledby={`${id}-title`} className="mt-16 border-t border-rule pt-10 sm:mt-24 sm:pt-12">
+      <header className="mb-8 flex flex-wrap items-baseline justify-between gap-3 sm:mb-10">
+        <h2 id={`${id}-title`} className="font-display text-[clamp(28px,4vw,44px)] font-medium leading-tight tracking-[-.03em]">A closer look.</h2>
       </header>
-      <IllustratedAccordion items={items} label={`Problem, solution and approach for ${title}`} />
+      <div className={styles.layout}>
+        <div className="lg:hidden">
+          <SelectField
+            id={`${id}-service`}
+            name={`${id}-service`}
+            label="Choose a service"
+            placeholder="Choose a service"
+            value={String(activeIndex)}
+            onValueChange={(value) => {
+              const selected = groups[Number(value)];
+              if (selected) onServiceSelect(selected.capability);
+            }}
+            options={groups.map((group, index) => ({ value: String(index), label: group.capability }))}
+          />
+        </div>
+        <div role="group" aria-label="Choose a service to explore" className="hidden self-start lg:block">
+          <p className="mb-4 text-caption text-muted">Services in this project</p>
+          <ul className="list-none border-t border-rule">
+            {groups.map((group, index) => (
+              <li key={group.capability} className="border-b border-rule">
+                <button
+                  type="button"
+                  aria-pressed={activeIndex === index}
+                  aria-controls={`${id}-content`}
+                  onClick={() => onServiceSelect(group.capability)}
+                  className={cn(styles.service, activeIndex === index && styles.selected)}
+                >
+                  <span className="min-w-0">
+                    <span className="block text-support font-medium leading-snug">{group.capability}</span>
+                    <span className="mt-2 block text-caption text-muted">{group.images.length} {group.images.length === 1 ? "image" : "images"}</span>
+                  </span>
+                  <ArrowUpRight size={18} aria-hidden="true" className={cn("shrink-0", activeIndex !== index && "opacity-0")} />
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div id={`${id}-content`} role="region" aria-labelledby={`${id}-service-title`} className={styles.content}>
+          <header className="mb-5">
+            <h3 id={`${id}-service-title`} className="text-balance font-display text-[clamp(24px,3vw,34px)] font-medium leading-tight tracking-[-.025em]">{active.capability}</h3>
+          </header>
+          <ImageGallery key={active.capability} images={active.images} label={active.capability} />
+          <dl className={styles.notes}>
+            {notes.map((note) => (
+              <div key={note.label} className="min-w-0 border-t border-rule pt-4">
+                <dt className="text-label font-medium">{note.label}</dt>
+                <dd className="mt-3 text-support text-muted">{note.text}</dd>
+              </div>
+            ))}
+          </dl>
+          {active.note && <p className="mt-5 max-w-prose text-caption text-muted">{active.note}</p>}
+          <p role="status" aria-atomic="true" className="sr-only">Showing {active.capability}: {active.images.length} images, with the problem, solution and approach.</p>
+        </div>
+      </div>
     </section>
   );
 }

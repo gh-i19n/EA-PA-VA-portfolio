@@ -12,7 +12,7 @@ export function TestimonialsSection() {
             Testimonials
           </h2>
           <p className="max-w-[440px] text-pretty text-body text-muted">
-            Recommendations from people who know my work.
+            Recommendations from people I have worked with.
           </p>
         </header>
         <RecommendationFolio items={testimonials} />
