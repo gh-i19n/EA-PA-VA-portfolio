@@ -184,7 +184,7 @@ export const projectWorkSamples: WorkSampleLibrary = {
     "Project coordination and management": {
       images: [images["directed-production"]],
       documents: [{
-        src: "/documents/production-planning-and-execution.pdf?v=10",
+        src: "/documents/production-planning-and-execution.pdf?v=11",
         caption: "Production planning and execution",
         pageCount: 11,
         sections: [
