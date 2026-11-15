@@ -1,0 +1,766 @@
+{
+  "sourceFiles": 93,
+  "uniqueSourceFiles": 66,
+  "screenshots": 63,
+  "travelPages": 7,
+  "images": [
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-07-30 173539.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-07-30 173539.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-07-30 173539.png"
+      ],
+      "sha256": "efab5365c6542ea068503002ca2bc5d34eb72817bdacf0778c51f94e4aa1b1e2",
+      "page": null,
+      "key": "calendar-01",
+      "publicImage": "/images/projects/folder-samples/calendar-01-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-08-13 134439.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-08-13 134439.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-08-13 134439.png"
+      ],
+      "sha256": "1df01bd268c3c8975381d0374398230a3c5540a8ead0d162ff3439ef593f090c",
+      "page": null,
+      "key": "calendar-02",
+      "publicImage": "/images/projects/folder-samples/calendar-02-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-09-07 112104.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-09-07 112104.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-09-07 112104.png"
+      ],
+      "sha256": "5417a8e4ccc2e298450b1d2bb07e06a4ab2ae13af57e3499700d12ee443c7d50",
+      "page": null,
+      "key": "calendar-03",
+      "publicImage": "/images/projects/folder-samples/calendar-03-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-09-07 112153.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-09-07 112153.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-09-07 112153.png"
+      ],
+      "sha256": "f916147920ccb7971884fbd9b6533ad4f5dd09098e118c1c872eacfab1b9e48f",
+      "page": null,
+      "key": "calendar-04",
+      "publicImage": "/images/projects/folder-samples/calendar-04-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-09-09 200538.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-09-09 200538.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-09-09 200538.png"
+      ],
+      "sha256": "b3e13208eb7727cdd9de664d411154ce132608d079b6bf76d388aa3352787116",
+      "page": null,
+      "key": "calendar-05",
+      "publicImage": "/images/projects/folder-samples/calendar-05-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 144808.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 144808.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-10-31 144808.png"
+      ],
+      "sha256": "e236c526c43bec8225ed96b986bae1ae2c9f3b057b308dadc18920ff14aa359d",
+      "page": null,
+      "key": "calendar-06",
+      "publicImage": "/images/projects/folder-samples/calendar-06-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 150513.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 150513.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-10-31 150513.png"
+      ],
+      "sha256": "efe2d7604a8b3493fc59da7b6a8348a9d851740b22a4623c208e544254daf759",
+      "page": null,
+      "key": "calendar-07",
+      "publicImage": "/images/projects/folder-samples/calendar-07-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 150525.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 150525.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-10-31 150525.png"
+      ],
+      "sha256": "1b00966a730c549bb04551b8ebb2b6544a820d5f4d7448244c484c5d5a97a9f1",
+      "page": null,
+      "key": "calendar-08",
+      "publicImage": "/images/projects/folder-samples/calendar-08-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 151038.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 151038.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-10-31 151038.png"
+      ],
+      "sha256": "5388366b87a9acd23484a23de6337eed520c364eeb0572fbbd1f38600777565f",
+      "page": null,
+      "key": "calendar-09",
+      "publicImage": "/images/projects/folder-samples/calendar-09-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 151204.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 151204.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-10-31 151204.png"
+      ],
+      "sha256": "91a06da7339d8898d3fbea2dcfdf2bfd7cf28d225d4c72f8583ae1bd0d221f5d",
+      "page": null,
+      "key": "calendar-10",
+      "publicImage": "/images/projects/folder-samples/calendar-10-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 151417.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 151417.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-10-31 151417.png"
+      ],
+      "sha256": "42dc61b28168f5ad069834bc606efc5c160c9ac9e1970e56a918d27f2dcdaa7b",
+      "page": null,
+      "key": "calendar-11",
+      "publicImage": "/images/projects/folder-samples/calendar-11-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 151442.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 151442.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-10-31 151442.png"
+      ],
+      "sha256": "a8bd5ea1aa5639404e963afaa519cd886593b9c21679f402dc930cacc52a522d",
+      "page": null,
+      "key": "calendar-12",
+      "publicImage": "/images/projects/folder-samples/calendar-12-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 152021.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/Calendar Scheduling/Screenshot 2026-10-31 152021.png",
+        "output/ALL PROJECT/Design/Calendar Scheduling/Screenshot 2026-10-31 152021.png"
+      ],
+      "sha256": "dc9c7da1b75203a16ae5cc572defef875caeb0aa6ba70f31495e59494f8bddc6",
+      "page": null,
+      "key": "calendar-13",
+      "publicImage": "/images/projects/folder-samples/calendar-13-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/File Management/Screenshot 2026-10-31 161700.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/File Management/Screenshot 2026-10-31 161700.png",
+        "output/ALL PROJECT/File Management/Screenshot 2026-10-31 161700.png"
+      ],
+      "sha256": "6ce3be48bcc38c76daae1cf5b3d395253c73878c8136c81783c67ee33e1a8904",
+      "page": null,
+      "key": "filing-01",
+      "publicImage": "/images/projects/folder-samples/filing-01-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/File Management/Screenshot 2026-10-31 161715.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/File Management/Screenshot 2026-10-31 161715.png",
+        "output/ALL PROJECT/File Management/Screenshot 2026-10-31 161715.png"
+      ],
+      "sha256": "988759d65c5f4dc7520c58c6d8f1d1a78b1911ddcb9f7cb035d181066662c915",
+      "page": null,
+      "key": "filing-02",
+      "publicImage": "/images/projects/folder-samples/filing-02-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/File Management/Screenshot 2026-10-31 161740.png",
+      "aliases": [
+        "output/ALL PROJECT/Calendar Scheduling/File Management/Screenshot 2026-10-31 161740.png",
+        "output/ALL PROJECT/File Management/Screenshot 2026-10-31 161740.png"
+      ],
+      "sha256": "30b9c5e9046ea8272319e9f751ee6033071a61127008795d7f6d105347be1c44",
+      "page": null,
+      "key": "filing-03",
+      "publicImage": "/images/projects/folder-samples/filing-03-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Communication template/Screenshot 2026-08-13 104722.png",
+      "aliases": [
+        "output/ALL PROJECT/Communication template/Screenshot 2026-08-13 104722.png"
+      ],
+      "sha256": "a254a4c66b609f1b6835132eff579d1039d0c92dceb4d1bc43d1693fb38a6306",
+      "page": null,
+      "key": "communication-01",
+      "publicImage": "/images/projects/folder-samples/communication-01-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Communication template/Screenshot 2026-08-13 125934.png",
+      "aliases": [
+        "output/ALL PROJECT/Communication template/Screenshot 2026-08-13 125934.png"
+      ],
+      "sha256": "6c958d510d2edfdfbbb40c1d872ff313a6d0ac71fd5fc711d3e4d9d60afc42b8",
+      "page": null,
+      "key": "communication-02",
+      "publicImage": "/images/projects/folder-samples/communication-02-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Communication template/Screenshot 2026-08-13 125953.png",
+      "aliases": [
+        "output/ALL PROJECT/Communication template/Screenshot 2026-08-13 125953.png"
+      ],
+      "sha256": "bef109b8eaf7b3d2734a55d29acde6e30718d1b6fee966b23d27c0a200fc2351",
+      "page": null,
+      "key": "communication-03",
+      "publicImage": "/images/projects/folder-samples/communication-03-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Communication template/Screenshot 2026-08-13 131837.png",
+      "aliases": [
+        "output/ALL PROJECT/Communication template/Screenshot 2026-08-13 131837.png"
+      ],
+      "sha256": "f81798d30156fab605fefae682817d041077e692d8243abed1b0610b87190fea",
+      "page": null,
+      "key": "communication-04",
+      "publicImage": "/images/projects/folder-samples/communication-04-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 104245.png",
+      "aliases": [
+        "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 104245.png"
+      ],
+      "sha256": "a5dfc251e8a84bb5310cfb24e6d3f15de7210d2a4975b0747f08ba3c0f3cc055",
+      "page": null,
+      "key": "dataEntry-01",
+      "publicImage": "/images/projects/folder-samples/dataEntry-01-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 104334.png",
+      "aliases": [
+        "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 104334.png"
+      ],
+      "sha256": "93222d06aa84cd8be9b6bec3514aef5d4986aba55233f642a340912d1bcd4f78",
+      "page": null,
+      "key": "dataEntry-02",
+      "publicImage": "/images/projects/folder-samples/dataEntry-02-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105320.png",
+      "aliases": [
+        "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105320.png"
+      ],
+      "sha256": "739387f28987bdf0ee8272787ac1ac8d03d791fc90dbae22fd3d00a73c6b3157",
+      "page": null,
+      "key": "dataEntry-03",
+      "publicImage": "/images/projects/folder-samples/dataEntry-03-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105406.png",
+      "aliases": [
+        "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105406.png"
+      ],
+      "sha256": "8294a2830a206216cb9cdad0c7d752bf030ff48146d88f0d0d0d20d59c3b479a",
+      "page": null,
+      "key": "dataEntry-04",
+      "publicImage": "/images/projects/folder-samples/dataEntry-04-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105425.png",
+      "aliases": [
+        "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105425.png"
+      ],
+      "sha256": "69f1b0efa407f5049f4ae785db16cc381d7be9a6b933ab98d9d7fb3b4efcf138",
+      "page": null,
+      "key": "dataEntry-05",
+      "publicImage": "/images/projects/folder-samples/dataEntry-05-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105440.png",
+      "aliases": [
+        "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105440.png"
+      ],
+      "sha256": "e9ae952b416f0632351cd99c998e4393352be8ae3bfab728f81995850b062205",
+      "page": null,
+      "key": "dataEntry-06",
+      "publicImage": "/images/projects/folder-samples/dataEntry-06-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105454.png",
+      "aliases": [
+        "output/ALL PROJECT/Data Entry/Screenshot 2026-11-02 105454.png"
+      ],
+      "sha256": "018bdb45a5204223a399a18c10bd98cf918ecffbf16e2cafbf4b567d1e40add5",
+      "page": null,
+      "key": "dataEntry-07",
+      "publicImage": "/images/projects/folder-samples/dataEntry-07-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/ARCON Weekly Report.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/ARCON Weekly Report.png"
+      ],
+      "sha256": "59efb362559940c8bf2757b016318840b9323f0ab8f68059058008a20ca06560",
+      "page": null,
+      "key": "design-01",
+      "publicImage": "/images/projects/folder-samples/design-01-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 135353.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 135353.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 135353.png"
+      ],
+      "sha256": "1b64a3dbc72027bd7a9071b8e43b4c085b85098c31b23ff94e549206f2fa8d26",
+      "page": null,
+      "key": "email-02",
+      "publicImage": "/images/projects/folder-samples/email-02-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140019.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140019.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140019.png"
+      ],
+      "sha256": "fb1e9f2c71b65d811d60a3e2679a9c75a9eee144bb0cbc3e7863be7fac6056dd",
+      "page": null,
+      "key": "email-03",
+      "publicImage": "/images/projects/folder-samples/email-03-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140145.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140145.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140145.png"
+      ],
+      "sha256": "2f960d69eadcba32ec49a09f0631b8726efc559f5db9e707313867d88cb8d525",
+      "page": null,
+      "key": "email-04",
+      "publicImage": "/images/projects/folder-samples/email-04-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140338.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140338.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 140338.png"
+      ],
+      "sha256": "e1d348e7954e5f8d513e147f915ea774b937fcc12832896e0ff675eb58ce9be1",
+      "page": null,
+      "key": "email-05",
+      "publicImage": "/images/projects/folder-samples/email-05-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 141435.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 141435.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 141435.png"
+      ],
+      "sha256": "e7e776943e21f2c8fb5401c35b86a15a2652e5e8ca6dedc971317499da68c9d0",
+      "page": null,
+      "key": "email-06",
+      "publicImage": "/images/projects/folder-samples/email-06-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 141511.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 141511.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 141511.png"
+      ],
+      "sha256": "ae9be20d7a5e332dea93ab04f8875adac824332a5b45d7e9db82c9f99a1b6077",
+      "page": null,
+      "key": "email-07",
+      "publicImage": "/images/projects/folder-samples/email-07-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 142844.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 142844.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 142844.png"
+      ],
+      "sha256": "90281188447b135d51318bc0757a40e558b932c4e3cc489da94dcda6acdae907",
+      "page": null,
+      "key": "email-08",
+      "publicImage": "/images/projects/folder-samples/email-08-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143005.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143005.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143005.png"
+      ],
+      "sha256": "0d71f6e0fd3bd7d86043555e08c2c81dbc8c97eb83339568404a22fd684e86e0",
+      "page": null,
+      "key": "email-09",
+      "publicImage": "/images/projects/folder-samples/email-09-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143154.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143154.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143154.png"
+      ],
+      "sha256": "ce7e40a765c60e1696df3dd12e25d6ad0d259470a70606b659eddd89f3677347",
+      "page": null,
+      "key": "email-10",
+      "publicImage": "/images/projects/folder-samples/email-10-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143415.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143415.png",
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-10-31 143415.png"
+      ],
+      "sha256": "a657819308f7b578eed80dc4d13d94b4561f5d6f33f8524974da2472f1e680fe",
+      "page": null,
+      "key": "email-11",
+      "publicImage": "/images/projects/folder-samples/email-11-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-05-28 195835.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-05-28 195835.png",
+        "output/ALL PROJECT/Design/figma.png"
+      ],
+      "sha256": "fac44986a4f2fd9d8b636679cd3b099382fae326f894800d5b66694468b0ed3c",
+      "page": null,
+      "key": "design-02",
+      "publicImage": "/images/projects/folder-samples/design-02-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-08-11 173850.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-08-11 173850.png"
+      ],
+      "sha256": "4cc1b5ef96c8451d000fb9d39d5bdecc6f1dd6a87f9fca544fb8a0f26d4d2878",
+      "page": null,
+      "key": "design-03",
+      "publicImage": "/images/projects/folder-samples/design-03-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-08-11 173921.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-08-11 173921.png"
+      ],
+      "sha256": "17fe648320ff033865b8e58eaeb311508a383cf7f6e6bfd98f26dd51c912daea",
+      "page": null,
+      "key": "design-04",
+      "publicImage": "/images/projects/folder-samples/design-04-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-08-11 174017.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-08-11 174017.png"
+      ],
+      "sha256": "09d590fc3cefdd41176b75b7f62c30510ea7051eeb206301d6a83bb627c1949c",
+      "page": null,
+      "key": "design-05",
+      "publicImage": "/images/projects/folder-samples/design-05-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-08-11 174040.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-08-11 174040.png"
+      ],
+      "sha256": "887f111bb792cc1044d7f624c221e182d6feb58effe54bef061e52710c68144c",
+      "page": null,
+      "key": "design-06",
+      "publicImage": "/images/projects/folder-samples/design-06-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-08-11 174054.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-08-11 174054.png"
+      ],
+      "sha256": "a79c5f6b72cd5a5187900119ba032eafb85ba627cd3ce40de63599a24c4bfdb9",
+      "page": null,
+      "key": "design-07",
+      "publicImage": "/images/projects/folder-samples/design-07-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-08-11 174110.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-08-11 174110.png"
+      ],
+      "sha256": "9d2ff2b23dbd31fed8630647bd0869cb6a3bf48d3aaa2508aa7e2d57f2b905c7",
+      "page": null,
+      "key": "design-08",
+      "publicImage": "/images/projects/folder-samples/design-08-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-08-11 174144.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-08-11 174144.png"
+      ],
+      "sha256": "8b125c4b591455312020f8da49adc2ae2f373d5add1fc41c9194f7c86e2782ba",
+      "page": null,
+      "key": "design-09",
+      "publicImage": "/images/projects/folder-samples/design-09-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2025-08-11 174157.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2025-08-11 174157.png"
+      ],
+      "sha256": "0c81bd18fe984b21690e3168158080c356eab1ad8828141939e62919838e59f8",
+      "page": null,
+      "key": "design-10",
+      "publicImage": "/images/projects/folder-samples/design-10-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2026-11-02 110720.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2026-11-02 110720.png"
+      ],
+      "sha256": "b8b90576902439b99665ce822d8970bf2c89506980b8c9ca31cfbdceeb2db6e8",
+      "page": null,
+      "key": "design-11",
+      "publicImage": "/images/projects/folder-samples/design-11-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Design/Screenshot 2026-11-02 110749.png",
+      "aliases": [
+        "output/ALL PROJECT/Design/Screenshot 2026-11-02 110749.png"
+      ],
+      "sha256": "769abab36b975ac2568cb58d949830e081255b400059e93198a397d1840fdf50",
+      "page": null,
+      "key": "design-12",
+      "publicImage": "/images/projects/folder-samples/design-12-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-09-06 221736.png",
+      "aliases": [
+        "output/ALL PROJECT/Email Management Picture Screendhot folder/Screenshot 2026-09-06 221736.png"
+      ],
+      "sha256": "c5567f078547b8f7761821a4fefd37d0f741c7b76b8bd964073ce03078fc9f59",
+      "page": null,
+      "key": "email-01",
+      "publicImage": "/images/projects/folder-samples/email-01-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 022622.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 022622.png"
+      ],
+      "sha256": "31813556ae87974c88ad2a37c0e8472519007b4909e56ec291b3c1ff6b9e1730",
+      "page": null,
+      "key": "reports-01",
+      "publicImage": "/images/projects/folder-samples/reports-01-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 024313.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 024313.png"
+      ],
+      "sha256": "d522fb0903dbf92e2abe66046e9bac55abf04025a53edf2bd37177be0d1868fd",
+      "page": null,
+      "key": "reports-02",
+      "publicImage": "/images/projects/folder-samples/reports-02-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 024610.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 024610.png"
+      ],
+      "sha256": "bc450645948ee0cc54b21bc366d96cf215dee52f5773a1af9ba50996431a858a",
+      "page": null,
+      "key": "reports-03",
+      "publicImage": "/images/projects/folder-samples/reports-03-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 092748.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 092748.png"
+      ],
+      "sha256": "0e8eb68ea9ef8c6e50b3134932f47c36d0a10503afbb7b63071db79a52b7695a",
+      "page": null,
+      "key": "reports-04",
+      "publicImage": "/images/projects/folder-samples/reports-04-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 093100.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 093100.png"
+      ],
+      "sha256": "4366b693439317b36a127a0a43baf8b257b312b3b676e318a901f41b995e5457",
+      "page": null,
+      "key": "reports-05",
+      "publicImage": "/images/projects/folder-samples/reports-05-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 100305.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-09-07 100305.png"
+      ],
+      "sha256": "75d9a4ad3e404f52bcf28863ebc777d18fc45e48cd25ba122c61816dc5a70d5e",
+      "page": null,
+      "key": "reports-06",
+      "publicImage": "/images/projects/folder-samples/reports-06-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-11-02 114946.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-11-02 114946.png"
+      ],
+      "sha256": "ec536aebb09a6729ef8195de2aa3bd13a33d59a6625fb90d2a6a09fa5195b85c",
+      "page": null,
+      "key": "reports-07",
+      "publicImage": "/images/projects/folder-samples/reports-07-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-11-02 115002.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-11-02 115002.png"
+      ],
+      "sha256": "bf5ec394d69bc7ff4b72f91ca033cded7932b5dac6d06a3b5bf911df2292c045",
+      "page": null,
+      "key": "reports-08",
+      "publicImage": "/images/projects/folder-samples/reports-08-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-11-02 115036.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-11-02 115036.png"
+      ],
+      "sha256": "6136debad6d469dd06b73e6cf534b4f051a6d6315afdc2f1d921558ac965bdd9",
+      "page": null,
+      "key": "reports-09",
+      "publicImage": "/images/projects/folder-samples/reports-09-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-11-02 115117.png",
+      "aliases": [
+        "output/ALL PROJECT/REports google forms presenttio/Screenshot 2026-11-02 115117.png"
+      ],
+      "sha256": "04fb49640061c870b71d55c9a103995b29ad26de59cf9207a7d24c0ee3ac43a1",
+      "page": null,
+      "key": "reports-10",
+      "publicImage": "/images/projects/folder-samples/reports-10-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Research & Article/Screenshot 2026-11-02 105715.png",
+      "aliases": [
+        "output/ALL PROJECT/Research & Article/Screenshot 2026-11-02 105715.png"
+      ],
+      "sha256": "7e96bee4576008ebc2f7c2fed2784d5193c1be6310f8604499523f682068de5e",
+      "page": null,
+      "key": "research-01",
+      "publicImage": "/images/projects/folder-samples/research-01-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Research & Article/Screenshot 2026-11-02 105902.png",
+      "aliases": [
+        "output/ALL PROJECT/Research & Article/Screenshot 2026-11-02 105902.png"
+      ],
+      "sha256": "3e9efee4c217601ebd108a8fee8951aed35bfe2efd50b38c491fc36ecd83c17a",
+      "page": null,
+      "key": "research-02",
+      "publicImage": "/images/projects/folder-samples/research-02-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/Research & Article/Screenshot 2026-11-02 105943.png",
+      "aliases": [
+        "output/ALL PROJECT/Research & Article/Screenshot 2026-11-02 105943.png"
+      ],
+      "sha256": "904e90f3026337debd9a9200cb4f39a3eb04e42ca98b93a32462ab9e7d52493e",
+      "page": null,
+      "key": "research-03",
+      "publicImage": "/images/projects/folder-samples/research-03-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/travels/E-TICKET ITINERARY RECEIPT - ODUGUWAABIMBOLA.pdf",
+      "aliases": [
+        "output/ALL PROJECT/travels/E-TICKET ITINERARY RECEIPT - ODUGUWAABIMBOLA.pdf"
+      ],
+      "sha256": "6c7aed852367e75c080a30a65b160ea48b07ed555cdd41cb6757923b45e6ef12",
+      "page": 1,
+      "key": "ticket-receipt-1",
+      "publicImage": "/images/projects/folder-samples/ticket-receipt-1-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/travels/E-TICKET ITINERARY RECEIPT - ODUGUWAABIMBOLA.pdf",
+      "aliases": [
+        "output/ALL PROJECT/travels/E-TICKET ITINERARY RECEIPT - ODUGUWAABIMBOLA.pdf"
+      ],
+      "sha256": "6c7aed852367e75c080a30a65b160ea48b07ed555cdd41cb6757923b45e6ef12",
+      "page": 2,
+      "key": "ticket-receipt-2",
+      "publicImage": "/images/projects/folder-samples/ticket-receipt-2-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly 2.pdf",
+      "aliases": [
+        "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly 2.pdf"
+      ],
+      "sha256": "cf15928a0f2e5209ef4b1e21170db18021a0c930cd7e1efea96a1a88574731f3",
+      "page": 1,
+      "key": "boarding-document-1",
+      "publicImage": "/images/projects/folder-samples/boarding-document-1-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly 2.pdf",
+      "aliases": [
+        "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly 2.pdf"
+      ],
+      "sha256": "cf15928a0f2e5209ef4b1e21170db18021a0c930cd7e1efea96a1a88574731f3",
+      "page": 2,
+      "key": "boarding-document-2",
+      "publicImage": "/images/projects/folder-samples/boarding-document-2-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly.pdf",
+      "aliases": [
+        "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly.pdf"
+      ],
+      "sha256": "3bf0549044d30df4ae8fbeb0423e75f5ae3f92379a2e1fa48b5f1319ab2bd789",
+      "page": 1,
+      "key": "flight-receipt-1",
+      "publicImage": "/images/projects/folder-samples/flight-receipt-1-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly.pdf",
+      "aliases": [
+        "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly.pdf"
+      ],
+      "sha256": "3bf0549044d30df4ae8fbeb0423e75f5ae3f92379a2e1fa48b5f1319ab2bd789",
+      "page": 2,
+      "key": "flight-receipt-2",
+      "publicImage": "/images/projects/folder-samples/flight-receipt-2-original.jpg"
+    },
+    {
+      "source": "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly.pdf",
+      "aliases": [
+        "output/ALL PROJECT/travels/ValueJet  Creating a world where everyone can fly.pdf"
+      ],
+      "sha256": "3bf0549044d30df4ae8fbeb0423e75f5ae3f92379a2e1fa48b5f1319ab2bd789",
+      "page": 3,
+      "key": "flight-receipt-3",
+      "publicImage": "/images/projects/folder-samples/flight-receipt-3-original.jpg"
+    }
+  ],
+  "galleryDuplicateResolution": [
+    {
+      "excludedKey": "calendar-08",
+      "retainedKeys": [
+        "calendar-07"
+      ],
+      "reason": "Same week, events and times with different framing."
+    },
+    {
+      "excludedKey": "dataEntry-03",
+      "retainedKeys": [
+        "dataEntry-06"
+      ],
+      "reason": "Same attendance-and-giving tables; retained capture has no offline-extension banner."
+    },
+    {
+      "excludedKey": "dataEntry-07",
+      "retainedKeys": [
+        "dataEntry-06"
+      ],
+      "reason": "Same table content with minor viewport differences."
+    },
+    {
+      "excludedKey": "design-04",
+      "retainedKeys": [
+        "design-05",
+        "design-06"
+      ],
+      "reason": "Repeated About and Trainers content is preserved in clearer separate views, including trainer names."
+    }
+  ]
+}

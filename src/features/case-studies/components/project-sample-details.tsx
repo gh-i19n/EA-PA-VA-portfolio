@@ -1,10 +1,11 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
-import { ImageGallery } from "~/components/ui/image-gallery";
+import { MediaGallery } from "~/components/ui/media-gallery";
 import { SelectField } from "~/components/ui/select-field";
 import { cn } from "~/shared/ui/utils";
 import type { ProjectWorkSampleGroup } from "../types/project-work-sample";
+import { sampleCountLabel, sampleMedia } from "../utils/sample-media";
 import styles from "./project-sample-details.module.css";
 
 /** A service remains selected while visitors inspect its images and context. */
@@ -58,7 +59,7 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
                 >
                   <span className="min-w-0">
                     <span className="block text-support font-medium leading-snug">{group.capability}</span>
-                    <span className="mt-2 block text-caption text-muted">{group.images.length} {group.images.length === 1 ? "image" : "images"}</span>
+                    <span className="mt-2 block text-caption text-muted">{sampleCountLabel(group)}</span>
                   </span>
                   <ArrowUpRight size={18} aria-hidden="true" className={cn("shrink-0", activeIndex !== index && "opacity-0")} />
                 </button>
@@ -70,7 +71,7 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
           <header className="mb-5">
             <h3 id={`${id}-service-title`} className="text-balance font-display text-[clamp(24px,3vw,34px)] font-medium leading-tight tracking-[-.025em]">{active.capability}</h3>
           </header>
-          <ImageGallery key={active.capability} images={active.images} label={active.capability} />
+          <MediaGallery key={active.capability} items={sampleMedia(active)} label={active.capability} />
           <dl className={styles.notes}>
             {notes.map((note) => (
               <div key={note.label} className="min-w-0 border-t border-rule pt-4">
@@ -80,7 +81,7 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
             ))}
           </dl>
           {active.note && <p className="mt-5 max-w-prose text-caption text-muted">{active.note}</p>}
-          <p role="status" aria-atomic="true" className="sr-only">Showing {active.capability}: {active.images.length} images, with the problem, solution and approach.</p>
+          <p role="status" aria-atomic="true" className="sr-only">Showing {active.capability}: {sampleCountLabel(active)}, with the problem, solution and approach.</p>
         </div>
       </div>
     </section>

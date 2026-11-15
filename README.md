@@ -4,7 +4,7 @@ A single Next.js application for AY's professional portfolio. The current versio
 
 ## Run locally
 
-Use Node.js 20.9 or newer and pnpm 10.27.0.
+Use Node.js 20.16 or newer and pnpm 10.27.0.
 
 ```bash
 pnpm install
@@ -32,6 +32,38 @@ pnpm lint
 pnpm check-types
 pnpm build
 ```
+
+## Vercel Web Analytics
+
+The root layout mounts `Analytics` from `@vercel/analytics/next` once for the
+whole site. It tracks page views and client-side navigation, including case-study
+routes. The SDK selects development mode locally and production mode in deployed
+builds. No analytics API key or additional environment variable is required for
+this Vercel-hosted setup.
+
+Web Analytics must be enabled for the Vercel project. After deploying this change,
+visit the deployed site, navigate between pages, then check the project's Web
+Analytics dashboard. Local development does not confirm production ingestion.
+See [Vercel's setup guide](https://vercel.com/docs/analytics/quickstart).
+
+## Project images and PDF documents
+
+Project service galleries accept images and original PDF files. Document entries
+are configured beside images in `project-work-samples.ts`; optional page counts
+and section links help visitors navigate longer documents. The supplied
+production-planning document is available under Project coordination and management.
+
+The PDF reader loads on selection and renders one page at a time, with selectable
+text, page navigation, zoom, section links and an expanded reading view.
+File selection and page selection are separate, and the selected PDF page is
+retained when switching files or expanding the reader. Loading failures provide
+retry and an original-file link. PDFs are served from this application.
+The dedicated PDF download action is omitted in both gallery views at the owner's
+request.
+
+`react-pdf` and `pdfjs-dist` are pinned to matching versions. Update both together
+so the bundled PDF.js worker continues to match the renderer. The client-only
+reader keeps PDF.js out of server rendering and image-only initial bundles.
 
 ## Application structure
 

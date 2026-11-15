@@ -9,6 +9,22 @@
   background: var(--surface);
 }
 
+.documentStage {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-frame);
+  background: var(--surface);
+}
+
+.documentThumbnail {
+  display: grid;
+  height: 100%;
+  place-content: center;
+  justify-items: center;
+  gap: 0.2rem;
+  font-size: 0.65rem;
+}
+
 .thumbnails {
   display: flex;
   min-width: 0;

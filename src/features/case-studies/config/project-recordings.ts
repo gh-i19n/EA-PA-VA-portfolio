@@ -63,7 +63,7 @@ export const projectRecordings = {
   ],
   documentation: [
     recording("documentation", "Presentation design and preparation", "presentation-design", "Presentation design", "A walkthrough of the Bridge500 introduction, mission and programme slides."),
-    recording("documentation", "Documentation and report writing", "communication-templates", "Communication templates", "Communication channels, timing, approval steps and reusable message templates."),
+    recording("documentation", "Communication templates", "communication-templates", "Communication templates", "Communication channels, timing, approval steps and reusable message templates."),
     recording("documentation", "Meeting agendas and preparation", "meeting-agenda", "Meeting agenda", "Department updates, action items and upcoming priorities arranged in a meeting agenda."),
     recording("documentation", "Documentation and report writing", "meeting-report-review", "Meeting reporting", "The updated recording of structured meeting notes, discussion points and follow-up actions."),
     recording("documentation", "Presentation design and preparation", "figma-designs", "Speaker profiles in Figma", "A set of speaker-profile layouts prepared in Figma."),

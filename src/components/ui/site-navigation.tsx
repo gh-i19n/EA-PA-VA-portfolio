@@ -69,6 +69,15 @@ export function SiteNavigation() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 64rem)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) dialog.current?.close();
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
+
   function openMenu() {
     if (!dialog.current || dialog.current.open) return;
     closing.current = false;
@@ -165,7 +174,7 @@ export function SiteNavigation() {
         aria-expanded={open}
         aria-controls="portfolio-index"
         aria-haspopup="dialog"
-        className="group ml-auto flex min-h-11 shrink-0 items-center gap-4 text-label lg:ml-8"
+        className="group ml-auto flex min-h-11 shrink-0 items-center gap-4 text-label lg:hidden"
       >
         Menu
         <span className="grid size-9 place-items-center rounded-full border border-ink/30 transition-transform duration-300 ease-[cubic-bezier(.22,1,.36,1)] group-hover:rotate-90 motion-reduce:transition-none">

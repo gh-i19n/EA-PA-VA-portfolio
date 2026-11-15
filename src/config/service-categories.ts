@@ -29,6 +29,7 @@ export const serviceCategories = {
     title: "Documentation & Communication",
     capabilities: [
       "Documentation and report writing",
+      "Communication templates",
       "Meeting agendas and preparation",
       "Presentation design and preparation",
       "Proofreading and editing",

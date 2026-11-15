@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type React from "react";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteShell } from "~/components/ui/site-shell";
 import { displayFont, readingFont } from "~/infrastructure/fonts";
 import "./globals.css";
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en" className={`${readingFont.variable} ${displayFont.variable}`}>
       <body>
         <SiteShell>{children}</SiteShell>
+        <Analytics />
       </body>
     </html>
   );
