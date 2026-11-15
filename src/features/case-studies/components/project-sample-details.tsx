@@ -1,10 +1,11 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import { ContentAccordion } from "~/components/ui/content-accordion";
 import { MediaGallery } from "~/components/ui/media-gallery";
 import { SelectField } from "~/components/ui/select-field";
 import { cn } from "~/shared/ui/utils";
-import type { ProjectWorkSampleGroup } from "../types/project-work-sample";
+import type { ProjectWorkSampleGroup, ProjectWorkSampleNote } from "../types/project-work-sample";
 import { sampleCountLabel, sampleMedia } from "../utils/sample-media";
 import styles from "./project-sample-details.module.css";
 
@@ -23,7 +24,20 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
     { label: "Problem", text: active.problem },
     { label: "Solution", text: active.solution },
     { label: "Approach", text: active.approach },
-  ];
+  ].map<ProjectWorkSampleNote>(({ label, text }) => typeof text === "string"
+    ? { title: label, paragraphs: [text] }
+    : text);
+  const detailed = notes.some((note) => note.paragraphs.length > 1 || Boolean(note.bullets?.length));
+  const noteContent = (note: ProjectWorkSampleNote) => (
+    <div className={styles.noteBody}>
+      {note.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {note.bullets?.length ? (
+        <ul className={styles.noteList}>
+          {note.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+        </ul>
+      ) : null}
+    </div>
+  );
 
   return (
     <section id={id} aria-labelledby={`${id}-title`} className="mt-16 border-t border-rule pt-10 sm:mt-24 sm:pt-12">
@@ -72,14 +86,25 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
             <h3 id={`${id}-service-title`} className="text-balance font-display text-[clamp(24px,3vw,34px)] font-medium leading-tight tracking-[-.025em]">{active.capability}</h3>
           </header>
           <MediaGallery key={active.capability} items={sampleMedia(active)} label={active.capability} />
-          <dl className={styles.notes}>
-            {notes.map((note) => (
-              <div key={note.label} className="min-w-0 border-t border-rule pt-4">
-                <dt className="text-label font-medium">{note.label}</dt>
-                <dd className="mt-3 text-support text-muted">{note.text}</dd>
-              </div>
-            ))}
-          </dl>
+          {detailed ? (
+            <ContentAccordion
+              label="Problem, solution and approach"
+              items={notes.map((note, index) => ({
+                id: `note-${index}`,
+                title: note.title.replace(/^\d+\.\s*/, ""),
+                content: noteContent(note),
+              }))}
+            />
+          ) : (
+            <dl className={styles.notes}>
+              {notes.map((note) => (
+                <div key={note.title} className="min-w-0 border-t border-rule pt-4">
+                  <dt className="text-label font-medium">{note.title.replace(/^\d+\.\s*/, "")}</dt>
+                  <dd className="mt-3 text-support text-muted">{noteContent(note)}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
           {active.note && <p className="mt-5 max-w-prose text-caption text-muted">{active.note}</p>}
           <p role="status" aria-atomic="true" className="sr-only">Showing {active.capability}: {sampleCountLabel(active)}, with the problem, solution and approach.</p>
         </div>

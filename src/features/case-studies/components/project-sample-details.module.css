@@ -38,6 +38,19 @@
   margin-top: 2rem;
 }
 
+.noteBody {
+  display: grid;
+  min-width: 0;
+  gap: 1rem;
+}
+
+.noteList {
+  display: grid;
+  gap: 0.5rem;
+  padding-inline-start: 1.25rem;
+  list-style: disc;
+}
+
 @container (min-width: 42rem) {
   .notes {
     grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -23,7 +23,7 @@ export const curriculumVitae = [
     previewWidth: 1391,
     previewHeight: 1800,
     pages: [
-      { number: 1, src: "/images/credentials/ay-remote-cv-page-1.png" },
+      { number: 1, src: "/images/credentials/ay-remote-cv-page-1-v2.png" },
       { number: 2, src: "/images/credentials/ay-remote-cv-page-2.png" },
     ],
     documentHref: "/documents/ayomide-ajibola-remote-cv.pdf",

@@ -20,7 +20,7 @@ export const serviceAreas = [
       "I connect people, information and deadlines across the work you delegate. Dependencies are tracked, owners stay informed and issues reach you with context and options.",
     sample: {
       image: "/images/services/ay-project-operations.png",
-      alt: "Ayomide Ajibola's Project and Operations Management flyer: project coordination, task and deadline tracking, workflow coordination and AI-powered workflow automation",
+      alt: "Ayomide Ajibola's Project and Operations Management flyer: project coordination, task and deadline tracking, workflow coordination and workflow automation",
       label: "Project and operations management",
       href: "/case-studies/closing-the-loop",
     },

@@ -24,7 +24,7 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
         <ProjectWorkShowcase
           recordings={recordings}
           serviceCategory={study.serviceCategory}
-          groups={Object.entries(projectWorkSamples[study.serviceCategory]).map(([capability, sample]) => ({ capability, ...sample }))}
+          groups={Object.entries(projectWorkSamples[study.serviceCategory]).flatMap(([capability, sample]) => sample ? [{ capability, ...sample }] : [])}
         >
           {!recordings.length && <>
             <PortfolioVisual className="relative aspect-[1.2] overflow-hidden bg-mist sm:aspect-[2.1]">
