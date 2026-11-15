@@ -1,0 +1,64 @@
+[
+  {
+    "slug": "ay-project-operations",
+    "title": "Project & Operations Management",
+    "services": [
+      "Project coordination and management",
+      "Task and deadline tracking",
+      "Workflow coordination",
+      "AI-powered workflow automation"
+    ],
+    "source": "output/imagegen/service-flyers/ay-project-operations.html",
+    "asset": "public/images/services/ay-project-operations.png",
+    "portrait": "public/images/ay-a.png",
+    "workSample": "public/images/work/trello-workflow.jpg",
+    "portraitProcessing": "Original portrait embedded directly, without AI generation, retouching, recolouring or filters.",
+    "designSource": "Existing AY Executive Support flyer, including the same desk background, palette, typography and layout.",
+    "dimensions": [
+      1600,
+      1200
+    ]
+  },
+  {
+    "slug": "ay-documentation-communication",
+    "title": "Documentation & Communication",
+    "services": [
+      "Documentation and report writing",
+      "Meeting agendas and preparation",
+      "Presentation design and preparation",
+      "Proofreading and editing",
+      "Research and article writing",
+      "PDF formatting"
+    ],
+    "source": "output/imagegen/service-flyers/ay-documentation-communication.html",
+    "asset": "public/images/services/ay-documentation-communication.png",
+    "portrait": "public/images/ay-a.png",
+    "workSample": "public/images/work/meeting-agenda.png",
+    "portraitProcessing": "Original portrait embedded directly, without AI generation, retouching, recolouring or filters.",
+    "designSource": "Existing AY Executive Support flyer, including the same desk background, palette, typography and layout.",
+    "dimensions": [
+      1600,
+      1200
+    ]
+  },
+  {
+    "slug": "ay-travel-logistics",
+    "title": "Travel & Logistics Management",
+    "services": [
+      "Travel planning and coordination",
+      "Itinerary preparation",
+      "Flight and accommodation arrangements",
+      "Appointment and booking coordination"
+    ],
+    "source": "output/imagegen/service-flyers/ay-travel-logistics.html",
+    "asset": "public/images/services/ay-travel-logistics.png",
+    "portrait": "public/images/ay-a.png",
+    "workSample": "public/images/work/travel-coordination.png",
+    "portraitProcessing": "Original portrait embedded directly, without AI generation, retouching, recolouring or filters.",
+    "designSource": "Existing AY Executive Support flyer, including the same desk background, palette, typography and layout.",
+    "dimensions": [
+      1600,
+      1200
+    ]
+  }
+]
