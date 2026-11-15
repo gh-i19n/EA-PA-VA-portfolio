@@ -4,7 +4,7 @@
 
 On 15 November 2026, the user requested every related image from `output/ALL PROJECT/`, followed by a request to keep the information unmasked. The user subsequently requested duplicate removal and clarified that a screenshot may appear once in each relevant subcategory.
 
-There are 93 source files: 63 distinct image files and three distinct PDFs, with exact duplicate copies across the nested folders. The PDFs contain seven pages, producing 70 prepared images. The latest gallery review omits four redundant captures while preserving their content in the retained screenshots. The galleries reference 66 of these prepared images and 12 existing supporting images, for 78 distinct image URLs across 20 subcategories. Different contents and workflow steps are retained.
+There are 93 source files: 63 distinct image files and three distinct PDFs, with exact duplicate copies across the nested folders. The PDFs contain seven pages, producing 70 prepared images. The latest gallery review omits four redundant captures while preserving their content in the retained screenshots. The galleries reference 66 of these prepared images and 11 existing supporting images, for 77 distinct image URLs across 19 subcategories. Different contents and workflow steps are retained.
 
 | Source category | Distinct screenshots / pages |
 | --- | ---: |
@@ -30,11 +30,14 @@ The calendar folder also contains duplicate copies of the three filing images. D
 - The session reminder and speaker outreach screenshots are assigned to Documentation & Communication > Communication templates, alongside the four communication-template screenshots. They no longer appear in the executive project galleries.
 - The Communication templates recording selects this same service gallery.
 - The communication-template overview, welcome/follow-up and event announcement screenshots appear once each in Communication templates and have been removed from General administrative support.
-- The meeting agenda was also removed from General administrative support, leaving only the administrative support SOP. The agenda remains available under Meeting agendas and preparation.
+- General administrative support was removed from the executive project gallery at the user's request. Its SOP remains in Communication templates, PDF formatting and Workflow coordination; the agenda remains available under Meeting agendas and preparation.
 - Task and deadline tracking contains the Trello board and action handoff. The Project tracker screenshot was removed from that subcategory.
-- The welcome/follow-up and event announcement templates were removed from Workflow coordination, leaving three images in that subcategory.
-- The administrative support SOP was removed from AI-powered workflow automation, leaving the meeting-record settings and inbox-rule examples.
-- AI-powered workflow automation now includes the supplied Google Meet screenshot with Gemini note-taking, transcription and recording settings.
+- The Project tracker screenshot was also removed from Project coordination and management at the user's request, leaving the theatre image followed by the project PDF.
+- The welcome/follow-up and event announcement templates were removed from Workflow coordination. The Team meeting agenda image is also included there alongside the SOP, action handoff and communication template overview.
+- The Bridge500 presentation image was removed from Documentation and report writing and remains in Presentation design and preparation.
+- The administrative support SOP was removed from Workflow automation, leaving the meeting-record settings and email-management examples.
+- Email label creation, inbox filter setup and scheduled delivery options also appear under Workflow automation, with one copy of each. All three remain in Email and inbox management.
+- Workflow automation includes the supplied Google Meet screenshot with Gemini note-taking, transcription and recording settings.
 - The travel receipts and boarding pages are separate examples from the existing planning itinerary.
 
 ## Duplicate review
@@ -52,7 +55,15 @@ The 144 remaining image placements contain no repeated image URLs within a subca
 
 ## Project PDF documents
 
-The project galleries support PDFs alongside images. Project coordination and management includes an edited copy of the supplied `CONTENT WRITING.pdf`, served as `public/documents/production-planning-and-execution.pdf`, with 33 pages and section links. At the user's request, the portfolio copy notes beneath Project Completion on page 33 and all following pages were removed. The document now ends with the complete Project Completion section. The uploaded original is unchanged; the edited master is saved at `output/pdf/production-planning-and-execution.pdf`. The viewer URL includes `?v=2` so an already-open reader reloads the edited document. The screenshot-generation request was superseded by this PDF viewer; no PDF-page images were added to the galleries from this document.
+The project galleries support PDFs alongside images. Project coordination and management includes an edited copy of the supplied `CONTENT WRITING.pdf`, served as `public/documents/production-planning-and-execution.pdf`. The current document has 11 pages. The uploaded original is unchanged; the edited master is saved at `output/pdf/production-planning-and-execution.pdf`. The viewer URL includes `?v=10` so an already-open reader reloads the edited document.
+
+At the user's request, the portfolio copy notes beneath Project Completion on original page 33 and all following pages were removed. The document ends with the complete Project Completion section. The introductory “CONTENT WRITING” and “1. Project management documentation” lines on page 1 were also removed, so the content begins with Project Documentation.
+
+The Resource and Budget Management section was replaced with the user's supplied paragraphs, four-column allocation table, Budget Summary and note identifying the expense and variance figures as illustrative estimates. Its new page 6 includes six budget categories and a Total row: planned budget ₦1,080,000, estimated expenses ₦1,065,000 and estimated balance ₦15,000. The repeated budget layout on original pages 6–28 and its old introduction at the bottom of page 5 were replaced with this single budget page. The viewer section links and PDF bookmarks were remapped to the resulting 11-page document; duplicate budget bookmarks and invalid bookmarks from previously removed content were removed.
+
+The Team / Key Responsibilities section on page 3 is a bordered, two-column table with a shaded header and eight team rows. The Project Timeline on page 5 has a matching bordered, three-column table preserving all eight weeks. Risk Management is now on page 7, with six risk entries in a bordered, three-column table headed Identified Risk, Potential Impact and Mitigation / Response. All wording in those tables is preserved. The selected budget-record fragments, financial-figures note and divider above the risk section on original page 29 were removed. Its heading reads “10. RISK MANAGEMENT”, with the matching viewer tab labelled “Risk management”.
+
+On final page 11, the video placeholder is replaced with an underlined “Watch the final stage production on YouTube” link to the user-supplied URL (`https://youtu.be/wBScAdVrZ_8?si=6_2qvc4RBDPBk4J0`). The PDF includes a URI link annotation, which the viewer is configured to open in a new tab. The screenshot-generation request was superseded by this PDF viewer; no PDF-page images were added to the galleries from this document.
 
 ## Image handling
 

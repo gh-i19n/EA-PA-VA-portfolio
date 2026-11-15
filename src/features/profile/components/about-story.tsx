@@ -33,7 +33,7 @@ export function AboutStory() {
             <div className={styles.proseColumns}>
               <p>
                 People often ask how someone who studied Performing Arts became an
-                Executive Virtual Assistant. To me, the transition makes perfect
+                Executive Assistant. To me, the transition makes perfect
                 sense.
               </p>
               <p>

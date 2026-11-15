@@ -20,7 +20,7 @@ export const serviceCategories = {
       "Project coordination and management",
       "Task and deadline tracking",
       "Workflow coordination",
-      "AI-powered workflow automation",
+      "Workflow automation",
     ],
   },
   documentation: {
@@ -44,7 +44,7 @@ export const serviceCategories = {
     capabilities: [
       "Travel planning and coordination",
       "Itinerary preparation",
-      "Flight and accommodation arrangements",
+      "Flight booking",
       "Appointment and booking coordination",
     ],
   },
