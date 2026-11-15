@@ -16,7 +16,10 @@ export const projectCards = [
     return {
       id: study.slug,
       order: category.order,
-      category: category.title,
+      category:
+        "projectIndexCategory" in study
+          ? study.projectIndexCategory
+          : category.title,
       title: presentation.title,
       contents: recordings.length
         ? [`${recordings.length} recordings`, ...presentation.contents]

@@ -61,7 +61,7 @@ export function AboutStory() {
                 as valuable in business as they are on stage.
               </p>
               <p>
-                Every CEO, founder and growing business needs someone who keeps
+                Every CEO, founder, and executive needs someone who keeps
                 operations moving, anticipates what needs doing and creates order
                 where there’s complexity. That’s where I do my best work.
               </p>

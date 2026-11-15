@@ -27,7 +27,6 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
   ].map<ProjectWorkSampleNote>(({ label, text }) => typeof text === "string"
     ? { title: label, paragraphs: [text] }
     : text);
-  const detailed = notes.some((note) => note.paragraphs.length > 1 || Boolean(note.bullets?.length));
   const noteContent = (note: ProjectWorkSampleNote) => (
     <div className={styles.noteBody}>
       {note.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
@@ -86,25 +85,14 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
             <h3 id={`${id}-service-title`} className="text-balance font-display text-[clamp(24px,3vw,34px)] font-medium leading-tight tracking-[-.025em]">{active.capability}</h3>
           </header>
           <MediaGallery key={active.capability} items={sampleMedia(active)} label={active.capability} />
-          {detailed ? (
-            <ContentAccordion
-              label="Problem, solution and approach"
-              items={notes.map((note, index) => ({
-                id: `note-${index}`,
-                title: note.title.replace(/^\d+\.\s*/, ""),
-                content: noteContent(note),
-              }))}
-            />
-          ) : (
-            <dl className={styles.notes}>
-              {notes.map((note) => (
-                <div key={note.title} className="min-w-0 border-t border-rule pt-4">
-                  <dt className="text-label font-medium">{note.title.replace(/^\d+\.\s*/, "")}</dt>
-                  <dd className="mt-3 text-support text-muted">{noteContent(note)}</dd>
-                </div>
-              ))}
-            </dl>
-          )}
+          <ContentAccordion
+            label="Problem, solution and approach"
+            items={notes.map((note, index) => ({
+              id: `note-${index}`,
+              title: note.title.replace(/^\d+\.\s*/, ""),
+              content: noteContent(note),
+            }))}
+          />
           {active.note && <p className="mt-5 max-w-prose text-caption text-muted">{active.note}</p>}
           <p role="status" aria-atomic="true" className="sr-only">Showing {active.capability}: {sampleCountLabel(active)}, with the problem, solution and approach.</p>
         </div>
