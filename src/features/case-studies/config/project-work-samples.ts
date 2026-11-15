@@ -138,8 +138,8 @@ export const projectWorkSamples: WorkSampleLibrary = {
     },
     "Data entry": {
       images: [
-        source["dataEntry-01"], source["dataEntry-02"], source["dataEntry-04"],
-        source["dataEntry-05"], source["dataEntry-06"],
+        source["dataEntry-01"], source["dataEntry-02"], source["dataEntry-06"],
+        source["dataEntry-04"], source["dataEntry-05"],
       ],
       problem: {
         title: "1. The Problem",
