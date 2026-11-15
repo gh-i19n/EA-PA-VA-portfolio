@@ -8,7 +8,7 @@ export function EditorialPageIntro({
   description: string;
 }) {
   return (
-    <header className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-12 pt-10 sm:w-[calc(100%-5rem)] sm:pb-20 sm:pt-16 lg:pt-20">
+    <header className="mx-auto w-[calc(100%-2.5rem)] max-w-[1440px] pb-12 pt-10 [overflow-wrap:anywhere] sm:w-[calc(100%-5rem)] sm:pb-20 sm:pt-16 lg:pt-20">
       <PortfolioPageTitle title={title} />
       <p className="ml-auto mt-9 max-w-[480px] text-pretty text-body text-muted sm:mt-12 lg:mr-[6%]">
         {description}

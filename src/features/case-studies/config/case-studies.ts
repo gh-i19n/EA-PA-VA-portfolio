@@ -1,14 +1,35 @@
+import { serviceCategories } from "~/config/service-categories";
 import type { CaseStudy } from "../types/case-study";
+import { projectRecordings } from "./project-recordings";
 export type { CaseStudy } from "../types/case-study";
+
+const sampleListFormatter = new Intl.ListFormat("en-GB", {
+  style: "long",
+  type: "conjunction",
+});
+
+function workSampleSummary(
+  support: string,
+  recordings: readonly { title: string }[],
+  documentSamples: readonly string[] = [],
+) {
+  const titles = recordings.length
+    ? recordings.map(({ title }) => title)
+    : documentSamples;
+  const introduction = `These are work samples of the ${support} I have provided`;
+
+  return titles.length
+    ? `${introduction}, including ${sampleListFormatter.format(titles)}.`
+    : `${introduction}.`;
+}
 
 export const caseStudies = [
   {
     slug: "the-executive-week",
-    title: "The executive week.",
+    title: serviceCategories.executive.title,
     serviceCategory: "executive",
     sample: "brief",
-    summary:
-      "Calendar planning, appointment bookings, inbox workflows, digital filing and spreadsheet summaries, shown through the supplied recordings.",
+    summary: workSampleSummary("administrative support", projectRecordings.executive),
     image: "/images/work/calendar-availability.png",
     alt: "AY’s Google Calendar appointment schedule with recurring training availability",
     challenge:
@@ -57,11 +78,14 @@ export const caseStudies = [
   },
   {
     slug: "every-journey-considered",
-    title: "Every journey, considered.",
+    title: serviceCategories.travel.title,
     serviceCategory: "travel",
     sample: "travel",
-    summary:
-      "A Lagos–Abuja planning sample connecting the schedule, estimated budget and travel checklist.",
+    summary: workSampleSummary("travel and logistics support", projectRecordings.travel, [
+      "the Lagos–Abuja itinerary",
+      "an estimated travel budget",
+      "a travel checklist",
+    ]),
     image: "/images/work/travel-cover.png",
     alt: "Preview of AY’s Lagos–Abuja executive travel itinerary",
     challenge:
@@ -109,11 +133,10 @@ export const caseStudies = [
   },
   {
     slug: "closing-the-loop",
-    title: "Keeping projects on track.",
+    title: serviceCategories.operations.title,
     serviceCategory: "operations",
     sample: "handoff",
-    summary:
-      "Task boards, written handoffs and a live-production excerpt, grouped as project and operations work samples.",
+    summary: workSampleSummary("project and operations management", projectRecordings.operations),
     image: "/images/work/trello-workflow.jpg",
     alt: "AY’s supplied Trello board showing To-do, In Progress and Done lists",
     challenge:
@@ -163,10 +186,9 @@ export const caseStudies = [
   },
   {
     slug: "documents-and-communication",
-    title: "Documents that do the work.",
+    title: serviceCategories.documentation.title,
     serviceCategory: "documentation",
-    summary:
-      "Presentations, meeting documents, communication templates, research and survey summaries, shown in the supplied work samples.",
+    summary: workSampleSummary("documentation and communication support", projectRecordings.documentation),
     image: "/images/projects/presentation-design.jpg",
     alt: "A slide from the supplied Bridge500 presentation",
     challenge:

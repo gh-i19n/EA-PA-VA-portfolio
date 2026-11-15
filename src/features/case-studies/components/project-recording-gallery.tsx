@@ -7,7 +7,7 @@ import { cn } from "~/shared/ui/utils";
 import { serviceCategories, type ServiceCategoryId } from "~/config/service-categories";
 import { useProjectPlayback } from "../hooks/use-project-playback";
 import type { ProjectRecording } from "../types/project-recording";
-import { ProjectSampleDetails } from "./project-sample-details";
+import styles from "./project-recording-gallery.module.css";
 
 function RecordingPlayer({ recording, id, userInitiated }: {
   recording: ProjectRecording;
@@ -64,9 +64,11 @@ function RecordingPlayer({ recording, id, userInitiated }: {
   );
 }
 
-export function ProjectRecordingGallery({ recordings, serviceCategory }: {
+export function ProjectRecordingGallery({ recordings, serviceCategory, detailsId, onServiceSelect }: {
   recordings: readonly ProjectRecording[];
   serviceCategory: ServiceCategoryId;
+  detailsId: string;
+  onServiceSelect: (capability: string) => void;
 }) {
   const [selection, setSelection] = useState({ index: 0, userInitiated: false, version: 0 });
   const id = useId();
@@ -91,7 +93,7 @@ export function ProjectRecordingGallery({ recordings, serviceCategory }: {
       <div className="grid items-stretch gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(250px,320px)] lg:gap-8">
         <RecordingPlayer key={`${selected.id}-${selection.version}`} id={`${id}-player`} recording={selected} userInitiated={selection.userInitiated} />
         <nav aria-label="Choose a project recording" className="min-w-0 lg:relative lg:min-h-0">
-          <ol className="flex max-w-full list-none gap-3 overflow-x-auto pb-3 lg:absolute lg:inset-0 lg:flex-col lg:overflow-x-hidden lg:overflow-y-auto lg:pb-0 lg:pe-2">
+          <ol className={cn(styles.playlist, "flex max-w-full list-none gap-3 overflow-x-auto pb-3 lg:absolute lg:inset-0 lg:flex-col lg:overflow-x-hidden lg:overflow-y-auto lg:pb-0 lg:pe-2")}>
             {playlist.map(({ recording, index, groupIndex, startsGroup }) => (
               <li key={recording.id} className="w-[240px] shrink-0 lg:w-full">
                 {startsGroup && (
@@ -103,9 +105,12 @@ export function ProjectRecordingGallery({ recordings, serviceCategory }: {
                   type="button"
                   aria-label={`Play ${recording.title}`}
                   aria-pressed={selection.index === index}
-                  aria-controls={`${id}-player ${id}-details`}
+                  aria-controls={`${id}-player ${detailsId}`}
                   aria-describedby={`${id}-capability-${groupIndex}`}
-                  onClick={() => setSelection((previous) => ({ index, userInitiated: true, version: previous.version + 1 }))}
+                  onClick={() => {
+                    setSelection((previous) => ({ index, userInitiated: true, version: previous.version + 1 }));
+                    onServiceSelect(recording.capability);
+                  }}
                   className={cn("flex min-h-24 w-full items-center gap-3 rounded-control border p-3 text-left transition-colors motion-reduce:transition-none", selection.index === index ? "border-mustard bg-mist" : "border-rule/70 bg-sheet hover:bg-mist")}
                 >
                   <span className="relative grid h-16 w-20 shrink-0 place-items-center overflow-hidden rounded-inset bg-paper">
@@ -120,15 +125,8 @@ export function ProjectRecordingGallery({ recordings, serviceCategory }: {
         </nav>
       </div>
       <p role="status" aria-atomic="true" className="sr-only">
-        Showing the video and details for {selected.title}.
+        Showing the video for {selected.title}.
       </p>
-      <ProjectSampleDetails
-        key={selected.id}
-        id={`${id}-details`}
-        title={selected.title}
-        story={selected.story}
-        imageSrc={selected.poster}
-      />
     </section>
   );
 }

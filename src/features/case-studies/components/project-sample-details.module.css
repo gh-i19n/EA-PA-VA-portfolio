@@ -1,0 +1,59 @@
+.layout {
+  display: grid;
+  min-width: 0;
+  gap: 2rem;
+}
+
+.content {
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.service {
+  display: flex;
+  width: 100%;
+  min-height: 5.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-inline-start: 2px solid transparent;
+  padding: 1.25rem 1rem;
+  text-align: start;
+  transition: background-color 160ms ease;
+}
+
+.service:hover {
+  background: var(--surface-sheet);
+}
+
+.selected,
+.selected:hover {
+  border-inline-start-color: var(--foreground);
+  background: var(--surface);
+}
+
+.notes {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@container (min-width: 42rem) {
+  .notes {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 3fr);
+    gap: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service {
+    transition: none;
+  }
+}
