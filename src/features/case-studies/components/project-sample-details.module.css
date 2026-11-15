@@ -32,12 +32,6 @@
   background: var(--surface);
 }
 
-.notes {
-  display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
 .noteBody {
   display: grid;
   min-width: 0;
@@ -49,13 +43,6 @@
   gap: 0.5rem;
   padding-inline-start: 1.25rem;
   list-style: disc;
-}
-
-@container (min-width: 42rem) {
-  .notes {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem;
-  }
 }
 
 @media (min-width: 1024px) {
