@@ -514,7 +514,6 @@ export const projectImageFolders = {
     folderScreenshots["communication-01"],
     folderScreenshots["communication-02"],
     folderScreenshots["communication-03"],
-    folderScreenshots["communication-04"],
   ],
   dataEntry: [
     folderScreenshots["dataEntry-01"],
