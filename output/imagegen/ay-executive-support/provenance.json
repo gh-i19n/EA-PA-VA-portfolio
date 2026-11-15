@@ -1,0 +1,19 @@
+{
+  "photoSource": "public/images/ay-a.png",
+  "photoSHA256": "38a9385f3e85d29db70fa279eb177ad27ef91ffaf2d8f677881b06363192fc57",
+  "photoProcessing": "Original image embedded directly, scaled and positioned in browser. No generative editing, face retouching, recolouring or image filters applied to the portrait.",
+  "generatedElements": "Desk/laptop background only, using built-in image_gen. No portrait was supplied to the generator.",
+  "composition": "Original HTML/CSS typography and services, rendered at 1600x1200.",
+  "reference": "User-supplied email-management flyer, used for broad composition only.",
+  "headline": "Executive Support",
+  "services": [
+    "Calendar & appointment scheduling",
+    "Email & inbox management",
+    "Meeting agendas & preparation",
+    "Task & project coordination",
+    "File & records management",
+    "Follow-ups & administrative support"
+  ],
+  "calendarSource": "public/images/work/calendar-month-view.png",
+  "calendarProcessing": "Existing supplied screenshot inserted into laptop screen using CSS perspective, with original August 2026 dates retained."
+}
