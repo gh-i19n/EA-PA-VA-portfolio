@@ -5,6 +5,7 @@ export type CaseStudy = {
   slug: string;
   title: string;
   serviceCategory: ServiceCategoryId;
+  projectIndexCategory?: string;
   summary: string;
   image: string;
   alt: string;

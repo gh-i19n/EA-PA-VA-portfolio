@@ -80,6 +80,7 @@ export const caseStudies = [
     slug: "every-journey-considered",
     title: "Travel Bookings and Itineraries",
     serviceCategory: "travel",
+    projectIndexCategory: "Flight Booking and Itineraries",
     sample: "travel",
     summary: workSampleSummary("travel and logistics support", projectRecordings.travel, [
       "the Lagos–Abuja itinerary",
