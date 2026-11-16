@@ -28,14 +28,30 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
         >
           {!recordings.length && <>
             <PortfolioVisual className="relative aspect-[1.2] overflow-hidden bg-mist sm:aspect-[2.1]">
-              <Image
-                src={study.image}
-                alt={study.alt}
-                fill
-                loading="eager"
-                sizes="95vw"
-                className="object-cover object-[center_45%] saturate-[.3]"
-              />
+              {study.video ? (
+                <video
+                  controls
+                  playsInline
+                  preload="none"
+                  poster={study.video.poster}
+                  width={study.video.width}
+                  height={study.video.height}
+                  aria-label={study.video.title}
+                  className="h-full w-full object-contain"
+                >
+                  <source src={study.video.src} type="video/mp4" />
+                  <a href={study.video.src}>Open {study.video.title}</a>
+                </video>
+              ) : (
+                <Image
+                  src={study.image}
+                  alt={study.alt}
+                  fill
+                  loading="eager"
+                  sizes="95vw"
+                  className="object-cover object-[center_45%] saturate-[.3]"
+                />
+              )}
             </PortfolioVisual>
             {study.artifact && (
               <a

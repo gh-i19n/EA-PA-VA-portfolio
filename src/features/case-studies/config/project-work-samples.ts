@@ -405,11 +405,26 @@ export const projectWorkSamples: WorkSampleLibrary = {
       },
     },
     "Flight booking": {
+      displayTitle: "Flight Booking and Travel Coordination",
       images: [images["flight-itinerary"], images["travel-page-2"], images["travel-page-1"]],
-      problem: "Transport and accommodation need to fit the trip schedule and have a visible cost allowance.",
-      solution: "Record the route, hotel stay and estimated travel costs alongside the proposed schedule.",
-      approach: "Review the departure and return plan, allow for transfers and compare the flight and accommodation estimates before booking.",
-      note: "The public flight-itinerary sample and planning itinerary are separate examples. Accommodation costs appear as estimates in the itinerary.",
+      problem: {
+        title: "Problem",
+        paragraphs: [
+          "A client had a scheduled engagement in Lagos that required travelling from Abuja and returning after the engagement. The travel arrangements needed to align with the engagement schedule to ensure timely arrival and a smooth return journey.",
+        ],
+      },
+      solution: {
+        title: "Solution",
+        paragraphs: [
+          "Coordinated a round-trip flight booking from Abuja to Lagos and back, selecting suitable flight times that aligned with the client's engagement and return schedule. Also completed the online check-in process and ensured the necessary travel details were available ahead of departure.",
+        ],
+      },
+      approach: {
+        title: "Approach",
+        paragraphs: [
+          "Identified suitable airlines, compared available flight schedules and ticket prices, and selected flights based on the client's preferred travel times and engagement schedule. Completed the booking, confirmed the travel itinerary, and carried out online check-in ahead of departure to ensure a seamless travel experience.",
+        ],
+      },
     },
   },
 };

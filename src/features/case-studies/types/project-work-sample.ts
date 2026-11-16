@@ -10,6 +10,7 @@ export type ProjectWorkSampleNote = {
 export type ProjectWorkSample = {
   images: readonly GalleryImage[];
   documents?: readonly GalleryDocument[];
+  displayTitle?: string;
   problem: string | ProjectWorkSampleNote;
   solution: string | ProjectWorkSampleNote;
   approach: string | ProjectWorkSampleNote;

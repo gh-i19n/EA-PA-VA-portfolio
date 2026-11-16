@@ -9,6 +9,13 @@ export type CaseStudy = {
   summary: string;
   image: string;
   alt: string;
+  video?: {
+    src: string;
+    poster: string;
+    title: string;
+    width: number;
+    height: number;
+  };
   sample?: WorkSampleId;
   challenge: string;
   constraints: readonly string[];

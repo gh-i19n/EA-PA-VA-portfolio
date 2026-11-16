@@ -9,6 +9,8 @@ import type { ProjectWorkSampleGroup, ProjectWorkSampleNote } from "../types/pro
 import { sampleCountLabel, sampleMedia } from "../utils/sample-media";
 import styles from "./project-sample-details.module.css";
 
+const groupTitle = (group: ProjectWorkSampleGroup) => group.displayTitle ?? group.capability;
+
 /** A service remains selected while visitors inspect its images and context. */
 export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }: {
   id: string;
@@ -55,7 +57,7 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
               const selected = groups[Number(value)];
               if (selected) onServiceSelect(selected.capability);
             }}
-            options={groups.map((group, index) => ({ value: String(index), label: group.capability }))}
+            options={groups.map((group, index) => ({ value: String(index), label: groupTitle(group) }))}
           />
         </div>
         <div role="group" aria-label="Choose a service to explore" className="hidden self-start lg:block">
@@ -71,7 +73,7 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
                   className={cn(styles.service, activeIndex === index && styles.selected)}
                 >
                   <span className="min-w-0">
-                    <span className="block text-support font-medium leading-snug">{group.capability}</span>
+                    <span className="block text-support font-medium leading-snug">{groupTitle(group)}</span>
                     <span className="mt-2 block text-caption text-muted">{sampleCountLabel(group)}</span>
                   </span>
                   <ArrowUpRight size={18} aria-hidden="true" className={cn("shrink-0", activeIndex !== index && "opacity-0")} />
@@ -82,9 +84,9 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
         </div>
         <div id={`${id}-content`} role="region" aria-labelledby={`${id}-service-title`} className={styles.content}>
           <header className="mb-5">
-            <h3 id={`${id}-service-title`} className="text-balance font-display text-[clamp(24px,3vw,34px)] font-medium leading-tight tracking-[-.025em]">{active.capability}</h3>
+            <h3 id={`${id}-service-title`} className="text-balance font-display text-[clamp(24px,3vw,34px)] font-medium leading-tight tracking-[-.025em]">{groupTitle(active)}</h3>
           </header>
-          <MediaGallery key={active.capability} items={sampleMedia(active)} label={active.capability} />
+          <MediaGallery key={active.capability} items={sampleMedia(active)} label={groupTitle(active)} />
           <ContentAccordion
             label="Problem, solution and approach"
             items={notes.map((note, index) => ({
@@ -94,7 +96,7 @@ export function ProjectSampleDetails({ id, groups, capability, onServiceSelect }
             }))}
           />
           {active.note && <p className="mt-5 max-w-prose text-caption text-muted">{active.note}</p>}
-          <p role="status" aria-atomic="true" className="sr-only">Showing {active.capability}: {sampleCountLabel(active)}, with the problem, solution and approach.</p>
+          <p role="status" aria-atomic="true" className="sr-only">Showing {groupTitle(active)}: {sampleCountLabel(active)}, with the problem, solution and approach.</p>
         </div>
       </div>
     </section>
