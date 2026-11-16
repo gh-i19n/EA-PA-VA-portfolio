@@ -82,13 +82,17 @@ export const caseStudies = [
     serviceCategory: "travel",
     projectIndexCategory: "Flight Booking and Itineraries",
     sample: "travel",
-    summary: workSampleSummary("travel and logistics support", projectRecordings.travel, [
-      "the Lagos–Abuja itinerary",
-      "an estimated travel budget",
-      "a travel checklist",
-    ]),
+    summary:
+      "These are work samples of the travel and logistics support I have provided, including a flight booking walkthrough, the Lagos–Abuja itinerary, an estimated travel budget and a travel checklist.",
     image: "/images/work/travel-cover.png",
     alt: "Preview of AY’s Lagos–Abuja executive travel itinerary",
+    video: {
+      src: "/videos/flight-booking.mp4",
+      poster: "/images/work/flight-booking.jpg",
+      title: "Flight booking walkthrough",
+      width: 1600,
+      height: 784,
+    },
     challenge:
       "The supplied itinerary brings airport movements, accommodation, a board meeting, meals and return travel into one reference. It also includes an estimated budget and a checklist of documents, work items and personal essentials.",
     constraints: [

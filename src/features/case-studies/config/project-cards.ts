@@ -10,6 +10,7 @@ export const projectCards = [
     const presentation = projectPresentations[study.slug];
     const category = serviceCategories[study.serviceCategory];
     const document = presentation.format === "document" ? study.artifact : undefined;
+    const studyVideo = "video" in study ? study.video : undefined;
     const recordings = projectRecordings[study.serviceCategory];
     const featured = recordings[0];
 
@@ -24,9 +25,9 @@ export const projectCards = [
       contents: recordings.length
         ? [`${recordings.length} recordings`, ...presentation.contents]
         : presentation.contents,
-      poster: featured?.poster ?? document?.preview ?? study.image,
+      poster: featured?.poster ?? studyVideo?.poster ?? document?.preview ?? study.image,
       alt: document?.alt ?? study.alt,
-      recording: featured?.src,
+      recording: featured?.src ?? studyVideo?.src,
       href: `/case-studies/${study.slug}`,
       linkLabel: `View ${presentation.title} project`,
       opensNewTab: false,
