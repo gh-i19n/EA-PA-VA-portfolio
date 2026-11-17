@@ -198,6 +198,27 @@ export const projectScreenshots = {
     width: 1132,
     height: 1600,
   },
+  "flight-search-form": {
+    src: "/images/projects/screenshots/flight-search-form.jpg",
+    alt: "United Nigeria Airlines search form for a return trip from Abuja to Lagos",
+    caption: "Abuja to Lagos flight search",
+    width: 1600,
+    height: 784,
+  },
+  "flight-search-results": {
+    src: "/images/projects/screenshots/flight-search-results.jpg",
+    alt: "Available Abuja to Lagos flight times and fare options",
+    caption: "Compare available flights",
+    width: 1600,
+    height: 784,
+  },
+  "flight-selection-summary": {
+    src: "/images/projects/screenshots/flight-selection-summary.jpg",
+    alt: "Selected Abuja to Lagos and Lagos to Abuja flights in the booking basket",
+    caption: "Review the return itinerary",
+    width: 1600,
+    height: 784,
+  },
   "calendar-month": {
     src: "/images/work/calendar-month-view.png",
     alt: "Google Calendar showing meetings and training across a month",
