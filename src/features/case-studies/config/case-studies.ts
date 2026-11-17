@@ -80,7 +80,7 @@ export const caseStudies = [
     slug: "every-journey-considered",
     title: "Travel Bookings and Itineraries",
     serviceCategory: "travel",
-    projectIndexCategory: "Flight Booking and Itineraries",
+    projectIndexCategory: "Travel Bookings and Itineraries",
     sample: "travel",
     summary:
       "These are work samples of the travel and logistics support I have provided, including a flight booking walkthrough, the Lagos–Abuja itinerary, an estimated travel budget and a travel checklist.",

@@ -384,7 +384,14 @@ export const projectWorkSamples: WorkSampleLibrary = {
   },
   travel: {
     "Itinerary preparation": {
-      images: [images["travel-page-1"], images["travel-page-2"], images["travel-page-3"]],
+      images: [
+        images["flight-search-form"],
+        images["flight-search-results"],
+        images["flight-selection-summary"],
+        images["travel-page-1"],
+        images["travel-page-2"],
+        images["travel-page-3"],
+      ],
       problem: {
         title: "Problem",
         paragraphs: [
